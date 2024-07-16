@@ -1,0 +1,70 @@
+.topHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 3rem;
+  background-color: rgba(243, 243, 243, 0.4);
+  backdrop-filter: blur(60px) saturate(180%);
+  border-bottom: 1px solid #000;
+  &.active{
+    border-bottom: 1px solid #fff;
+  }
+  .container {
+    .row {
+      flex-direction: row;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: #242424;
+      font-size: 12px;
+      text-transform: uppercase;
+      @media (max-width:380px){
+        font-size: 10px;
+      }
+      @media (max-width:330px){
+        font-size: 8px;
+      }
+      .userArea {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        height: 100%;
+        &.active{
+          color:#fff;
+        }
+        .contacts{
+          .contactTitle{
+            color: #242424;
+            &.active{
+              color:#fff;
+            }
+          }
+        }
+      }
+      .logoName {
+        @media (max-width:1020px){
+          display: none;
+        }
+        .title{
+          color: #242424;
+          &.active{
+            color:#fff;
+          }
+        }
+      }
+      .logo{
+        .logo-icon{
+          fill:#242424;
+          &.active{
+            fill:#fff;
+          }
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.header {
+  background-color: #0c2340;
+  height: 36px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  position: sticky;
+  top:37px;
+  z-index: 20;
+  .container {
+    .row {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      .productsItem{
+        color: #fff;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.heroSection {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      transparent 23.96%,
+      rgba(19, 19, 19, 0) 60.42%,
+      rgba(19, 19, 19, 0.8)
+    );
+    transform: rotate(-180deg);
+  }
+  .heroImg {
+    width: 100%;
+    height: 500px;
+    background-image: url(../../image/d957264a3006cc970f3330f7ebcac2c2ac5fc3d2-1600x1600.webp);
+    object-fit: cover;
+    background-size: cover;
+    background-position: center, center;
+    .hero {
+      display: flex;
+      position: sticky;
+      top: 100px;
+      z-index: 11;
+      .heroTitle {
+        color: #fff;
+        padding-top: 70px;
+        padding-bottom: 130px;
+        font-size: 3rem;
+        font-weight: 100;
+        text-transform: uppercase;
+        line-height: 1;
+        transform: scale(2, 2.5);
+        font-family: "Bebas Neue", sans-serif;
+        padding-left: 70px;
+      }
+    }
+  }
+}

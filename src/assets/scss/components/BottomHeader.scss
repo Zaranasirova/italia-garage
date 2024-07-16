@@ -1,0 +1,37 @@
+.bottomHeader {
+  height: 3rem;
+  background-color: rgba(243, 243, 243, 0.4);
+  backdrop-filter: blur(60px) saturate(180%);
+  position: sticky;
+  bottom: 0;
+  border-top: 1px solid #242424;
+  border-bottom: 1px solid #242424;
+  &.active {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+  
+  }
+  .container {
+    .row {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      color: #242424;
+      font-size: 12px;
+      padding: 0 30px;
+      text-transform: uppercase;
+      &.active {
+        color: #fff;
+      
+      }
+      .customs,.ourGarage,.marketPlace,.hub,.shop,.studio{
+        color: #242424;
+        &.active {
+          color: #fff;
+        
+        }
+      }
+    }
+  }
+}

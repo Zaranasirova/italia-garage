@@ -1,0 +1,115 @@
+
+
+.contacts-section {
+  padding-top: 80px;
+  background-color: #fff;
+  .container {
+    .row {
+      flex-direction: column;
+      gap: 20px;
+      .contacts-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .title {
+          padding-left: 46px;
+          padding-top: 20px;
+          font-size: 3rem;
+          font-weight: 100;
+          text-transform: uppercase;
+          line-height: 1;
+          transform: scale(2, 2.5);
+          font-family: "Bebas Neue", sans-serif;
+          color: #242424;
+        }
+        .contact-information {
+          display: flex;
+          flex-direction: column;
+          text-align: right;
+          .address-title {
+            font-weight: 600;
+          }
+          .phoneNumber {
+            color: #000000;
+            font-size: 16px;
+          
+            span {
+              text-decoration: underline;
+            }
+          }
+          .geoAdress {
+            color: #000000;
+            font-size: 16px;
+            text-decoration: underline;
+
+          }
+        }
+      }
+      .contacts-about {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        .postal-adres-name {
+          width: 35%;
+          display: flex;
+          flex-direction: column;
+          .studio,
+          .press {
+            border-bottom: 1px solid #000000;
+            padding: 30px 0;
+            font-size: 24px;
+            font-weight: 400;
+            color: #242424;
+          }
+          .customs {
+            padding: 30px 0;
+            font-size: 24px;
+            font-weight: 400;
+            color: #242424;
+          }
+        }
+        .postal-addressee {
+          width: 65%;
+          display: flex;
+          flex-direction: column;
+   
+          .studio-mailAdress,
+          .press-mailAdress {
+            border-bottom: 1px solid #000000;
+            padding: 24px 0;
+            font-size: 34px;
+      
+            .mailAdress {
+              color:#242424;
+              font-weight: 500;
+            }
+          }
+          .customs-mailAdress {
+            padding: 23px 0;
+            font-size: 34px;
+            .mailAdress {
+              color:#242424;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  .writeUs {
+    background-color: #242424;
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+
+    .rfm-marquee-container {
+      overflow-y: hidden;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 5rem;
+      font-weight: 100;
+      transform: scale(1, 1.5);
+      padding: 10px;
+
+    }
+  }
+}
