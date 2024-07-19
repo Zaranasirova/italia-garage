@@ -1,0 +1,183 @@
+.productSection {
+  padding-top: 70px;
+
+  .container {
+    .row {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      .leftSide {
+        position: sticky;
+        top: 70px;
+        width: 50%;
+        max-height: calc(100vh - 70px);
+        overflow: hidden;
+        padding-right: 20px;
+        .productName {
+          font-size: 100px;
+          font-weight: 100;
+          text-transform: uppercase;
+          line-height: 0.9;
+          font-family: "Bebas Neue", sans-serif;
+          color: #242424;
+          letter-spacing: -2px;
+        }
+
+        .aboutProduct {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          span {
+            font-size: 16px;
+            font-weight: 600;
+          }
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 20px;
+
+            li {
+              position: relative;
+              font-size: 12px;
+              color: #242424;
+              &::before {
+                content: " ";
+                position: absolute;
+                left: -20px;
+                top: 5px;
+                font-size: 20px;
+                border-radius: 50%;
+                border: 1px solid #242424;
+                width: 8px;
+                height: 8px;
+              }
+            }
+          }
+        }
+
+        .productSize {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 10px;
+          span {
+            font-size: 16px;
+            font-weight: 400;
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 85px;
+              height: 1px;
+              top: 23px;
+              left: 0;
+              background-color: #242424;
+            }
+          }
+
+          .size {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            .sizeList {
+              display: flex;
+              gap: 10px;
+
+              li {
+                list-style: none;
+                font-size: 14px;
+                cursor: pointer;
+                width: 46px;
+                height: 46px;
+                color: #242424;
+                border: 1px solid #242424;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &.active {
+                  background-color: #242424;
+                  color: #fff;
+                }
+                &.deactive {
+                  border: 1px solid rgb(192, 191, 191);
+                  color: rgb(192, 191, 191);
+                }
+              }
+            }
+
+            .sendIcon {
+              margin-right: 40px;
+            }
+          }
+        }
+
+        .addTooBasket {
+          display: flex;
+          flex-direction: row;
+        gap: 15px;
+          padding-top: 30px;
+          button {
+            background-color: #000000;
+            color: #fff;
+
+            width: 100%;
+            cursor: pointer;
+            font-size: 12px;
+          }
+
+          .price {
+            font-size: 64px;
+            color: #242424;
+            font-weight: 100;
+            text-transform: uppercase;
+            line-height: 0.9;
+            font-family: "Bebas Neue", sans-serif;
+            color: #242424;
+            letter-spacing: -2px;
+            margin-right: 40px;
+          }
+        }
+      }
+
+      .rightSide {
+        width: 50%;
+        padding-bottom: 20px;
+        position: relative;
+        overflow-y: auto;
+
+        &:after {
+          content: "";
+          position: fixed;
+          left: 50%;
+          top: -40px;
+          bottom: 20px;
+          border: 0.1px solid #242424;
+          width: 0.1px;
+          height: 75%;
+          background-color: #242424;
+        }
+
+        .productsPhotos {
+          width: 100%;
+
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 1px solid #242424;
+            margin-bottom: -1px;
+            display: table-cell;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
