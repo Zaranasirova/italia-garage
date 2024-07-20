@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 60;
+  z-index: 100;
   height: 3rem;
   background-color: rgba(243, 243, 243, 0.4);
   backdrop-filter: blur(60px) saturate(180%);
@@ -109,7 +109,6 @@
             }
           }
         }
-      
       }
     }
     .logoName {
@@ -130,6 +129,80 @@
           fill: #fff;
         }
       }
+    }
+  }
+  .cartBox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 450px;
+    background-color: #fff;
+    height: 100dvh;
+    transform: translateX(100%);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 450;
+    border-left: 1px solid #242424;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+ 
+    &.isOpen {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .cartHead {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #242424;
+      padding: 15px ;
+      h3 {
+        font-size: 12px;
+        color: #242424;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+    .endOfCart {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+     padding: 0 30px 15px 30px ;
+      .total {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+      button {
+        padding: 15px 0;
+        width: 100%;
+        height: 100%;
+       
+        background-color: rgb(0 0 0 / 1);
+        color: #fff;
+        opacity: 0.6;
+        border: 1px solid #000000;
+      }
+    }
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    &.isOpen {
+      visibility: visible;
+      opacity: 1;
+      background: rgba(150, 150, 150, 0.8);
+      backdrop-filter: saturate(180%) blur(10px);
     }
   }
 }
