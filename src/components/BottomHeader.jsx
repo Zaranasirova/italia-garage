@@ -1,14 +1,55 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+
 const BottomHeader = () => {
   const location = useLocation();
   const path = location.pathname;
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="bottomHeader">
+      <div className="menu">
+        <Link className="menu-click" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          MENU
+        </Link>
+        {isMenuOpen && (
+          <nav>
+            <Link>
+              {" "}
+              <Link to={"/"}>Customs</Link>
+            </Link>
+            <Link>
+              {" "}
+              <Link to={"/"}>ourGarage</Link>
+            </Link>
+            <Link>
+              {" "}
+              <Link to={"/"}>marketPlace</Link>
+            </Link>
+            <Link>
+              {" "}
+              <Link to={"/"}> hub</Link>
+            </Link>
+            <Link>
+              {" "}
+              <Link to={"/"}>shop</Link>
+            </Link>
+            <Link>
+              {" "}
+              <Link to={"/"}>studio</Link>
+            </Link>
+          </nav>
+        )}
+      </div>
       <div className="container">
-        <nav>
-          <div className="customs">
-            <Link to={"/"} className="title">Customs</Link>
+        <div className="menuOverlay"></div>
+        <nav className={`navBar ${isMenuOpen && "MenuOpen"}`}>
+          <div className={`customs ${isMenuOpen && "MenuOpen"}`}>
+            <Link to={"/"} className="title">
+              Customs
+            </Link>
             <ul className="customs-dropdown">
               <li>
                 {" "}
@@ -24,8 +65,10 @@ const BottomHeader = () => {
               </li>
             </ul>
           </div>
-          <div className="ourGarage">
-            <Link to={"/"} className="title">our Garage</Link>
+          <div className={`ourGarage ${isMenuOpen && "MenuOpen"}`}>
+            <Link to={"/"} className="title">
+              our Garage
+            </Link>
             <ul className="garage-dropdown">
               <li>
                 {" "}
@@ -58,35 +101,51 @@ const BottomHeader = () => {
               </li>
             </ul>
           </div>
-          <div className="marketPlace">
-            <Link to={"/"} className="title">market Place</Link>
+          <div className={`marketPlace ${isMenuOpen && "MenuOpen"}`}>
+            <Link to={"/"} className="title">
+              market Place
+            </Link>
           </div>
-          <div className="hub">
-            <Link to={"/"} className="title">Hub</Link>
+          <div className={`hub ${isMenuOpen && "MenuOpen"}`}>
+            <Link to={"/"} className="title">
+              Hub
+            </Link>
             <ul className="hub-dropdown">
               <li>
                 {" "}
-                <Link to={"/"} className="dropdown-links">Hub Home</Link>
+                <Link to={"/"} className="dropdown-links">
+                  Hub Home
+                </Link>
               </li>
               <li>
                 {" "}
-                <Link to={"/"} className="dropdown-links">Garage Culture</Link>
+                <Link to={"/"} className="dropdown-links">
+                  Garage Culture
+                </Link>
               </li>
               <li>
                 {" "}
-                <Link to={"/"}  className="dropdown-links">Garage Customs</Link>
+                <Link to={"/"} className="dropdown-links">
+                  Garage Customs
+                </Link>
               </li>
               <li>
                 {" "}
-                <Link to={"/"}  className="dropdown-links">Studio Projects</Link>
+                <Link to={"/"} className="dropdown-links">
+                  Studio Projects
+                </Link>
               </li>
             </ul>
           </div>
-          <div className="shop">
-         <Link to={"/shop"} className="title">SHOP</Link>
+          <div className={`shop ${isMenuOpen && "MenuOpen"}`}>
+            <Link to={"/shop"} className="title">
+              SHOP
+            </Link>
           </div>
-          <div className="studio">
-            <Link to={"/"} className="title">STUDIO</Link>
+          <div className={`studio ${isMenuOpen && "MenuOpen"}`}>
+            <Link to={"/"} className="title">
+              STUDIO
+            </Link>
           </div>
         </nav>
       </div>

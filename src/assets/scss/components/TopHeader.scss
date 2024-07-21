@@ -8,6 +8,7 @@
   background-color: rgba(243, 243, 243, 0.4);
   backdrop-filter: blur(60px) saturate(180%);
   border-bottom: 1px solid #000;
+  cursor: url("../../icons/download.svg"),auto;
   &.active {
     border-bottom: 1px solid #fff;
   }
@@ -33,6 +34,12 @@
         gap: 20px;
         align-items: center;
         height: 100%;
+        width: 25%;
+        justify-content: end;
+        @media (max-width: 1020px) {
+          width: 90%;
+         
+        }
         &.active {
           color: #fff;
         }
@@ -109,11 +116,23 @@
             }
           }
         }
+        .search {
+          .search-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 12px;
+            height: 12px;
+          }
+        }
       }
     }
     .logoName {
+      width: 25%;
+      cursor: url("../../icons/download.svg"),auto;
       @media (max-width: 1020px) {
         display: none;
+       
       }
       .title {
         color: #242424;
@@ -123,6 +142,13 @@
       }
     }
     .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media (max-width: 1020px) {
+        width: 10%;
+       justify-content: flex-start;
+      }
       .logo-icon {
         fill: #242424;
         &.active {
@@ -144,9 +170,8 @@
     z-index: 450;
     border-left: 1px solid #242424;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
- 
+
     &.isOpen {
       visibility: visible;
       opacity: 1;
@@ -154,9 +179,17 @@
     }
     .cartHead {
       display: flex;
+      height: 48px;
+      flex: none;
+      align-items: center;
       justify-content: space-between;
+      border-bottom-width: 1px;
+      padding-left: 1.125rem;
+      padding-right: 1.125rem;
+      text-align: center;
+      font-size: 0.6rem;
+      text-transform: uppercase;
       border-bottom: 1px solid #242424;
-      padding: 15px ;
       h3 {
         font-size: 12px;
         color: #242424;
@@ -164,45 +197,69 @@
         text-transform: uppercase;
       }
     }
-    .endOfCart {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-     padding: 0 30px 15px 30px ;
-      .total {
+    .cartList {
+      height: 100%;
+      overflow: auto;
+      .empty {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-size: 12px;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
         text-transform: uppercase;
       }
-      button {
-        padding: 15px 0;
-        width: 100%;
-        height: 100%;
-       
-        background-color: rgb(0 0 0 / 1);
-        color: #fff;
-        opacity: 0.6;
-        border: 1px solid #000000;
+    }
+    .endOfCart {
+      margin-top: -1px;
+      width: 100%;
+      padding: 1.125rem;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      .total {
+        flex-direction: column;
+        gap: 0.75rem;
+        display: flex;
+
+        .subTotal {
+          display: flex;
+          justify-content: space-between;
+        }
+        button {
+          border-width: 1px;
+
+          border-color: rgb(0 0 0 /1);
+          color: #fff;
+        }
       }
     }
-  }
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh;
 
-    background-color: transparent;
-    visibility: hidden;
-    opacity: 0;
-    &.isOpen {
-      visibility: visible;
-      opacity: 1;
-      background: rgba(150, 150, 150, 0.8);
-      backdrop-filter: saturate(180%) blur(10px);
+    button {
+      padding: 15px 0;
+      width: 100%;
+      height: 100%;
+
+      background-color: rgb(0 0 0 / 1);
+      color: #fff;
+      opacity: 0.6;
+      border: 1px solid #000000;
     }
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+
+  background-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+  &.isOpen {
+    visibility: visible;
+    opacity: 1;
+    background: rgba(150, 150, 150, 0.8);
+    backdrop-filter: saturate(180%) blur(10px);
   }
 }

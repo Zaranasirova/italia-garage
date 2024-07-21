@@ -1,8 +1,34 @@
-import React from 'react'
+import React from 'react';
+ import Tee from "../assets/image/tee_fronte_pastel_green.webp";
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+<div className="about-product">
+<div className="productInfo">
+<div className="productImg">
+  <img src={Tee} alt="" />
+</div>
+<div className="product-info">
+  <div className="upperSide">
+    <div className="productSize">
+      <p>COLOR LOGO THE PASTEL GREY</p>
+      <span>SIZE:XXS</span>
+    </div>
+    <div className="removeProduct">
+      <span>REMOVE</span>
+    </div>
+  </div>
+  <div className="downSide">
+    <ul className='numberlist'>
+      <li>-</li>
+      <li>1</li>
+      <li>+</li>
+    </ul>
+  <span>42.00$</span>
+  </div>
+</div>
+</div>
+</div>
   )
 }
 

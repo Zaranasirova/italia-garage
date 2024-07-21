@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from "react";
+//Import Hooks
 import { Link, useLocation } from "react-router-dom";
+
+//import SVG
 import { ReactComponent as Logo } from "../assets/icons/logo.svg";
 import { ReactComponent as Search } from "../assets/icons/search.svg";
 import { ReactComponent as Basket } from "../assets/icons/basket.svg";
+import { ReactComponent as Dropdown } from "../assets/icons/dropDown.svg";
+
+//import component
 import Cart from "./Cart";
+
+//Import Fontawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+
 
 const TopHeader = () => {
   const location = useLocation();
@@ -35,7 +47,7 @@ const TopHeader = () => {
           </div>
           <div className={`userArea ${path === "/" ? "active" : ""}`}>
             <div className="social">
-              <p className="socialTitle">Social</p>
+              <p className="socialTitle">Social <Dropdown/> </p>
               <ul className={`dropdownContent ${path === "/" ? "active" : ""}`}>
                 <li className={path === "/" ? "active" : ""}>
                   <Link
@@ -105,7 +117,7 @@ const TopHeader = () => {
               <span>ITA</span>
             </div>
             <div className="search">
-              <Search fill="#000" />
+            <FontAwesomeIcon icon={faSearch} className="search-icon" />
             </div>
             <div className="basketCart">
               <Basket
@@ -127,16 +139,22 @@ const TopHeader = () => {
           </h3>
         </div>
         <div className="cartList">
-          <Cart />
+          <div className="productList">
+         <Cart/>
         </div>
-        <p>YOUR CART IS EMPTY</p>
+          {/* <div className="empty">
+            <span>YOUR CART IS EMPTY</span>
+          </div> */}
+        </div>
 
         <div className="endOfCart">
           <div className="total">
-            <p>SubTotal</p>
-            <p>$42.00</p>
+            <div className="subTotal">
+              <p>SubTotal</p>
+              <p>$42.00</p>
+            </div>
+            <button>CHECKOUT</button>
           </div>
-          <button>CHECKOUT</button>
         </div>
       </div>
       <div

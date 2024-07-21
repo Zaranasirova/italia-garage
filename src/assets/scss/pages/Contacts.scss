@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 .contacts-section {
   padding-top: 80px;
@@ -32,7 +32,7 @@
           .phoneNumber {
             color: #000000;
             font-size: 16px;
-          
+         
             span {
               text-decoration: underline;
             }
@@ -41,7 +41,7 @@
             color: #000000;
             font-size: 16px;
             text-decoration: underline;
-
+        
           }
         }
       }
@@ -73,13 +73,13 @@
           width: 65%;
           display: flex;
           flex-direction: column;
-   
+         
           .studio-mailAdress,
           .press-mailAdress {
             border-bottom: 1px solid #000000;
             padding: 24px 0;
             font-size: 34px;
-      
+         
             .mailAdress {
               color:#242424;
               font-weight: 500;
@@ -100,8 +100,8 @@
   .writeUs {
     background-color: #242424;
     color: #fff;
-    font-family: "Bebas Neue", sans-serif;
-
+ 
+  
     .rfm-marquee-container {
       overflow-y: hidden;
       font-family: "Bebas Neue", sans-serif;
