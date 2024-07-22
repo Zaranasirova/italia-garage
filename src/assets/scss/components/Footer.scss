@@ -1,54 +1,82 @@
-.footer{
-    background-color: #0C2340;
-    color: #fff;
-    font-size: 10px;
-    text-transform: uppercase;
-    padding-top: 40px;
-    border-top: 1px solid #242424;
-    border-bottom: 1px solid #242424;
-    padding-bottom: 40px;
-   .container{
-    .row{
-        flex-direction: column;
-        gap: 40px;
-        width: 100%;
-        .socialList{
+.footer {
+  background-color: #0c2340;
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding-top: 40px;
+  border-top: 1px solid #242424;
+  border-bottom: 1px solid #242424;
+  padding-bottom: 40px;
+  .container {
+    .row {
+      flex-direction: column;
+      gap: 20px;
+
+      .socialHead,
+      .socialList {
+        width: 98%;
+        ul {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          @media (max-width: 1024px) {
             display: flex;
-            flex-direction: row;
+            flex-wrap: wrap;
             justify-content: space-between;
-            width: 90%;
-            .listItem{
-                display: flex;
-                flex-direction: column;
-                gap: 40px;
-                .socialListLink{
-                    font-weight: 700;
-                    color: #fff;
-                }
-                ul{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
-                    li{
-                        .pageLinks{
-                            color: #fff;
-                            font-weight: 500;
-                        }
-                    }
-                }
+            gap: 20px;
+          }
+          li {
+            width: 70%;
+            @media (max-width: 1024px) {
+              flex: 0 0 45%;
             }
+          }
         }
-        .copywrite{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            height: 100%;
-            align-items: center;
-            .footerLogo{
-                width: 18px;
+      }
+      .socialHead {
+        ul {
+          li {
+            .socialListLink {
+              color: #fff;
+              font-size: 9.6px;
+              font-weight: 700;
             }
+          }
         }
+      }
+      .socialList {
+        ul {
+          li {
+            ul {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+              li {
+                font-weight: 700;
+                .listLink {
+                  font-size: 9.6px;
+                  font-weight: 300;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+      .copywrite {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+   
+        .footerLogo {
+          height: 20px;
+        
+        }
+        small {
+          width: 100%;
+        }
+      }
     }
-   }
-    
+  }
 }

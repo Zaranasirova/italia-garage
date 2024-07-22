@@ -139,12 +139,12 @@ const TopHeader = () => {
           </h3>
         </div>
         <div className="cartList">
-          <div className="productList">
+          {/* <div className="productList">
          <Cart/>
-        </div>
-          {/* <div className="empty">
+        </div> */}
+          <div className="empty">
             <span>YOUR CART IS EMPTY</span>
-          </div> */}
+          </div>
         </div>
 
         <div className="endOfCart">
@@ -153,7 +153,7 @@ const TopHeader = () => {
               <p>SubTotal</p>
               <p>$42.00</p>
             </div>
-            <button>CHECKOUT</button>
+            <button className="check" >CHECKOUT</button>
           </div>
         </div>
       </div>

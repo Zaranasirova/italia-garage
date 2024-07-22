@@ -14,39 +14,12 @@ const BottomHeader = () => {
         <Link className="menu-click" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           MENU
         </Link>
-        {isMenuOpen && (
-          <nav>
-            <Link>
-              {" "}
-              <Link to={"/"}>Customs</Link>
-            </Link>
-            <Link>
-              {" "}
-              <Link to={"/"}>ourGarage</Link>
-            </Link>
-            <Link>
-              {" "}
-              <Link to={"/"}>marketPlace</Link>
-            </Link>
-            <Link>
-              {" "}
-              <Link to={"/"}> hub</Link>
-            </Link>
-            <Link>
-              {" "}
-              <Link to={"/"}>shop</Link>
-            </Link>
-            <Link>
-              {" "}
-              <Link to={"/"}>studio</Link>
-            </Link>
-          </nav>
-        )}
+       
       </div>
       <div className="container">
-        <div className="menuOverlay"></div>
-        <nav className={`navBar ${isMenuOpen && "MenuOpen"}`}>
-          <div className={`customs ${isMenuOpen && "MenuOpen"}`}>
+        
+        <nav className="navBar">
+          <div className="customs">
             <Link to={"/"} className="title">
               Customs
             </Link>
@@ -65,7 +38,7 @@ const BottomHeader = () => {
               </li>
             </ul>
           </div>
-          <div className={`ourGarage ${isMenuOpen && "MenuOpen"}`}>
+          <div className="ourGarage">
             <Link to={"/"} className="title">
               our Garage
             </Link>
@@ -101,12 +74,12 @@ const BottomHeader = () => {
               </li>
             </ul>
           </div>
-          <div className={`marketPlace ${isMenuOpen && "MenuOpen"}`}>
+          <div className="marketPlace">
             <Link to={"/"} className="title">
               market Place
             </Link>
           </div>
-          <div className={`hub ${isMenuOpen && "MenuOpen"}`}>
+          <div className="hub">
             <Link to={"/"} className="title">
               Hub
             </Link>
@@ -137,12 +110,12 @@ const BottomHeader = () => {
               </li>
             </ul>
           </div>
-          <div className={`shop ${isMenuOpen && "MenuOpen"}`}>
+          <div className="shop">
             <Link to={"/shop"} className="title">
               SHOP
             </Link>
           </div>
-          <div className={`studio ${isMenuOpen && "MenuOpen"}`}>
+          <div className="studio">
             <Link to={"/"} className="title">
               STUDIO
             </Link>

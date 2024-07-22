@@ -34,13 +34,47 @@
             font-size: 9.6px;
           }
         }
-       
       }
-      .downSide{
+      .downSide {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-    }
+        .numberlist {
+          display: flex;
+          flex-direction: row;
+          li {
+            button {
+              padding: 5px 10px;
+              background-color: #fff;
+              color: #242424;
+              font-size: 12px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 1px solid #000000;
+              &:hover{
+                background-color: #000000;
+                color: #fff;
+              }
+            }
+          }
+          .num {
+            padding: 5px 10px;
+            font-size: 12px;
+            border-collapse: collapse;
+            border-top: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        span {
+          font-size: 12px;
+          color: #242424;
+        
+        }
+      }
     }
   }
 }

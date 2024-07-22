@@ -20,9 +20,9 @@ const Cart = () => {
   </div>
   <div className="downSide">
     <ul className='numberlist'>
-      <li>-</li>
-      <li>1</li>
-      <li>+</li>
+      <li><button>-</button></li>
+      <li className='num'>1</li>
+      <li><button>+</button></li>
     </ul>
   <span>42.00$</span>
   </div>

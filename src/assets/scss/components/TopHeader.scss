@@ -8,7 +8,7 @@
   background-color: rgba(243, 243, 243, 0.4);
   backdrop-filter: blur(60px) saturate(180%);
   border-bottom: 1px solid #000;
-  cursor: url("../../icons/download.svg"),auto;
+  cursor: url("../../icons/download.svg"), auto;
   &.active {
     border-bottom: 1px solid #fff;
   }
@@ -38,7 +38,6 @@
         justify-content: end;
         @media (max-width: 1020px) {
           width: 90%;
-         
         }
         &.active {
           color: #fff;
@@ -129,10 +128,9 @@
     }
     .logoName {
       width: 25%;
-      cursor: url("../../icons/download.svg"),auto;
+      cursor: url("../../icons/download.svg"), auto;
       @media (max-width: 1020px) {
         display: none;
-       
       }
       .title {
         color: #242424;
@@ -147,7 +145,7 @@
       align-items: center;
       @media (max-width: 1020px) {
         width: 10%;
-       justify-content: flex-start;
+        justify-content: flex-start;
       }
       .logo-icon {
         fill: #242424;
@@ -171,7 +169,9 @@
     border-left: 1px solid #242424;
     display: flex;
     flex-direction: column;
-
+@media(max-width:1024px){
+  width: 100%;
+}
     &.isOpen {
       visibility: visible;
       opacity: 1;
@@ -220,29 +220,43 @@
         flex-direction: column;
         gap: 0.75rem;
         display: flex;
-
+        font-size: 12px;
         .subTotal {
           display: flex;
           justify-content: space-between;
+          font-size: 12px;
         }
-        button {
-          border-width: 1px;
-
-          border-color: rgb(0 0 0 /1);
-          color: #fff;
+        .check {
+          position: relative;
+          background-color: black;
+          color: white;
+          border: none;
+          padding:  16px;
+          cursor: pointer;
+          font-size: 16px;
+          overflow: hidden;
+          z-index: 1;
+          transition: color 0.3s ease;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            z-index: -1;
+            transition: top 0.3s ease;
+          }
+          &:hover {
+            color: #000;
+            border: 1px solid black;
+            &::before{
+              top: 0;
+            }
+          }
         }
       }
-    }
-
-    button {
-      padding: 15px 0;
-      width: 100%;
-      height: 100%;
-
-      background-color: rgb(0 0 0 / 1);
-      color: #fff;
-      opacity: 0.6;
-      border: 1px solid #000000;
     }
   }
 }

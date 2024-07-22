@@ -15,6 +15,9 @@
       .productsItem{
         color: #fff;
         font-size: 12px;
+        @media(max-width:400px){
+          font-size: 9.6px;
+        }
       }
     }
   }
