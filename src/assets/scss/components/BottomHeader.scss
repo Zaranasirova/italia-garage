@@ -1,9 +1,9 @@
 .bottomHeader {
-  height: 3rem;
-  background-color: rgba(243, 243, 243, 0.4);
-  backdrop-filter: blur(60px) saturate(180%);
   position: sticky;
   bottom: 0;
+  height: 48px;
+  background-color: rgba(243, 243, 243, 0.4);
+  backdrop-filter: blur(60px) saturate(180%);
   border-top: 1px solid #242424;
   border-bottom: 1px solid #242424;
   cursor: url("../../icons/download.svg"), auto;
@@ -14,14 +14,11 @@
       justify-content: space-between;
       align-items: center;
       height: 100%;
-      color: #242424;
-      font-size: 12px;
       padding: 0 30px;
       text-transform: uppercase;
       @media (max-width: 640px) {
         display: none;
       }
-     
       .customs {
         position: relative;
         display: inline-block;
@@ -97,14 +94,14 @@
         }
         .garage-dropdown {
           bottom: 50px;
-          right: -150px;
+          
           left: -50px;
           opacity: 0;
           position: absolute;
           width: 200px;
           height: 0;
           transition: all 0.5s ease;
-          z-index: 12151447;
+          z-index: 21;
           li {
             color: #242424;
             display: flex;
@@ -152,8 +149,7 @@
         }
         .hub-dropdown {
           bottom: 50px;
-          right: -150px;
-          left: -50px;
+          left: -80px;
           opacity: 0;
           position: absolute;
           width: 200px;
@@ -194,10 +190,13 @@
        
         .title {
           color: #242424;
+         
         }
         &:hover {
           text-decoration: underline;
+         
         }
+       
       }
     }
    
@@ -217,3 +216,12 @@
     }
   }
 }
+
+
+
+
+
+
+
+  
+

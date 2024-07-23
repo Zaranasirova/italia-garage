@@ -1,17 +1,30 @@
 .boxs {
   flex: 0 0 calc(33.33% - 10px);
-  @media  (max-width:768px){
+  @media (max-width: 768px) {
     flex: 0 0 100%;
   }
   .boxImage {
     width: 100%;
     border: 1px solid #242424;
     display: block;
+    
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+    .socialInfo{
+      position: relative;
+      .socialicon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+    }
+   
+    
   }
   .boxInfoLink {
     display: block;
@@ -25,13 +38,13 @@
     .boxInfo {
       display: flex;
       justify-content: space-between;
-      .box-title,.boxPrice{
+      .box-title,
+      .boxPrice {
         font-size: 12px;
-        @media(max-width:400px){
+        @media (max-width: 400px) {
           font-size: 9.6px;
         }
       }
-   
     }
   }
 }

@@ -8,6 +8,8 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   transition: all 0.3s ease;
+  font-size: 12px;
+
 }
 .container{
     width: 94%;
@@ -23,8 +25,8 @@
 
 // * Custom scrollbar
 ::-webkit-scrollbar {
-  width: 2px;
-  height: 2px
+  width: 1px;
+  height: 70%;
 }
 
 ::-webkit-scrollbar-track {

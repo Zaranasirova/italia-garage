@@ -127,6 +127,15 @@
 
             .sendIcon {
               margin-right: 40px;
+              position: relative;
+              .socialIcon {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                
+              }
             }
           }
         }
@@ -199,7 +208,6 @@
       }
     }
   }
-  
 }
 
 @media (max-width: 1024px) {

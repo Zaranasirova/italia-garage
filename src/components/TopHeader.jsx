@@ -153,12 +153,13 @@ const TopHeader = () => {
               <p>SubTotal</p>
               <p>$42.00</p>
             </div>
-            <button className="check" >CHECKOUT</button>
+         <Link to={"/CheckOut"}><button className="check" >CHECKOUT</button></Link>
           </div>
         </div>
       </div>
       <div
         className={`overlay ${cartisOpen && "isOpen"}`}
+         
         onClick={() => setCartIsOpen(false)}
       ></div>
     </header>

@@ -1,5 +1,8 @@
 .heroSection {
   position: relative;
+  width: 100%;
+  padding-top: 48px;
+  height: calc(6.33px * 80);
   &:after {
     content: "";
     position: absolute;
@@ -19,28 +22,57 @@
   }
   .heroImg {
     width: 100%;
-    height: 500px;
+    height: 100%;
     background-image: url(../../image/d957264a3006cc970f3330f7ebcac2c2ac5fc3d2-1600x1600.webp);
     object-fit: cover;
     background-size: cover;
     background-position: center, center;
-    .hero {
-      display: flex;
-      position: sticky;
-      top: 100px;
-      z-index: 11;
-      .heroTitle {
-        color: #fff;
-        padding-top: 70px;
-        padding-bottom: 130px;
-        font-size: 3rem;
-        font-weight: 100;
-        text-transform: uppercase;
-        line-height: 1;
-        transform: scale(2, 2.5);
-        font-family: "Bebas Neue", sans-serif;
-        padding-left: 70px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+  .heroInfo {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 35px;
+    padding-top: 20px;
+    position: sticky;
+    top: 48px;
+    padding-bottom: 8rem;
+    h1 {
+      font-size: 100px;
+      font-weight: 100;
+      text-transform: uppercase;
+      line-height: 1;
+      font-family: "Bebas Neue", sans-serif;
+      color: #fff;
+      @media(max-width:1024px){
+        font-size: 64px;
       }
     }
+  
   }
 }
+
+// .heroInfo {
+//   display: flex;
+//   position: sticky;
+//   top: 100px;
+//   z-index: 11;
+//   .heroTitle {
+//     color: #fff;
+//     padding-top: 70px;
+//     padding-bottom: 130px;
+//     font-size: 3rem;
+//     font-weight: 100;
+//     text-transform: uppercase;
+//     line-height: 1;
+//     transform: scale(2, 2.5);
+//     font-family: "Bebas Neue", sans-serif;
+//     padding-left: 70px;
+//   }
+// }
+// }

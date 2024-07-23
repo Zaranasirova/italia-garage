@@ -11,105 +11,151 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @media (max-width: 1024px) {
+          flex-direction: column;
+          gap: 20px;
+        }
         .title {
-          padding-left: 46px;
-          padding-top: 20px;
-          font-size: 3rem;
+          font-size: 100px;
           font-weight: 100;
           text-transform: uppercase;
           line-height: 1;
-          transform: scale(2, 2.5);
           font-family: "Bebas Neue", sans-serif;
           color: #242424;
+          @media (max-width: 1024px) {
+            font-size: 64px;
+          }
         }
         .contact-information {
           display: flex;
           flex-direction: column;
           text-align: right;
+          font-size: 16px;
+          @media (max-width: 1024px) {
+            text-align: left;
+            font-size: 12px;
+          }
           .address-title {
             font-weight: 600;
+            @media (max-width: 1024px) {
+            
+              font-size: 12px;
+            }
           }
           .phoneNumber {
             color: #000000;
             font-size: 16px;
-         
+            @media (max-width: 1024px) {
+            
+              font-size: 12px;
+            }
+
             span {
               text-decoration: underline;
+              @media (max-width: 1024px) {
+            
+                font-size: 12px;
+              }
             }
           }
           .geoAdress {
             color: #000000;
             font-size: 16px;
             text-decoration: underline;
-        
+            @media(max-width:1024px){
+              font-size: 12px;
+            }
           }
         }
       }
       .contacts-about {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 20px;
-        .postal-adres-name {
-          width: 35%;
-          display: flex;
+      
+        @media (max-width: 1024px) {
           flex-direction: column;
-          .studio,
-          .press {
-            border-bottom: 1px solid #000000;
-            padding: 30px 0;
-            font-size: 24px;
-            font-weight: 400;
-            color: #242424;
-          }
-          .customs {
-            padding: 30px 0;
-            font-size: 24px;
-            font-weight: 400;
-            color: #242424;
-          }
         }
-        .postal-addressee {
-          width: 65%;
+        .postalAdressList {
           display: flex;
           flex-direction: column;
-         
-          .studio-mailAdress,
-          .press-mailAdress {
-            border-bottom: 1px solid #000000;
-            padding: 24px 0;
-            font-size: 34px;
-         
-            .mailAdress {
-              color:#242424;
-              font-weight: 500;
+          justify-content: space-between;
+          cursor: url("../../icons/download.svg"),auto;
+          li {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            gap: 20px;
+            @media (max-width: 1024px) {
+              flex-direction: column;
+              border-bottom: 1px solid #000000;
+              gap: 5px;
+              margin-bottom: 6px;
             }
-          }
-          .customs-mailAdress {
-            padding: 23px 0;
-            font-size: 34px;
-            .mailAdress {
-              color:#242424;
-              font-weight: 500;
+            p {
+              width: 35%;
+              border-bottom: 1px solid #000000;
+              padding-bottom: 25px;
+              display: flex;
+              font-size: 24px;
+              color: #242424;
+              font-weight: 600;
+              @media (max-width: 1024px) {
+                border: none;
+                font-size: 16px;
+                width: 100%;
+                padding-bottom: 10px;
+              }
+            }
+            .adressLink {
+              width: 65%;
+              border-bottom: 1px solid #000000;
+              font-size: 34px;
+              padding-bottom: 18px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              font-weight: 600;
+              color: #242424;
+              @media (max-width: 1024px) {
+                border: none;
+                font-size: 24px;
+                width: 100%;
+              }
             }
           }
         }
       }
     }
   }
-  .writeUs {
-    background-color: #242424;
-    color: #fff;
- 
-  
-    .rfm-marquee-container {
-      overflow-y: hidden;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 5rem;
-      font-weight: 100;
-      transform: scale(1, 1.5);
-      padding: 10px;
+  // .writeUs {
+  //   background-color: #242424;
+  //   color: #fff;
 
+  //   .rfm-marquee-container {
+  //     overflow-y: hidden;
+  //     font-family: "Bebas Neue", sans-serif;
+  //     font-size: 100px;
+  //     font-weight: 100;
+  //     padding: 30px;
+  //   }
+  // }
+
+
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+      font-size: 1.5rem;
+      color: #fff;
     }
   }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }

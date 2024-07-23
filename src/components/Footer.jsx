@@ -86,7 +86,7 @@ const Footer = () => {
               GARAGE ITALIA CUSTOMS S.R.L. VIA GALLARATE, 147 - 20151 MILANO,
               ITALIA N. REG. IMPR. MI P.IVA C.F. IT-09555260968
             </small>
-            <Logo to={"/"} className="footerLogo" />
+            <Link to={"/"}><Logo  className="footerLogo" /></Link>
           </div>
         </div>
       </div>

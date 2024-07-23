@@ -4,29 +4,24 @@ import { Routes, Route } from "react-router-dom";
 import TopHeader from "./components/TopHeader";
 
 //Page
-import Contact from "./pages/Contact";
+import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
-import BottomHeader from "./components/BottomHeader";
-import Footer from "./components/Footer";
 import Shop from "./pages/Shop";
-import ProductDetails from "./pages/ProductDetails";
-
-
+import DetailsPage from "./pages/DetailsPage";
+import CheckOutPage from "./pages/CheckOutPage";
+import GlobalContext from "./utils/MainContext";
 
 const App = () => {
   return (
-    <>
-      <TopHeader />
+    <GlobalContext>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/contacts" element={<Contact />} />
-        <Route path="/shop" element={<Shop/>}/>
-        <Route path="/Product-Details" element={<ProductDetails/>}/>
+        <Route path="/contacts" element={<ContactPage />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/Product-Details" element={<DetailsPage/>} />
+        <Route path="/CheckOut" element={<CheckOutPage/>}/>
       </Routes>
-      <BottomHeader/>
-      <Footer/>
-     
-    </>
+    </GlobalContext>
   );
 };
 

@@ -1,9 +1,14 @@
 import React from "react";
-import { ReactComponent as Send } from "../assets/icons/send.svg";
-import Tee from "../assets/image/tee_fronte_pastel_green.webp";
-import TeeRetro from "../assets/image/tee_retro_pastel_grey.webp";
-import GarageItalia from "../assets/image/GarageItalia_Web_28_a969d81a-3229-4e03-a7b8-01ac4446196c.webp";
-import Box from "../components/Box";
+import { ReactComponent as Send } from "../../assets/icons/send.svg";
+import Tee from "../../assets/image/tee_fronte_pastel_green.webp";
+import TeeRetro from "../../assets/image/tee_retro_pastel_grey.webp";
+import GarageItalia from "../../assets/image/GarageItalia_Web_28_a969d81a-3229-4e03-a7b8-01ac4446196c.webp";
+import Box from "../../components/Box";
+import Social from "../../components/Social";
+
+
+
+
 const ProductDetails = () => {
   return (
     <section className="productSection">
@@ -35,8 +40,10 @@ const ProductDetails = () => {
                   <li className="deactive">XL</li>
                 </ul>
                 <div className="sendIcon">
-                  <Send />
+                  <Send className="socialIcon"/>
+                  <Social/>
                 </div>
+            
               </div>
             </div>
             <div className="addTooBasket">

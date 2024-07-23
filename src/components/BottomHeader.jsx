@@ -10,12 +10,7 @@ const BottomHeader = () => {
 
   return (
     <header className="bottomHeader">
-      <div className="menu">
-        <Link className="menu-click" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          MENU
-        </Link>
-       
-      </div>
+     
       <div className="container">
         
         <nav className="navBar">
@@ -121,6 +116,12 @@ const BottomHeader = () => {
             </Link>
           </div>
         </nav>
+      </div>
+      <div className="menu">
+        <Link className="menu-click" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          MENU
+        </Link>
+       
       </div>
     </header>
   );

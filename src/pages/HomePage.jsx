@@ -1,13 +1,20 @@
 import React from "react";
-import garage from "../assets/image/c7277835932697.5a02d87f74637.jpg";
+import BottomHeader from "../components/BottomHeader";
+import Footer from "../components/Footer";
+import TopHeader from "../components/TopHeader";
+import MainSection from "./Section/MainSection";
 
 const HomePage = () => {
   return (
+    <>
+    <TopHeader/>
     <main>
-      <section className="homePage">
-        <img src={garage} alt="garage-logo" />
-      </section>
+     <MainSection/>
     </main>
+    <BottomHeader/>
+    <Footer/>
+    </>
+    
   );
 };
 
