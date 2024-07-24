@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 //import SVG
 import { ReactComponent as Logo } from "../assets/icons/logo.svg";
-import { ReactComponent as Search } from "../assets/icons/search.svg";
+
 import { ReactComponent as Basket } from "../assets/icons/basket.svg";
 import { ReactComponent as Dropdown } from "../assets/icons/dropDown.svg";
 

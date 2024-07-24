@@ -128,13 +128,27 @@
             .sendIcon {
               margin-right: 40px;
               position: relative;
-              .socialIcon {
-                width: 20px;
-                height: 20px;
+              .iconList {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+                background-color: #000000;
+                width: 152px;
+                align-items: center;
+                justify-content: center;
+                height: 36px;
                 position: absolute;
-                right: 20px;
-                top: 20px;
-                
+                right: 0px;
+                top: -10px;
+                transition: all 0.3s;
+                .icon {
+                  width: 20px;
+                  height: 20px;
+                  fill: #fff;
+                }
+                .close {
+                  margin-left: 10px;
+                }
               }
             }
           }
@@ -203,12 +217,74 @@
             margin-bottom: -1px;
             display: table-cell;
             vertical-align: middle;
+            @media (max-width: 1024px) {
+              box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            }
           }
         }
       }
     }
   }
-}
+  .checkoutbox {
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #000000;
+    background-color: #fff;
+    color: #000000;
+    position: sticky;
+    bottom: 48px;
+    display: none;
+    z-index: 1;
+    padding: 20px;
+    @media (max-width: 1024px) {
+      display: flex;
+    }
+    .nameSizeBox {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p,
+      span {
+        font-size: 9.6px;
+      }
+    }
+    .addCartBox {
+      .addToCart {
+        position: relative;
+        background-color: #000000;
+        color: white;
+        border: none;
+        padding: 16px;
+        cursor: pointer;
+        font-size: 16px;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.3s ease;
+        font-size: 12px;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          z-index: -1;
+          transition: top 0.3s ease;
+        }
+        &:hover {
+          color: #000;
+          border: 1px solid black;
+         
+          &::before {
+            top: 0;
+          }
+        }
+        }
+      }
+    }
+  }
+
 
 @media (max-width: 1024px) {
   .productSection {
