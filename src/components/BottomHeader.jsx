@@ -1,110 +1,43 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import HoverList from "./HoverList";
+import { customsDropdown,garageDropdown,hubDropdown } from "../DB/Dropdown";
 
 const BottomHeader = () => {
   const location = useLocation();
   const path = location.pathname;
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   return (
     <header className="bottomHeader">
-     
       <div className="container">
-        
         <nav className="navBar">
-          <div className="customs">
-            <Link to={"/"} className="title">
-              Customs
-            </Link>
-            <ul className="customs-dropdown">
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  SERVICES
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  PROJECTS
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="ourGarage">
-            <Link to={"/"} className="title">
-              our Garage
-            </Link>
-            <ul className="garage-dropdown">
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  500 Spiaggina
-                </Link>
-              </li>
-              <li>
-                <Link to={"/"} className="dropdown-links">
-                  Vespa 50 Special-e
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  Spider Duetto Hybrid
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  Datsun 240z
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  Panda 4x4
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <HoverList
+            triggerText="CUSTOMS"
+            items={customsDropdown}
+            ClassList="customsDropdown-menu"
+            ClassLink="drop-link"
+          />
+          <HoverList
+            triggerText="OUR GARAGE"
+            items={garageDropdown}
+            ClassList="garageDropdown-menu"
+            ClassLink="drop-link"
+          />
           <div className="marketPlace">
             <Link to={"/"} className="title">
               market Place
             </Link>
           </div>
-          <div className="hub">
-            <Link to={"/"} className="title">
-              Hub
-            </Link>
-            <ul className="hub-dropdown">
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  Hub Home
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  Garage Culture
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  Garage Customs
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <Link to={"/"} className="dropdown-links">
-                  Studio Projects
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <HoverList
+            triggerText="HUB"
+            items={hubDropdown}
+            ClassList="hubDropdown-menu"
+            ClassLink="drop-link"
+          />
           <div className="shop">
             <Link to={"/shop"} className="title">
               SHOP
@@ -121,7 +54,6 @@ const BottomHeader = () => {
         <Link className="menu-click" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           MENU
         </Link>
-       
       </div>
     </header>
   );

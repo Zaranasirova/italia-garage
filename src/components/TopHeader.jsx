@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from "react";
-//Import Hooks
+import { useContext } from "react";
+
+//React-Router-Dom
 import { Link, useLocation } from "react-router-dom";
 
 //import SVG
 import { ReactComponent as Logo } from "../assets/icons/logo.svg";
-
 import { ReactComponent as Basket } from "../assets/icons/basket.svg";
 import { ReactComponent as Dropdown } from "../assets/icons/dropDown.svg";
 
 //import component
 import Cart from "./Cart";
+import HoverList from "./HoverList";
 
 //Import Fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
+//DB
+import { FirstDropdown } from "../DB/Dropdown";
+//MainContext
+import { MainContext } from "../utils/MainContext";
 
 
 const TopHeader = () => {
-  const location = useLocation();
-  const path = location.pathname;
-  const formattedPath = path.replace("/", "");
-  const title = `Garage Italia ${formattedPath ? `/ ${formattedPath}` : ""}`;
+  const { path, title } = useContext(MainContext);
   const [cartisOpen, setCartIsOpen] = useState(false);
 
   useEffect(() => {
@@ -46,65 +48,13 @@ const TopHeader = () => {
             </Link>
           </div>
           <div className={`userArea ${path === "/" ? "active" : ""}`}>
-            <div className="social">
-              <p className="socialTitle">Social <Dropdown/> </p>
-              <ul className={`dropdownContent ${path === "/" ? "active" : ""}`}>
-                <li className={path === "/" ? "active" : ""}>
-                  <Link
-                    to="https://it-it.facebook.com/garageitaliacustoms/"
-                    className={`socialLink ${path === "/" ? "active" : ""}`}
-                    target="_blank"
-                  >
-                    FACEBOOK CUSTOMS
-                  </Link>
-                </li>
-                <li className={path === "/" ? "active" : ""}>
-                  <Link
-                    to="https://www.instagram.com/garageitalia/"
-                    className={`socialLink ${path === "/" ? "active" : ""}`}
-                    target="_blank"
-                  >
-                    INSTAGRAM CUSTOMS
-                  </Link>
-                </li>
-                <li className={path === "/" ? "active" : ""}>
-                  <Link
-                    to="https://x.com/_GarageItalia_?s=20&t=icRFLrGIItWH5gEfiD-Bcg"
-                    className={`socialLink ${path === "/" ? "active" : ""}`}
-                    target="_blank"
-                  >
-                    TWITTER
-                  </Link>
-                </li>
-                <li className={path === "/" ? "active" : ""}>
-                  <Link
-                    to="https://www.linkedin.com/company/garageitalia/?originalSubdomain=it"
-                    className={`socialLink ${path === "/" ? "active" : ""}`}
-                    target="_blank"
-                  >
-                    LINKEDIN
-                  </Link>
-                </li>
-                <li className={path === "/" ? "active" : ""}>
-                  <Link
-                    to="https://open.spotify.com/user/2g1pc6ecmfsjglf5yzu7237n7"
-                    className={`socialLink ${path === "/" ? "active" : ""}`}
-                    target="_blank"
-                  >
-                    SPOTIFY
-                  </Link>
-                </li>
-                <li className={path === "/" ? "active" : ""}>
-                  <Link
-                    to="https://www.instagram.com/garageitaliastudio/"
-                    className={`socialLink ${path === "/" ? "active" : ""}`}
-                    target="_blank"
-                  >
-                    INSTAGRAM STUDIO
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <HoverList
+              triggerText="Social"
+              icon={<Dropdown />}
+              items={FirstDropdown}
+              ClassList="dropdown-menu"
+              ClassLink="menu-link"
+            />
             <div className="contacts">
               <Link
                 to={"/contacts"}
@@ -117,7 +67,7 @@ const TopHeader = () => {
               <span>ITA</span>
             </div>
             <div className="search">
-            <FontAwesomeIcon icon={faSearch} className="search-icon" />
+              <FontAwesomeIcon icon={faSearch} className="search-icon" />
             </div>
             <div className="basketCart">
               <Basket
@@ -153,13 +103,14 @@ const TopHeader = () => {
               <p>SubTotal</p>
               <p>$42.00</p>
             </div>
-         <Link to={"/CheckOut"}><button className="check" >CHECKOUT</button></Link>
+            <Link to={"/CheckOut"}>
+              <button className="check">CHECKOUT</button>
+            </Link>
           </div>
         </div>
       </div>
       <div
         className={`overlay ${cartisOpen && "isOpen"}`}
-         
         onClick={() => setCartIsOpen(false)}
       ></div>
     </header>
