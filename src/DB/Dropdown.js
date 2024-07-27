@@ -1,4 +1,4 @@
-export const FirstDropdown = [
+export const firstDropdown = [
     { text: 'FACEBOOK CUSTOMS', link: "https://it-it.facebook.com/garageitaliacustoms/" },
     { text: 'INSTAGRAM CUSTOMS', link: "https://www.instagram.com/garageitalia/" },
     { text: 'TWITTER', link: "https://x.com/_GarageItalia_?s=20&t=icRFLrGIItWH5gEfiD-Bcg" },

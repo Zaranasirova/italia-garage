@@ -8,7 +8,7 @@ export const GlobalContext = ({ children }) => {
   const location = useLocation();
     const path = location.pathname;
     const formattedPath = path.replace("/", "");
-    const title = `Garage Italia ${formattedPath ? `/ ${formattedPath}` : ""}`;
+    const title = `Garage Italia ${formattedPath ? `/ ${formattedPath}` : ""}`.toUpperCase();
   const globalData = {path ,title};
   return (
     <MainContext.Provider value={globalData}>{children}</MainContext.Provider>

@@ -1,15 +1,14 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import HoverList from "./HoverList";
-import { customsDropdown,garageDropdown,hubDropdown } from "../DB/Dropdown";
+import HoverList from "../HoverList";
+import { customsDropdown,garageDropdown,hubDropdown } from "../../DB/Dropdown";
 
 const BottomHeader = () => {
-  const location = useLocation();
-  const path = location.pathname;
+ 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
 
   return (
     <header className="bottomHeader">
@@ -50,11 +49,7 @@ const BottomHeader = () => {
           </div>
         </nav>
       </div>
-      <div className="menu">
-        <Link className="menu-click" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          MENU
-        </Link>
-      </div>
+    
     </header>
   );
 };

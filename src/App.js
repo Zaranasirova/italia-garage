@@ -1,7 +1,7 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 //components
-import TopHeader from "./components/TopHeader";
+
 
 //Page
 import ContactPage from "./pages/ContactPage";
@@ -10,17 +10,23 @@ import Shop from "./pages/Shop";
 import DetailsPage from "./pages/DetailsPage";
 import CheckOutPage from "./pages/CheckOutPage";
 import GlobalContext from "./utils/MainContext";
+import PageTransition from "./components/PageTransition";
+import { AnimatePresence } from "framer-motion";
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <GlobalContext>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/contacts" element={<ContactPage />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/Product-Details" element={<DetailsPage/>} />
-        <Route path="/CheckOut" element={<CheckOutPage/>}/>
-      </Routes>
+      <PageTransition pathname={location.pathname}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contacts" element={<ContactPage />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/Product-Details" element={<DetailsPage />} />
+          <Route path="/CheckOut" element={<CheckOutPage />} />
+        </Routes>
+      </PageTransition>
     </GlobalContext>
   );
 };

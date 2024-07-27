@@ -1,13 +1,13 @@
 import React from "react";
-import BottomHeader from "../components/BottomHeader";
+import BottomHeader from "../components/Headers/BottomHeader";
 import Footer from "../components/Footer";
-import TopHeader from "../components/TopHeader";
+import TopHeader from "../components/Headers/TopHeader";
 import MainSection from "./Section/MainSection";
 
 const HomePage = () => {
   return (
     <>
-    <TopHeader/>
+ <TopHeader/>
     <main>
      <MainSection/>
     </main>

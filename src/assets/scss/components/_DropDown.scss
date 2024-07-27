@@ -60,10 +60,10 @@
     transition: max-height 0.5s ease;
     width: 200px;
     background-color: rgba(243, 243, 243, 0.4);
-    backdrop-filter: blur(60px) saturate(180%);
     z-index: 50000;
     &.visible {
       max-height: 300px;
+      backdrop-filter: blur(60px);
     }
     .listItem {
       transition: height 0.5s ease;

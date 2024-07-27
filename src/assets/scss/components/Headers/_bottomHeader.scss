@@ -1,0 +1,39 @@
+.bottomHeader {
+  position: sticky;
+  bottom: 0;
+  height: 48px;
+  background-color: var(--bg--color);
+  backdrop-filter: var(--bg--blur);
+  border-top: 1px solid var(--base--color);
+  border-bottom: 1px solid var(--base--color);
+  .container {
+    .navBar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      padding: 0 30px;
+      text-transform: uppercase;
+      @media (max-width: 640px) {
+        display: none;
+      }
+      .customs,
+      .hub,
+      .ourGarage,
+      .marketPlace,
+      .studio,
+      .shop {
+        .title {
+          color: var(--base-color);
+          font-size: 12px;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+ 
+}
+

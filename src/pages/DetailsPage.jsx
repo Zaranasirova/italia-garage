@@ -1,13 +1,14 @@
 import React from "react";
-import TopHeader from "../components/TopHeader";
-import BottomHeader from "../components/BottomHeader";
+
+import BottomHeader from "../components/Headers/BottomHeader";
 import Footer from "../components/Footer";
 import ProductDetails from "./Section/ProductDetails";
+import TopHeader from "../components/Headers/TopHeader";
 
 const DetailsPage = () => {
   return (
     <>
-      <TopHeader />
+   <TopHeader/>
       <main>
         <ProductDetails />
       </main>

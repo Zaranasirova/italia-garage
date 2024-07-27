@@ -1,8 +1,8 @@
 @import "./base.scss";
 //components
-@import "./components/TopHeader.scss";
-@import "./components/BottomHeader.scss";
-@import "./components/Footer.scss";
+@import "./components/Headers/topHeader";
+@import "./components/Headers/bottomHeader";
+@import "./components/footer.scss";
 @import "./components/CenterHeader.scss";
 @import "./components/AllProducts.scss";
 @import "./components/ShopProducts.scss";

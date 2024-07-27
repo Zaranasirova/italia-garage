@@ -8,9 +8,14 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   transition: all 0.3s ease;
-  font-size: 12px;
 
 }
+
+a{
+  cursor: url("../icons/download.svg"), auto;
+  color: var(--base--color);
+}
+
 .container{
     width: 94%;
     height: 100%;
@@ -21,6 +26,21 @@
     height: 100%;
     display: flex;
 }
+
+:root{
+  --base--color:#242424;
+  --white--color:#fff;
+  --bg--color: rgba(243, 243, 243, 0.4);
+  --bg--blur:blur(60px) saturate(180%);
+}
+
+
+
+
+
+
+
+
 
 
 // * Custom scrollbar
