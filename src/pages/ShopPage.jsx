@@ -6,7 +6,8 @@ import TopHeader from '../components/Headers/TopHeader';
 import BottomHeader from '../components/Headers/BottomHeader';
 import Footer from '../components/Footer';
 
-const Shop = () => {
+
+const ShopPage = () => {
   return (
   <>
   <TopHeader/>
@@ -21,4 +22,4 @@ const Shop = () => {
   )
 }
 
-export default Shop
+export default ShopPage

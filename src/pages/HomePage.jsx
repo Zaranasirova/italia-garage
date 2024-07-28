@@ -7,14 +7,13 @@ import MainSection from "./Section/MainSection";
 const HomePage = () => {
   return (
     <>
- <TopHeader/>
-    <main>
-     <MainSection/>
-    </main>
-    <BottomHeader/>
-    <Footer/>
+      <TopHeader />
+      <main>
+        <MainSection />
+      </main>
+      <BottomHeader />
+      <Footer />
     </>
-    
   );
 };
 

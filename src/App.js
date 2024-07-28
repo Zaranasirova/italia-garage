@@ -6,7 +6,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 //Page
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
-import Shop from "./pages/Shop";
+import ShopPage from "./pages/ShopPage";
 import DetailsPage from "./pages/DetailsPage";
 import CheckOutPage from "./pages/CheckOutPage";
 import GlobalContext from "./utils/MainContext";
@@ -22,7 +22,7 @@ const App = () => {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<HomePage />} />
           <Route path="/contacts" element={<ContactPage />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/ShopPage" element={<ShopPage />} />
           <Route path="/Product-Details" element={<DetailsPage />} />
           <Route path="/CheckOut" element={<CheckOutPage />} />
         </Routes>

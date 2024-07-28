@@ -61,8 +61,8 @@ const Footer = () => {
               <li>
                 <ul>
                   <li>Shop</li>
-                  <li><Link to={"/shop"} className="list-link">Shop All</Link></li>
-                  <li><Link to={"/shop"} className="list-link">Sales</Link></li>
+                  <li><Link to={"/ShopPage"} className="list-link">Shop All</Link></li>
+                  <li><Link to={"/ShopPage"} className="list-link">Sales</Link></li>
                 </ul>
               </li>
               <li>
