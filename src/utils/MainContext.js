@@ -14,12 +14,14 @@ export const GlobalContext = ({ children }) => {
   }`.toUpperCase();
 
 
+//basket//
+const [cartIsOpen,setCartIsOpen]=useState(false);
 
 
 
 
   
-  const globalData = { path, title,  };
+  const globalData = { path, title,cartIsOpen, setCartIsOpen };
   return (
     <MainContext.Provider value={globalData}>{children}</MainContext.Provider>
   );

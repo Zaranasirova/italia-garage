@@ -1,0 +1,106 @@
+.basket-cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  background-color: #fff;
+  height: 100dvh;
+visibility: hidden;
+  z-index: 450;
+  border-left: 1px solid #242424;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%); /* Başlanğıcda sağdan gizlidir */
+  
+  &.open {
+    transform: translateX(0);
+    transition: transform 0.8s ease;  /* Açılanda görünür */
+    visibility: visible;
+  }
+  .basket-cart-head {
+    display: flex;
+    height: 48px;
+    flex: none;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-width: 1px;
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+    text-align: center;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #242424;
+    .basket-cart-close,
+    .basket-cart-title {
+      font-size: 12px;
+      color: #242424;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  .cart-list {
+    height: 100%;
+    overflow: auto;
+    .empty {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+  }
+
+  .end-of-cart {
+    margin-top: -1px;
+    width: 100%;
+    padding: 1.125rem;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    .total {
+      flex-direction: column;
+      gap: 0.75rem;
+      display: flex;
+      font-size: 12px;
+      .subTotal {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+      .check {
+        position: relative;
+        background-color: rgb(0 0 0 / 1);
+        opacity: 0.6;
+        color: white;
+        border: none;
+        padding: 16px;
+        cursor: pointer;
+        font-size: 16px;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.3s ease;
+        font-size: 12px;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          z-index: -1;
+          transition: top 0.3s ease;
+        }
+        &:hover {
+          color: #000;
+          border: 1px solid black;
+          &::before {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}

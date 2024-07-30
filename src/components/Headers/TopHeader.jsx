@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import DropDownList from "../DropDownList";
@@ -8,8 +8,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { ReactComponent as Basket } from "../../assets/icons/basket.svg";
 import { MainContext } from "../../utils/MainContext";
+import BasketCart from "../Basket/BasketCart";
+
+
+
 const TopHeader = () => {
-  const {path, title}=useContext(MainContext);
+  const {path, title, cartIsOpen, setCartIsOpen}=useContext(MainContext);
+ 
+  useEffect(() => {
+    document.body.style.overflow = cartIsOpen ? "hidden" : "auto";
+  }, [cartIsOpen]);
   return (
     <header className={`top-header ${path === "/" ? "active" : ""}`}>
       <div className="container">
@@ -33,10 +41,11 @@ const TopHeader = () => {
             <Link to="/contacts" className={`contact-page-title ${path === "/" ? "active" : ""}`}>CONTACTS</Link>
             <span className={`lang ${path === "/" ? "active" : ""}`}>ITA</span>
             <FontAwesomeIcon icon={faSearch} className={`search-icon ${path === "/" ? "active" : ""}`} />
-            <Basket className={`basket-icon ${path === "/" ? "active" : ""}`} />
+            <Basket className={`basket-icon ${path === "/" ? "active" : ""}`} onClick={()=> setCartIsOpen(true)} />
           </div>
         </div>
       </div>
+      {cartIsOpen && <BasketCart />}
     </header>
   );
 };
