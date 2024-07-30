@@ -16,12 +16,13 @@ const BottomHeader = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
   };
+  const { path } = useContext(MainContext);
   return (
     <header className={`bottom-header ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container">
         <nav className="navBar">
           <div className="menu-toggle" onClick={toggleMenu}>
-            <span>Menu</span>
+            <span className={`navBar-title ${path === "/" ? "active" : ""}`}>Menu</span>
             <NavBar clas={`navbar-menu ${isMenuOpen ? "open" : ""}`}/>
             <div className={`menu-overlay ${isMenuOpen ? "open" : ""}`}></div>
           </div>

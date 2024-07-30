@@ -13,7 +13,7 @@ const NavBar = ({clas}) => {
     const { path } = useContext(MainContext);
   return (
     <ul className={clas}>
-    <li>
+    <li  className={`${path === "/" ? "active" : ""}`}>
       {" "}
       <DropDownList
         triggerText="CUSTOMS"
@@ -22,7 +22,7 @@ const NavBar = ({clas}) => {
         ClassLink="drop-link"
       />
     </li>
-    <li>
+    <li className={`${path === "/" ? "active" : ""}`}>
       {" "}
       <DropDownList
         triggerText="OUR GARAGE"
@@ -31,7 +31,7 @@ const NavBar = ({clas}) => {
         ClassLink="drop-link"
       />
     </li>
-    <li className="market-place">
+    <li className={` ${path === "/" ? "active" : ""}`}>
       <Link
         to={"/"}
         className={`title ${path === "/" ? "active" : ""}`}
@@ -39,7 +39,7 @@ const NavBar = ({clas}) => {
         MARKET PLACE
       </Link>
     </li>
-    <li>
+    <li className={`${path === "/" ? "active" : ""}`}>
       <DropDownList
         triggerText="HUB"
         items={hubDropdown}
@@ -47,7 +47,7 @@ const NavBar = ({clas}) => {
         ClassLink="drop-link"
       />
     </li>
-    <li>
+    <li className={`${path === "/" ? "active" : ""}`}>
       <Link
         to={"/ShopPage"}
         className={`title ${path === "/" ? "active" : ""}`}
@@ -55,7 +55,7 @@ const NavBar = ({clas}) => {
         SHOP
       </Link>
     </li>
-    <li>
+    <li className={`${path === "/" ? "active" : ""}`}>
       <Link
         to={"/"}
         className={`title ${path === "/" ? "active" : ""}`}
