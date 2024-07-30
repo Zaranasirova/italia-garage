@@ -1,19 +1,19 @@
 .header {
   background-color: #0c2340;
   height: 36px;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid var(--white--color);
+  border-bottom: 1px solid var(--white--color);
   position: sticky;
   top:47px;
-  z-index: 20;
+  z-index: 1;
   .container {
     .row {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       height: 100%;
-      .productsItem{
-        color: #fff;
+      .products-item{
+        color:var(--white--color);
         font-size: 12px;
         @media(max-width:400px){
           font-size: 9.6px;

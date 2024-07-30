@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../assets/icons/logo.svg";
+import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 const Footer = () => {
   return (
     <footer className="footer">

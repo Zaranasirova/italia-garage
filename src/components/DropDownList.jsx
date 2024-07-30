@@ -4,9 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 //Context///
 import { MainContext } from "../utils/MainContext";
 
-const HoverList = ({ triggerText, items,icon,ClassList,ClassLink }) => {
+const DropDownList = ({ triggerText, items,icon,ClassList,ClassLink }) => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
-  const { path } = useContext(MainContext);
+  const { path} = useContext(MainContext);
   return (
     <div className="dropdown-container">
       <span
@@ -37,4 +37,4 @@ const HoverList = ({ triggerText, items,icon,ClassList,ClassLink }) => {
   );
 };
 
-export default HoverList;
+export default DropDownList;

@@ -1,9 +1,13 @@
 import React from "react";
-
-import BottomHeader from "../components/Headers/BottomHeader";
-import Footer from "../components/Footer";
-import ProductDetails from "./Section/ProductDetails";
+//Headers import//
 import TopHeader from "../components/Headers/TopHeader";
+import BottomHeader from "../components/Headers/BottomHeader";
+//Footer import//
+import Footer from "../components/Footer/Footer";
+
+//section import//
+import ProductDetails from "./Section/ProductDetails";
+
 
 const DetailsPage = () => {
   return (

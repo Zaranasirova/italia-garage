@@ -9,7 +9,7 @@ const pageVariants = {
 const pageTransition = {
   type: "tween",
   ease: "easeInOut",
-  duration: 0.5,
+  duration: 0.3,
 };
 
 const PageTransition = ({ pathname,children }) => {

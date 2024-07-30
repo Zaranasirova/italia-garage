@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Tee from "../assets/image/tee_fronte_pastel_green.webp";
 import { Link } from "react-router-dom";
 import { ReactComponent as Send } from "../assets/icons/send.svg";
@@ -6,23 +6,26 @@ import { ReactComponent as Facebook } from "../assets/icons/facebook.svg";
 import { ReactComponent as Twitter } from "../assets/icons/twitter.svg";
 import { ReactComponent as Whatsapp } from "../assets/icons/whatsappIcon.svg";
 import { ReactComponent as Close } from "../assets/icons/close.svg";
+import { MainContext } from "../utils/MainContext";
 
 const ShopProducts = () => {
-  const [sendIsOpen, setSendIsOpen] = useState(false);
+const {sendIsOpen,setSendIsOpen}=useContext(MainContext);
+
+
   return (
     <div className="boxs">
-      <div className="boxImage">
+      <div className="box-image">
         <Link to={"/Product-Details"}>
           {" "}
-          <img src={Tee} alt="" />
+          <img src={Tee} alt="img.title" />
         </Link>
 
         <Send
-          className="socialicon"
+          className="social-icon"
           onClick={() => setSendIsOpen(!sendIsOpen)}
         />
         {sendIsOpen && (
-          <div className="iconList">
+          <div className="icon-list">
             <Link
               className="icon"
               to={
@@ -57,10 +60,10 @@ const ShopProducts = () => {
           </div>
         )}
       </div>
-      <Link to={"/Product-Details"} className="boxInfoLink">
-        <div className="boxInfo">
-          <p className="boxTitle">COLOR LOGO TEE PASTEL GREY</p>
-          <span className="boxPrice">42,00 $</span>
+      <Link to={"/Product-Details"} className="box-info-link">
+        <div className="box-info">
+          <p className="box-name">COLOR LOGO TEE PASTEL GREY</p>
+          <span className="box-price">42,00 $</span>
         </div>
       </Link>
     </div>

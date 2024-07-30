@@ -3,26 +3,27 @@
   @media (max-width: 768px) {
     flex: 0 0 100%;
   }
-  .boxImage {
+  .box-image {
     width: 100%;
-    border: 1px solid #242424;
+    border: 1px solid var(--base--color);
     display: block;
     position: relative;
+a{
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .socialicon {
+    .social-icon {
       width: 20px;
       height: 20px;
       position: absolute;
       right: 20px;
       top: 20px;
     }
-    .iconList {
+    .icon-list {
       display: flex;
       flex-direction: row;
       gap: 15px;
@@ -38,27 +39,26 @@
       .icon {
         width: 20px;
         height: 20px;
-        fill: #fff;
+        fill: var(--white-color);
       }
       .close {
         margin-left: 10px;
       }
     }
   }
-  .boxInfoLink {
+  .box-info-link {
     display: block;
-    border-left: 1px solid #242424;
-    border-right: 1px solid #242424;
-    border-bottom: 1px solid #242424;
-
+    border-left: 1px solid var(--base--color);
+    border-right: 1px solid var(--base--color);
+    border-bottom: 1px solid var(--base--color);
     padding: 16px;
     font-size: 12px;
-    color: #242424;
-    .boxInfo {
+    color: var(--base--color);
+    .box-info {
       display: flex;
       justify-content: space-between;
       .box-title,
-      .boxPrice {
+      .box-price {
         font-size: 12px;
         @media (max-width: 400px) {
           font-size: 9.6px;

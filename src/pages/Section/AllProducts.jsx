@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ShopProducts from "./ShopProducts";
+import ShopProducts from "../../components/ShopProducts";
 const AllProducts = () => {
   return (
-    <section className="allProducts">
+    <section className="all-products">
       <div className="container">
         <div className="row">
-          <div className="productsBox">
+          <div className="products-box">
           <ShopProducts/>
           <ShopProducts/>
           <ShopProducts/>

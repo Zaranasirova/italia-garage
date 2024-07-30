@@ -21,12 +21,15 @@
       .customs,
       .hub,
       .ourGarage,
-      .marketPlace,
+      .market-place,
       .studio,
       .shop {
         .title {
           color: var(--base-color);
           font-size: 12px;
+          &.active{
+            color: var(--white--color);
+          }
         }
         &:hover {
           text-decoration: underline;

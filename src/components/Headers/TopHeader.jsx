@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
-import HoverList from "../HoverList";
+import DropDownList from "../DropDownList";
 import { ReactComponent as Dropdown } from "../../assets/icons/dropDown.svg";
 import { firstDropdown } from "../../DB/Dropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,7 +23,7 @@ const TopHeader = () => {
             </Link>
           </div>
           <div className={`user-area ${path === "/" ? "active" : ""}`}>
-            <HoverList
+            <DropDownList
               triggerText="Social"
               icon={<Dropdown />}
               items={firstDropdown}
