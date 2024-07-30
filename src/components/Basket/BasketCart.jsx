@@ -3,6 +3,7 @@ import { MainContext } from "../../utils/MainContext";
 import { useContext } from "react";
 import Cart from "../Cart";
 import { Link } from "react-router-dom";
+import AddButton from "../AddButton";
 const BasketCart = () => {
   const { cartIsOpen, setCartIsOpen } = useContext(MainContext);
   return (
@@ -23,11 +24,13 @@ const BasketCart = () => {
       </div>
       <div className="end-of-cart">
         <div className="total">
-          <div className="subtotal">
+          <div className="sub-total">
             <p>SubTotal</p>
             <p>€42.00</p>
           </div>
-          <Link  className="check" to={"/CheckOut"}>CHECKOUT</Link>
+          <Link  className="check" to={"/CheckOut"}>
+          <AddButton/>
+          </Link>
         </div>
       </div>
     </div>

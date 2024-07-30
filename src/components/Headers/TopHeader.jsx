@@ -46,6 +46,9 @@ const TopHeader = () => {
         </div>
       </div>
       {cartIsOpen && <BasketCart />}
+      {cartIsOpen && (
+        <div className="overlay" onClick={()=>setCartIsOpen(false)}></div>
+      )}
     </header>
   );
 };

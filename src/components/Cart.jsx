@@ -4,9 +4,10 @@ import React from 'react';
 const Cart = () => {
   return (
 <div className="about-product">
-<div className="productInfo">
+<div className="product-box">
 <div className="productImg">
-  <img src={Tee} alt="" />
+  <div className='image'><img src={Tee} alt="" /></div>
+  
 </div>
 <div className="product-info">
   <div className="upperSide">

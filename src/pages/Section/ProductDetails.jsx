@@ -11,7 +11,7 @@ import { ReactComponent as Close } from "../../assets/icons/close.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MainContext } from "../../utils/MainContext";
-
+import AddButton from "../../components/AddButton";
 const ProductDetails = () => {
   const [sendIsOpen,setSendIsOpen]=useState(false);
   return (
@@ -180,7 +180,7 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="add-to-basket">
-              <button className="add">ADD TO CART</button>
+             <AddButton/>
               <div className="list-price">
                 <span className="price old">€42.00</span>
                 <span className="price original">€37.80</span>
