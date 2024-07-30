@@ -222,7 +222,7 @@
   backdrop-filter: var(--bg--blur);
   height: 48px;
   width: 100%;
-  z-index: 2;
+  z-index: 2000;
   border-bottom: 1px solid var(--base--color);
   &.active {
     border-bottom: 1px solid #fff;

@@ -9,7 +9,7 @@ import { ReactComponent as Close } from "../assets/icons/close.svg";
 import { MainContext } from "../utils/MainContext";
 
 const ShopProducts = () => {
-const {sendIsOpen,setSendIsOpen}=useContext(MainContext);
+const [sendIsOpen,setSendIsOpen]=useState(false);
 
 
   return (

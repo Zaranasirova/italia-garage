@@ -1,55 +1,36 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+//hooks
 import { useContext } from "react";
-import DropDownList from "../DropDownList";
-import {
-  customsDropdown,
-  garageDropdown,
-  hubDropdown,
-} from "../../DB/Dropdown";
+//context
 import { MainContext } from "../../utils/MainContext";
+
+//component
+import NavBar from "../NavBar";
+
+
+
 const BottomHeader = () => {
-  const { path} = useContext(MainContext);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
+  };
   return (
-    <header className="bottom-header">
+    <header className={`bottom-header ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container">
         <nav className="navBar">
-          <DropDownList
-            triggerText="CUSTOMS"
-            items={customsDropdown}
-            ClassList="customsDropdown-menu"
-            ClassLink="drop-link"
-          />
-          <DropDownList
-            triggerText="OUR GARAGE"
-            items={garageDropdown}
-            ClassList="garageDropdown-menu"
-            ClassLink="drop-link"
-          />
-          <div className="market-place">
-            <Link to={"/"} className={`title ${path === "/" ? "active" : ""}`}>
-              market Place
-            </Link>
+          <div className="menu-toggle" onClick={toggleMenu}>
+            <span>Menu</span>
+            <NavBar clas={`navbar-menu ${isMenuOpen ? "open" : ""}`}/>
+            <div className={`menu-overlay ${isMenuOpen ? "open" : ""}`}></div>
           </div>
-          <DropDownList
-            triggerText="HUB"
-            items={hubDropdown}
-            ClassList="hubDropdown-menu"
-            ClassLink="drop-link"
-          />
-          <div className={`shop ${path === "/" ? "active" : ""}`}>
-            <Link to={"/ShopPage"}className={`title ${path === "/" ? "active" : ""}`}>
-              SHOP
-            </Link>
-          </div>
-          <div className={`studio ${path === "/" ? "active" : ""}`}>
-            <Link to={"/"} className={`title ${path === "/" ? "active" : ""}`}>
-              STUDIO
-            </Link>
-          </div>
+         <NavBar clas="navbar-menu"/>
         </nav>
       </div>
+      {isMenuOpen && <div className="overlay" onClick={toggleMenu}></div>}
     </header>
+  
   );
 };
 

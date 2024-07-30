@@ -1,4 +1,53 @@
-.bottom-header{
+// .bottom-header{
+//   position: sticky;
+//   bottom: 0;
+//   height: 48px;
+//   background-color: var(--bg--color);
+//   backdrop-filter: var(--bg--blur);
+//   border-top: 1px solid var(--base--color);
+//   border-bottom: 1px solid var(--base--color);
+//   .container {
+//     .navBar {
+
+//       // @media (max-width: 640px) {
+//       //   display: none;
+//       // }
+//       ul{
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
+//         align-items: center;
+//         height: 100%;
+//         padding: 0 30px;
+//         text-transform: uppercase;
+
+//         li{
+//           .customs,
+//           .hub,
+//           .ourGarage,
+//           .market-place,
+//           .studio,
+//           .shop {
+//             .title {
+//               color: var(--base-color);
+//               font-size: 12px;
+//               &.active{
+//                 color: var(--white--color);
+//               }
+//             }
+//             &:hover {
+//               text-decoration: underline;
+//             }
+//           }
+//         }
+//       }
+
+//     }
+//   }
+
+// }
+
+.bottom-header {
   position: sticky;
   bottom: 0;
   height: 48px;
@@ -6,37 +55,211 @@
   backdrop-filter: var(--bg--blur);
   border-top: 1px solid var(--base--color);
   border-bottom: 1px solid var(--base--color);
+  @media (max-width: 630px) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    &.menu-open {
+      .navbar-menu {
+        transform: translateY(0);
+      }
+      .overlay {
+        position: fixed;
+        left: 0;
+        bottom: 100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0.5, 0.5, 0.5, 0.5);
+        z-index: 99;
+      }
+    }
+  }
   .container {
     .navBar {
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
       align-items: center;
       height: 100%;
-      padding: 0 30px;
-      text-transform: uppercase;
-      @media (max-width: 640px) {
+      .menu-toggle {
         display: none;
-      }
-      .customs,
-      .hub,
-      .ourGarage,
-      .market-place,
-      .studio,
-      .shop {
-        .title {
-          color: var(--base-color);
-          font-size: 12px;
-          &.active{
-            color: var(--white--color);
+        width: 100%;
+        text-align: center;
+        span {
+          position: relative;
+          font-size: 16px;
+        }
+        .navbar-menu {
+          flex-direction: column;
+          width: 100%;
+          position: absolute;
+          bottom: 100%;
+          left: 0;
+          background-color: var(--bg--color);
+          backdrop-filter: var(--bg--blur);
+          border: 1px solid var(--bg--color);
+          z-index: 1000;
+          display: none;
+          li {
+            border-bottom: 1px solid var(--base--color);
+            text-align: center;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .title {
+              color: var(--base--color);
+              font-size: 16px;
+              &.active {
+                color: #fff;
+              }
+            }
+          }
+          li:last-child {
+            border-bottom: none;
           }
         }
-        &:hover {
-          text-decoration: underline;
+        .open {
+          display: flex;
+        }
+
+        @media (max-width: 630px) {
+          display: block;
+        }
+      }
+      .navbar-menu {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .title {
+          font-size: 12px;
+        }
+        @media (max-width: 630px) {
+          display: none;
         }
       }
     }
   }
- 
 }
 
+// @media (max-width: 1024px) {
+//   .bottom-header {
+//     .container {
+//       .row {
+//         .navbar {
+//           .navbar-menu {
+//             display: none;
+//             flex-direction: column;
+//             width: 100%;
+//             position: absolute;
+//             top: 100%;
+//             left: 0;
+//             background: white;
+//             border: 1px solid #ddd;
+//             z-index: 1000;
+
+//             li {
+//               border-bottom: 1px solid #ddd;
+//             }
+
+//             li:last-child {
+//               border-bottom: none;
+//             }
+//           }
+
+//           .menu-toggle {
+//             display: block;
+//             // Menü düyməsi üçün stil əlavə edin
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .navbar-menu.open {
+//   display: flex;
+// }
+
+// .bottom-header {
+//   .container {
+//     .row {
+//       .navbar {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+
+//         .menu-toggle {
+//           display: none;
+//           // Stil əlavə edin, məsələn, ikon stilinizi əlavə edin
+//         }
+
+//         .navbar-menu {
+//           display: flex;
+//           list-style: none;
+//           margin: 0;
+//           padding: 0;
+
+//           li {
+//             margin: 0 10px;
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   // Ekran ölçüsü 630px-dən kiçik olduqda
+//   @media (max-width: 630px) {
+//     .bottom-header {
+//       .container {
+//         .row {
+//           .navbar {
+//             .navbar-menu {
+//               display: none;
+//               flex-direction: column;
+//               width: 100%;
+//               position: fixed;
+//               top: 0;
+//               left: 0;
+//               height: 100vh;
+//               background: white;
+//               border: 1px solid #ddd;
+//               z-index: 1000;
+//               overflow: hidden;
+//               transform: translateY(100%);
+//               transition: transform 0.3s ease;
+
+//               li {
+//                 border-bottom: 1px solid #ddd;
+//               }
+
+//               li:last-child {
+//                 border-bottom: none;
+//               }
+//             }
+
+//             .menu-toggle {
+//               display: block;
+//               // Menü düyməsi üçün stil əlavə edin
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .bottom-header.menu-open {
+//       .navbar-menu {
+//         transform: translateY(0);
+//       }
+
+//       .overlay {
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background: rgba(0, 0, 0, 0.5);
+//         z-index: 999;
+//       }
+//     }
+//   }
+// }

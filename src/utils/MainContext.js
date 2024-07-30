@@ -13,14 +13,13 @@ export const GlobalContext = ({ children }) => {
     formattedPath ? `/ ${formattedPath}` : ""
   }`.toUpperCase();
 
-  //send icon on and off//
-  const [sendIsOpen, setSendIsOpen] = useState(false);
+
 
 
 
 
   
-  const globalData = { path, title, setSendIsOpen, sendIsOpen };
+  const globalData = { path, title,  };
   return (
     <MainContext.Provider value={globalData}>{children}</MainContext.Provider>
   );
