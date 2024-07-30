@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import { MainContext } from "../../utils/MainContext";
 
 const ProductDetails = () => {
-  const { sendIsOpen, setSendIsOpen } = useContext(MainContext);
+  const [sendIsOpen,setSendIsOpen]=useState(false);
   return (
     // <section className="product-section">
     //   <div className="container">
@@ -138,7 +138,7 @@ const ProductDetails = () => {
                 </ul>
                 <div className="send-icon">
                   <Send
-                    className="icon"
+                    className="icon social"
                     onClick={() => setSendIsOpen(!sendIsOpen)}
                   />
                   {sendIsOpen && (
@@ -196,6 +196,15 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+      <div className="checkoutbox">
+         <div className="nameSizeBox">
+           <p>COLOR LOGO TEE PASTEL GREY</p>
+           <span>42.00$</span>
+         </div>
+         <div className="addCartBox">
+           <button className="addToCart">ADD TO CART</button>
+         </div>
+       </div>
     </section>
   );
 };
