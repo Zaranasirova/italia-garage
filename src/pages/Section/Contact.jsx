@@ -47,12 +47,10 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="writeUs">
+      <div className="write-us">
         <Marquee speed={200}>WRITE US/WRITE US/WRITE US/WRITE US/</Marquee>
       </div>
-       <div className="marquee">
-      <p>Write Us.</p>
-    </div>
+      
     </section>
   );
 };
