@@ -1,18 +1,18 @@
 @import "./base.scss";
 //components
-@import "./components/Headers/topHeader";
-@import "./components/Headers/bottomHeader";
+@import "./components/Headers/top-header";
+@import "./components/Headers/bottom-header";
 @import "./components/Footer/footer";
-@import "./components/Headers/centerHeader";
-@import "./components/shopProducts.scss";
-@import "./components/cart.scss";
-@import "./components/dropDown.scss";
-@import "./components/Basket/basketCart.scss";
-@import "./components/addButton.scss";
+@import "./components/Headers/center-header";
+@import "./components/shop-products";
+@import "./components/cart";
+@import "./components/drop-down";
+@import "./components/Basket/basket-cart";
+@import "./components/add-button";
 //pages
-@import "./pages/sections/mainSection";
+@import "./pages/sections/main-section";
 @import "./pages/sections/contacts";
 @import "./pages/sections/hero";
-@import "./pages/sections/productDetails";
-@import "./pages/sections/allProducts";
+@import "./pages/sections/product-details";
+@import "./pages/sections/all-products";
 @import "./components/Loader/loader";
