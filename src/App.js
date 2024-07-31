@@ -15,7 +15,6 @@ import { AnimatePresence } from "framer-motion";
 
 const App = () => {
   const location = useLocation();
-
   return (
     <GlobalContext>
       <PageTransition pathname={location.pathname}>
