@@ -3,7 +3,7 @@ import { ReactComponent as Send } from "../../assets/icons/send.svg";
 import Tee from "../../assets/image/tee_fronte_pastel_green.webp";
 import TeeRetro from "../../assets/image/tee_retro_pastel_grey.webp";
 import GarageItalia from "../../assets/image/GarageItalia_Web_28_a969d81a-3229-4e03-a7b8-01ac4446196c.webp";
-
+import { useParams } from "react-router-dom";
 import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
 import { ReactComponent as Twitter } from "../../assets/icons/twitter.svg";
 import { ReactComponent as Whatsapp } from "../../assets/icons/whatsappIcon.svg";
@@ -14,6 +14,8 @@ import { MainContext } from "../../utils/MainContext";
 import AddButton from "../../components/AddButton";
 const ProductDetails = () => {
   const [sendIsOpen,setSendIsOpen]=useState(false);
+  const {productId}=useParams();
+  console.log(productId);
   return (
     // <section className="product-section">
     //   <div className="container">

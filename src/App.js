@@ -8,7 +8,7 @@ import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import DetailsPage from "./pages/DetailsPage";
-import CheckOutPage from "./pages/CheckOutPage";
+
 import GlobalContext from "./utils/MainContext";
 import PageTransition from "./components/PageTransition";
 import { AnimatePresence } from "framer-motion";
@@ -22,8 +22,8 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/contacts" element={<ContactPage />} />
           <Route path="/ShopPage" element={<ShopPage />} />
-          <Route path="/Product-Details" element={<DetailsPage />} />
-          <Route path="/CheckOut" element={<CheckOutPage />} />
+          <Route path="/product-details/:id" element={<DetailsPage />} />
+     
         </Routes>
       </PageTransition>
     </GlobalContext>

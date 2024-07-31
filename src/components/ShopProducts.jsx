@@ -8,16 +8,15 @@ import { ReactComponent as Whatsapp } from "../assets/icons/whatsappIcon.svg";
 import { ReactComponent as Close } from "../assets/icons/close.svg";
 import { MainContext } from "../utils/MainContext";
 
-const ShopProducts = () => {
-const [sendIsOpen,setSendIsOpen]=useState(false);
-
+const ShopProducts = ({ data }) => {
+  const [sendIsOpen, setSendIsOpen] = useState(false);
 
   return (
     <div className="boxs">
       <div className="box-image">
-        <Link to={"/Product-Details"}>
+        <Link to={`/product-details/${data.id}`}>
           {" "}
-          <img src={Tee} alt="img.title" />
+          <img src={`${process.env.REACT_APP_BASE_URL}/${data.productImage}`} alt={data.name} />
         </Link>
 
         <Send
@@ -60,10 +59,16 @@ const [sendIsOpen,setSendIsOpen]=useState(false);
           </div>
         )}
       </div>
-      <Link to={"/Product-Details"} className="box-info-link">
+      <Link to={`/product-details/${data.id}`} className="box-info-link">
         <div className="box-info">
-          <p className="box-name">COLOR LOGO TEE PASTEL GREY</p>
-          <span className="box-price">42,00 $</span>
+          <p className="box-name">{data.name}</p>
+          <div className="price-list">
+            {
+              data.old_price !==0 && <span className="old-price">€{data.old_price}</span>
+            }
+            
+            <span className="new-price">€{data.price}</span>
+          </div>
         </div>
       </Link>
     </div>
