@@ -11,7 +11,7 @@ import DetailsPage from "./pages/DetailsPage";
 import GlobalContext from "./utils/MainContext";
 import PageTransition from "./components/PageTransition";
 import { AnimatePresence } from "framer-motion";
-import Checkout from "./pages/Section/Checkout";
+import ShopSection from "./pages/shop/ShopSection";
 
 const App = () => {
   const location = useLocation();
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/contacts" element={<ContactPage />} />
           <Route path="/ShopPage" element={<ShopPage />} />
           <Route path="/product-details/:productId" element={<DetailsPage />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/CheckoutPage" element={<ShopSection />} />
         </Routes>
       </PageTransition>
     </GlobalContext>

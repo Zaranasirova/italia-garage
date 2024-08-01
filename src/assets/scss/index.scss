@@ -9,6 +9,8 @@
 @import "./components/drop-down";
 @import "./components/Basket/basket-cart";
 @import "./components/add-button";
+@import "./components/Headers/checkout-header";
+@import "./components/checkout-left";
 //pages
 @import "./pages/sections/main-section";
 @import "./pages/sections/contacts";
@@ -16,5 +18,11 @@
 @import "./pages/sections/product-details";
 @import "./pages/sections/all-products";
 @import "./components/Loader/loader";
-@import "./pages//sections/checkout-left";
-@import "./pages/sections/checkout";
+@import "./pages/shop/delivery";
+
+@import "./pages/shop/leftShop";
+@import "./pages/shop/pay-detail";
+@import "./pages/shop/rightShop";
+@import "./pages/shop/shopSection";
+@import "./pages/shop/topShop";
+

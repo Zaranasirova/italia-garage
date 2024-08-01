@@ -36,8 +36,8 @@ console.log("header",cartList);
             <p>SubTotal</p>
             <p>€{totalPrice}</p>
           </div>
-          <Link  className="check" to={"/CheckOut"}>
-          <AddButton/>
+          <Link  className="check" to={"/CheckoutPage"}>
+          <button className="add">CHECKOUT</button>
           </Link>
         </div>
       </div>

@@ -1,0 +1,76 @@
+.delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .react-tel-input {
+    border-radius: 5px;
+    .form-control {
+      width: 100% !important;
+      height: 45px;
+      background-color: grey;
+      border: 1px solid #FFFFFFA8;
+      color: gray;
+    }
+    .flag-dropdown{
+      background-color: grey;
+      border: 1px solid #FFFFFFA8;
+    }
+    .selected-flag{
+      background-color:grey !important;
+    }
+  }
+  p {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+  }
+  input,
+  select {
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #FFFFFFA8;
+    background-color: grey;
+    padding: 15px 10px;
+    width: 100%;
+  }
+  .form-control {
+    color: #000000;
+  }
+  select {
+    color: #ffffff;
+
+    option {
+      color: #ffffff;
+    }
+  }
+  .name-surname {
+    gap: 10px;
+  }
+  .adress-info {
+    gap: 10px;
+  }
+  .num {
+    display: flex;
+  flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.shipping {
+  font-size: 15px;
+  color: white;
+}
+
+.metod {
+  margin-top: 20px;
+  width: 100%;
+  padding: 17px 10px;
+  background-color: rgb(50, 50, 50);
+  border-radius: 5px;
+  color: grey;
+  font-size: 13px;
+}
+
+

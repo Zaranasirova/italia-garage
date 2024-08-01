@@ -1,0 +1,40 @@
+.top-shop {
+  width: 100%;
+  display: none;
+  @media (max-width: 1000px) {
+    display: block;
+  }
+  .container {
+    color: white;
+    font-size: 20px;
+    .show {
+      padding: 30px 100px;
+      width: 100%;
+      gap: 10px;
+      background-color: rgb(50, 50, 50);
+      justify-content: space-between;
+      div {
+        gap: 10px;
+      }
+      @media (max-width: 600px) {
+        padding: 30px 20px;
+        font-size: 15px;
+
+      }
+    }
+    .hidden {
+      gap: 10px;
+      padding: 30px 100px;
+      width: 100%;
+      background-color: rgb(50, 50, 50);
+      justify-content: space-between;
+      div {
+        gap: 10px;
+      }
+      @media (max-width: 600px) {
+        padding: 30px 20px;
+        font-size: 15px;
+      }
+    }
+  }
+}
