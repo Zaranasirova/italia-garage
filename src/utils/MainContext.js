@@ -48,7 +48,7 @@
 
 // export default GlobalContext;
 
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 
@@ -64,7 +64,7 @@ export const GlobalContext = ({ children }) => {
 
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
-
+const [totalPrice, setTotalPrice]=useState(0)
   const getSingleProduct = async (productId) => {
     setLoading(true);
     try {
@@ -107,6 +107,21 @@ export const GlobalContext = ({ children }) => {
     }
   };
 
+ const calcTotalPrice = ()=>{
+  const multiSum=cartList.map(item=>item.quantity*item.price);
+  const totalSum=multiSum.reduce((acc,curr)=>acc+curr,0);
+  setTotalPrice(totalSum)
+ }
+const removeProductCart=(id)=>{
+const updatedCart=cartList.filter(item=>item.id!==id);
+setCartList(updatedCart);
+}
+
+
+useEffect(()=>{
+  calcTotalPrice();
+},[cartList]);
+
   const globalData = {
     path,
     title,
@@ -119,6 +134,8 @@ export const GlobalContext = ({ children }) => {
     setProduct,
     getSingleProduct,
     loading,
+    totalPrice,
+    removeProductCart,
   };
 
   return (
