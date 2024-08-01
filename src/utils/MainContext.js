@@ -17,10 +17,6 @@ export const GlobalContext = ({ children }) => {
 //basket//
 const [cartIsOpen,setCartIsOpen]=useState(false);
 
-
-
-
-  
   const globalData = { path, title,cartIsOpen, setCartIsOpen };
   return (
     <MainContext.Provider value={globalData}>{children}</MainContext.Provider>
