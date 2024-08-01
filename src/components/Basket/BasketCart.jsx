@@ -5,7 +5,8 @@ import Cart from "../Cart";
 import { Link } from "react-router-dom";
 import AddButton from "../AddButton";
 const BasketCart = () => {
-  const { cartIsOpen, setCartIsOpen } = useContext(MainContext);
+  const { cartIsOpen, setCartIsOpen,cartList } = useContext(MainContext);
+console.log("header",cartList);
   return (
     <div className={`basket-cart ${cartIsOpen ? 'open' : ''}`}>
       <div className="basket-cart-head">
@@ -16,7 +17,11 @@ const BasketCart = () => {
       </div>
       <div className="cart-list">
         <div className="product-list">
-          <Cart/>
+          {
+            cartList.map(item=>(
+              <Cart/>
+            ))
+          }
         </div>
         {/* <div className="empty">
           <span>YOUR CART IS EMPTY</span>
