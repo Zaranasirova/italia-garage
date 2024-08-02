@@ -1,0 +1,128 @@
+.checkout-section {
+  .checkout-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .left {
+      background-color: black;
+      width: 50%;
+      padding-top: 30px;
+      .container-left {
+        padding-left: 6rem;
+        padding-right: 3rem;
+        .row {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          color: #fff;
+          .payment-way {
+           
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            .title {
+              color: #ffffffa8;
+              font-size: 13px;
+              font-weight: 500;
+            }
+            .button-container {
+              width: 45%;
+              display: flex;
+              flex: 1;
+              gap: 10px;
+              justify-content: center;
+              align-items: center;
+              button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                padding: 10px;
+                border-radius: 5px;
+                border: none;
+                img {
+                 width: 100%;
+                 height: 100%;
+                 object-fit: cover;
+                }
+              }
+              .paypal {
+                width: 100%;
+                height: 100%;
+                flex-grow: 1;
+                background-color: rgb(255, 196, 57);
+              }
+            }
+            .or-way {
+                display: flex;
+                flex-direction: row;
+              gap: 15px;
+              align-items: center;
+              span {
+                width: 100%;
+                height: 1px;
+                background-color: #ffffffa8;
+              }
+              p {
+                text-transform: uppercase;
+                color: #ffffffa8;
+              }
+            }
+          }
+          .contact-part {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+            .text-login{
+              font-size: 20px;
+              font-weight: 500;
+              width: 100%;
+              color: white;
+              display: flex;
+              justify-content: space-between ;
+              .login {
+                color: white;
+                font-size: 12px;
+                cursor: pointer;
+                text-decoration: underline;
+              }
+            }
+            form {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              input[type="text"],
+              input[type="email"] {
+                color: white;
+                border-radius: 5px;
+                border: 1px solid #fff;
+                background-color: #fff;
+                padding: 15px 10px;
+              }
+              .custom-checkbox{
+                display: flex;
+                gap: 15px;
+                 input[type="checkbox"]{
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 10px;
+                 }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      background-color: #fff;
+      width: 50%;
+      padding-top: 30px;
+      padding-left: 3rem;
+    }
+  }
+}

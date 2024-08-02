@@ -2,10 +2,13 @@ import React from "react";
 // import paypal from "../../assets/images/paypalbuy.svg";
 // import googlepay from "../../assets/images/light_gpay.svg";
 import Delivery from "./Delivery";
-import PayDetail from "./PayDetail";
+
 import { NavLink } from "react-router-dom";
+import PayPal from "../../assets/image/payPal .png";
+import { useState } from "react";
 
 const LeftShop = () => {
+ 
   return (
     <div className="left-shop">
       <div className="container">
@@ -13,10 +16,7 @@ const LeftShop = () => {
           <p className="title">Express checkout</p>
           <div className="button-container">
             <button className="paypal">
-              {/* <img src={paypal} alt="paypal" /> */}
-            </button>
-            <button className="googlepay">
-              {/* <img src={googlepay} alt="googlepay" /> */}
+              <img src={PayPal} alt="paypal" />
             </button>
           </div>
 
@@ -28,7 +28,7 @@ const LeftShop = () => {
         </div>
         <div className="contact-part">
           <div className="text-login row">
-            <span>contact information</span>
+            <span>Contact</span>
             <NavLink to={'/login'}><span className="login">Log in</span></NavLink>
           </div>
           <form>
@@ -46,9 +46,9 @@ const LeftShop = () => {
             Enter your shipping address to view available shipping methods.
           </div>
         </div>
-        <div className="cart-detail">
-          <PayDetail />
-        </div>
+        <button className="review-button" >
+         Review order
+          </button>
       </div>
     </div>
   );

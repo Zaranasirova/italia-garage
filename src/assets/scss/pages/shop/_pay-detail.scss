@@ -1,151 +1,151 @@
-.payment-form {
-  color: white;
-  border-radius: 10px;
-  width: 100%;
-  input, select {
-    background-color: var(--back-gray);
-    border: 1px solid var(--light-gray);
-    padding: 15px 10px;
-    border-radius: 5px;
-    color: gray;
-  }
-  .react-tel-input {
-    border-radius: 5px;
-    .form-control {
-      width: 100% !important;
-      height: 45px;
-      background-color: var(--back-gray);
-      border: 1px solid var(--light-gray);
-      color: gray;
-    }
-    .flag-dropdown{
-      background-color: var(--back-gray);
-      border: 1px solid var(--light-gray);
-    }
-    .selected-flag{
-      background-color: var(--back-gray) !important;
-    }
-  }
+// .payment-form {
+//   color: #fff;
+//   border-radius: 10px;
+//   width: 100%;
+//   input, select {
+//     background-color: #fff;
+//     border: 1px solid var(--light-gray);
+//     padding: 15px 10px;
+//     border-radius: 5px;
+//     color: gray;
+//   }
+//   .react-tel-input {
+//     border-radius: 5px;
+//     .form-control {
+//       width: 100% !important;
+//       height: 45px;
+//       background-color: var(--back-gray);
+//       border: 1px solid var(--light-gray);
+//       color: gray;
+//     }
+//     .flag-dropdown{
+//       background-color: var(--back-gray);
+//       border: 1px solid var(--light-gray);
+//     }
+//     .selected-flag{
+//       background-color: var(--back-gray) !important;
+//     }
+//   }
 
-  h2 {
+//   h2 {
 
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  .payment-text {
+//     font-size: 20px;
+//     margin-bottom: 10px;
+//   }
+//   .payment-text {
 
-    font-size: 13px;
-    margin-bottom: 10px;
-  }
+//     font-size: 13px;
+//     margin-bottom: 10px;
+//   }
 
-  .payment-method {
-    cursor: pointer;
-    .first-dot {
-      align-items: center;
-      gap: 10px;
-      padding: 20px 10px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      background-color: var(--dark-gray);
-      width: 100%;
-      justify-content: space-between;
-      border: 1px solid white;
-      .text-part {
-        justify-content: space-between;
-        .text {
+//   .payment-method {
+//     cursor: pointer;
+//     .first-dot {
+//       align-items: center;
+//       gap: 10px;
+//       padding: 20px 10px;
+//       border-top-left-radius: 10px;
+//       border-top-right-radius: 10px;
+//       background-color: var(--dark-gray);
+//       width: 100%;
+//       justify-content: space-between;
+//       border: 1px solid white;
+//       .text-part {
+//         justify-content: space-between;
+//         .text {
 
-          font-size: 15px;
-        }
-        .icon {
-          .icons {
-            gap: 5px;
-            img {
-              height: 25px;
-            }
-          }
-        }
-      }
-    }
-  }
+//           font-size: 15px;
+//         }
+//         .icon {
+//           .icons {
+//             gap: 5px;
+//             img {
+//               height: 25px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
 
-  .method {
-    cursor: pointer;
-    .second-dot {
-      align-items: center;
-      gap: 10px;
-      padding: 0px 10px;
-      border: 1px solid var(--light-gray);
-      .text-part {
-        justify-content: space-between;
-        align-items: center;
-        .text {
-          font-family: var(--base-font);
-          font-size: 15px;
-        }
-        .icon {
-          .pay-img {
-            img {
-              height: 50px;
-            }
-          }
-        }
-      }
-    }
-  }
-  .button {
-    margin-top: 30px;
-    width: 100%;
-    .pay-button {
-      width: 100%;
-      padding: 15px 0;
-      background-color: var(--blue);
-      border-radius: 5px;
-      cursor: pointer;
+//   .method {
+//     cursor: pointer;
+//     .second-dot {
+//       align-items: center;
+//       gap: 10px;
+//       padding: 0px 10px;
+//       border: 1px solid var(--light-gray);
+//       .text-part {
+//         justify-content: space-between;
+//         align-items: center;
+//         .text {
+//           font-family: var(--base-font);
+//           font-size: 15px;
+//         }
+//         .icon {
+//           .pay-img {
+//             img {
+//               height: 50px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .button {
+//     margin-top: 30px;
+//     width: 100%;
+//     .pay-button {
+//       width: 100%;
+//       padding: 15px 0;
+//       background-color: var(--blue);
+//       border-radius: 5px;
+//       cursor: pointer;
 
-      border: none;
-      img {
-        height: 30px;
-      }
-    }
-    .paga-button {
-      border: none;
-      border-radius: 5px;
-      width: 100%;
-      padding: 15px 0;
-      background-color: var(--green);
-      font-size: 25px;
-      font-family: var(--base-font);
-      cursor: pointer;
-    }
-  }
-  .payment {
-    background-color: var(--back-gray);
-    padding: 20px 10px;
-    .card-details {
-    display: flex;
-    flex-direction: column;
-      gap: 10px;
-      background-color: var(--back-gray);
-      .expiry-cvv {
-        gap: 15px;
-        display: flex;
-        justify-content: space-between;
-        input {
-          width: 100%;
-        }
-      }
-    }
-  }
-  .pay-open {
-    background-color: var(--back-gray);
-    border: 1px solid var(--light-gray);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    p {
-      text-align: center;
-      padding: 40px 20px;
-    }
-  }
-}
+//       border: none;
+//       img {
+//         height: 30px;
+//       }
+//     }
+//     .paga-button {
+//       border: none;
+//       border-radius: 5px;
+//       width: 100%;
+//       padding: 15px 0;
+//       background-color: var(--green);
+//       font-size: 25px;
+//       font-family: var(--base-font);
+//       cursor: pointer;
+//     }
+//   }
+//   .payment {
+//     background-color: var(--back-gray);
+//     padding: 20px 10px;
+//     .card-details {
+//     display: flex;
+//     flex-direction: column;
+//       gap: 10px;
+//       background-color: var(--back-gray);
+//       .expiry-cvv {
+//         gap: 15px;
+//         display: flex;
+//         justify-content: space-between;
+//         input {
+//           width: 100%;
+//         }
+//       }
+//     }
+//   }
+//   .pay-open {
+//     background-color: var(--back-gray);
+//     border: 1px solid var(--light-gray);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     cursor: pointer;
+//     p {
+//       text-align: center;
+//       padding: 40px 20px;
+//     }
+//   }
+// }

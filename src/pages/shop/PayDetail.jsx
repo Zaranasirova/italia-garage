@@ -36,8 +36,8 @@ const PayDetail = () => {
 
   return (
     <div className="payment-form">
-      <h2>Pagamenti</h2>
-      <p className="payment-text">Tutte le transazioni sono sicure e criptate</p>
+      <h2>Payment</h2>
+      <p className="payment-text">All transactions are secure and encrypted.</p>
 
       <label className="payment-method">
         <div className="first-dot row">
@@ -53,7 +53,8 @@ const PayDetail = () => {
           </div>
           <div className="text-part row">
             <div className="text">
-              <span>Carta di credito</span>
+              <span>
+              Credit card</span>
             </div>
             {/* <div className="icon">
               <div className="icons row">
@@ -72,24 +73,24 @@ const PayDetail = () => {
           <div className="card-details">
             <input
               type="text"
-              placeholder="Numero carta/ Card number"
+              placeholder="Card number"
               ref={cardNumberRef}
             />
             <div className="expiry-cvv">
               <input
                 type="text"
-                placeholder="Data di scadenza (MM/YY)"
+                placeholder="Expiration date (MM / YY)"
                 ref={expiryDateRef}
               />
               <input
                 type="text"
-                placeholder="Codice sicurezza (CVV)"
+                placeholder="Security code"
                 ref={cvvRef}
               />
             </div>
             <input
               type="text"
-              placeholder="Nome sulla carta/ Card name"
+              placeholder="Name on card"
               ref={cardNameRef}
             />
             <div className="custom-checkbox">
