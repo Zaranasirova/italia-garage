@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PayPal from "../../assets/image/payPal .png";
 import { Link } from "react-router-dom";
+import Delivery from "../../pages/shop/Delivery";
 
 const CheckOut = () => {
+  useEffect(() => {
+    document.body.style.overflow = "scroll";
+  }, []);
   return (
     <section className="checkout-section">
       <div className="checkout-container">
@@ -38,14 +42,15 @@ const CheckOut = () => {
                   </label>
                 </form>
               </div>
-              
+              <div className="delivery-part">
+                <Delivery />
+              </div>
+              <button className="review-button">Review order</button>
             </div>
           </div>
         </div>
         <div className="right">
-          <div className="container-right">
-            salam
-          </div>
+          <div className="container-right">salam</div>
         </div>
       </div>
     </section>

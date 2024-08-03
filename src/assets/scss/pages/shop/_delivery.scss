@@ -61,6 +61,7 @@
 // .shipping {
 //   font-size: 15px;
 //   color: white;
+
 // }
 
 // .metod {
@@ -73,4 +74,70 @@
 //   font-size: 13px;
 // }
 
+.delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  p {
+    font-size: 21px;
+  }
+  select {
+    width: 100%;
+    padding: 15px 8px;
+    border-radius: 7px;
+    color: gray;
+  }
+  .name-surname {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    input {
+      width: 50%;
+      padding: 15px 8px;
+      border-radius: 7px;
+      color: gray;
+    }
+  }
+  input {
+    width: 100%;
+    padding: 15px 8px;
+    border-radius: 7px;
+    color: gray;
+  }
+  .num {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .phone-input {
+      width: 100%;
+    }
+    .react-tel-input {
+      border-radius: 5px;
 
+      .form-control {
+        width: 100% ;
+        height: 45px;
+        background-color: #fff;
+        border: 1px solid #fff;
+        color: gray;
+      }
+      .flag-dropdown {
+        background-color: #fff;
+        border: 1px solid gray;
+      
+      }
+      .selected-flag {
+        background-color: #fff ;
+      }
+     
+    }
+     .custom-checkbox{
+        display: flex;
+    }
+  }
+  .shipping{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+  }
+}
