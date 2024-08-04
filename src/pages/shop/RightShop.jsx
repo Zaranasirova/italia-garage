@@ -5,7 +5,7 @@ const RightShop = () => {
     
     const { cartList} = useContext(MainContext);
   return (
-    <div className="right-part left">
+    <div className="right-part ">
       <div className="container">
         <div className="selected-clothes">
           {cartList.map(item=>(
@@ -18,9 +18,7 @@ const RightShop = () => {
               <div className="product-info">
                 <span className="name">{item.name}</span>
                 <span className="size">M</span>
-                <span className="date">
-                  Estimated between: Jul 14 and Jul 17
-                </span>
+               
               </div>
               <div className="common-price">
                 <span className="price">€500</span>
@@ -30,9 +28,9 @@ const RightShop = () => {
           ))}
 
         </div>
-        <div className="gift-input row">
-          <input type="text" placeholder="Gift card" />
-          <button>Applica</button>
+        <div className="gift-input ">
+          <input type="text" placeholder="Discount code or gift card" />
+          <button>Apply</button>
         </div>
         <div className="final-info">
           <div className="final-Subprice row">

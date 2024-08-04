@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import PayPal from "../../assets/image/payPal .png";
 import { Link } from "react-router-dom";
 import Delivery from "../../pages/shop/Delivery";
+import RightShop from "../shop/RightShop";
 
 const CheckOut = () => {
   useEffect(() => {
@@ -50,7 +51,9 @@ const CheckOut = () => {
           </div>
         </div>
         <div className="right">
-          <div className="container-right">salam</div>
+          <div className="container-right">
+            <RightShop/>
+          </div>
         </div>
       </div>
     </section>

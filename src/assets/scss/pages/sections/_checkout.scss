@@ -9,6 +9,8 @@
       background-color: black;
       width: 50%;
       padding-top: 30px;
+      padding-bottom: 30px;
+    
       .container-left {
         padding-left: 6rem;
         padding-right: 3rem;
@@ -114,12 +116,22 @@
               }
             }
           }
+          .review-button{
+            width: 100%;
+            background-color: #1A49AF;
+            padding: 15px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            border: 1px solid  #1A49AF;
+            border-radius: 8px;
+            }
         }
       }
     }
 
     .right {
-      background-color: #fff;
+      background-color: #fff !important;
       width: 50%;
       padding-top: 30px;
       padding-left: 3rem;
