@@ -13,9 +13,10 @@ import BasketCart from "../Basket/BasketCart";
 const TopHeader = () => {
   const { path, title, cartIsOpen, setCartIsOpen } = useContext(MainContext);
 
-  // useEffect(() => {
-  //   document.body.style.overflow = cartIsOpen ? "hidden" : "auto";
-  // }, [cartIsOpen]);
+  useEffect(() => {
+    document.body.style.overflow = cartIsOpen ? "hidden" : "auto";
+  
+  }, [cartIsOpen]);
   return (
     // <header className={`top-header ${path === "/" ? "active" : ""}`}>
     //   <div className="container">
@@ -63,28 +64,33 @@ const TopHeader = () => {
           </div>
           <nav className="nav-bar row">
             <DropDownList
-            
               triggerText="Social"
               icon={<Dropdown />}
               items={firstDropdown}
               ClassList="dropdown-menu"
               ClassLink="menu-link"
             />
-            <Link
+           <div className="contacts">
+           <Link
               to="/contacts"
-              className={`contact-page-title ${path === "/" ? "active" : ""}`}
+              className={`color-active ${path === "/" ? "active" : ""}`}
             >
               CONTACTS
             </Link>
-            <span className={`lang ${path === "/" ? "active" : ""}`}>ITA</span>
+           </div>
+           <div className="ita"> <span className={`color-active ${path === "/" ? "active" : ""}`}>ITA</span></div>
+            <div className="search">
             <FontAwesomeIcon
               icon={faSearch}
-              className={`search-icon ${path === "/" ? "active" : ""}`}
+              className={`color-active ${path === "/" ? "active" : ""}`}
             />
-            <Basket
-              className={`basket-icon ${path === "/" ? "active" : ""}`}
+            </div>
+          <div className="basket">
+          <Basket
+              className={`color-active ${path === "/" ? "active" : ""}`}
               onClick={() => setCartIsOpen(true)}
             />
+          </div>
           </nav>
         </div>
       </div>
