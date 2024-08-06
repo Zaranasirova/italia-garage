@@ -1,106 +1,4 @@
-// .boxs {
-//   flex: 0 0 calc(33.33% - 10px);
 
-//   @media (max-width: 768px) {
-//     flex: 0 0 100%;
-//   }
-//   .box-head{
-
-//       border: 1px solid var(--base--color);
-//       display: block;
-//       position: relative;
-//     .box-image {
-//       width: 100%;
-//       a {
-//         img {
-//           width: 100%;
-//           height: 100%;
-//           object-fit: cover;
-//         }
-//       }
-
-//       .social-icon {
-//         width: 20px;
-//         height: 20px;
-//         position: absolute;
-//         right: 20px;
-//         top: 20px;
-//       }
-//       .icon-list {
-//         display: flex;
-//         flex-direction: row;
-//         gap: 15px;
-//         background-color: #000000;
-//         width: 152px;
-//         align-items: center;
-//         justify-content: center;
-//         height: 36px;
-//         position: absolute;
-//         right: 20px;
-//         top: 10px;
-//         transition: all 0.3s;
-//         .icon {
-//           width: 20px;
-//           height: 20px;
-//           fill: #fff;
-//         }
-//         .close {
-//           margin-left: 10px;
-//         }
-//       }
-//     }
-//   }
-//   .box-info-link {
-//     .box-info {
-//       display: flex;
-//       gap: 90px;
-//       width: 100%;
-//    height: 50px;
-//       border: 1px solid #242424;
-//       color: #242424;
-//       border-top: none;
-//       padding: 12px;
-//       .box-name {
-//         font-size: 12px;
-//         width: 100%;
-//         @media(max-width:1038px){
-//           font-size: 9.6px;
-//         }
-//       }
-
-//       .price-list{
-//         display: flex;
-//         gap: 8px;
-//         justify-content: end;
-//         .new-price{
-//           font-size: 12px;
-
-//         color: #242424;
-//         @media(max-width:1038px){
-//           font-size: 9.6px;
-//         }
-//         }
-//         .old-price{
-//           color:#242424;
-//           opacity: 0.6;
-//           text-decoration: line-through;
-//           font-size: 12px;
-//           @media(max-width:1038px){
-//             font-size: 9.6px;
-//           }
-//         }
-//       }
-//       // .box-price {
-
-//       //   font-size: 12px;
-//       //   text-align: end;
-//       //   @media(max-width:1038px){
-//       //     font-size: 9.6px;
-//       //   }
-//       // }
-//     }
-//   }
-// }
 
 .boxs {
   flex: 0 0 calc(33.333% - 10px);
@@ -114,7 +12,7 @@
     position: relative;
     a {
       .box-image {
-       @include width-height;
+        @include width-height;
         img {
           @include width-height;
           object-fit: cover;
@@ -130,14 +28,14 @@
     }
     .icon-list {
       gap: 15px;
-      background-color: #000000;
+      background-color: var(--black--color);
       width: 152px;
-     @include flex-center-property;
+      @include flex-center-property;
       height: 36px;
       position: absolute;
       right: 20px;
       top: 10px;
-      transition:var(--transition);
+      transition: var(--transition);
       .icon {
         width: 20px;
         height: 20px;
@@ -151,41 +49,41 @@
 
   .box-info {
     border: 1px solid var(--base--color);
-    color:var(--base--color);
+    color: var(--base--color);
     border-top: none;
     padding: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: 50px;
-    .box-name {
-      font-size: var(--base--font);
-      width: 100%;
-      @media (max-width: 1038px) {
-        font-size:var( --responsive--font);
-      }
-    }
-
-    .price-list {
-      display: flex;
-      gap: 8px;
-      justify-content: end;
-      .new-price {
+    .box-info-link {
+      @include flex-between-property;
+      .box-name {
         font-size: var(--base--font);
-        color: var(--base--color);
-
+        width: 100%;
         @media (max-width: 1038px) {
-          font-size:var( --responsive--font);
+          font-size: var(--responsive--font);
         }
       }
 
-      .old-price {
-        color: var(--base--color);
-        opacity: 0.6;
-        text-decoration: line-through;
-        font-size: var(--base--font);
-        @media (max-width: 1038px) {
-          font-size:var( --responsive--font);
+      .price-list {
+        display: flex;
+        gap: 8px;
+        justify-content: end;
+        .new-price {
+          font-size: var(--base--font);
+          color: var(--base--color);
+
+          @media (max-width: 1038px) {
+            font-size: var(--responsive--font);
+          }
+        }
+
+        .old-price {
+          color: var(--base--color);
+          opacity: 0.6;
+          text-decoration: line-through;
+          font-size: var(--base--font);
+          @media (max-width: 1038px) {
+            font-size: var(--responsive--font);
+          }
         }
       }
     }

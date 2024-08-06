@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
-import Tee from "../assets/image/tee_fronte_pastel_green.webp";
+import React, {  useState } from "react";
+//REACT ROUTER DOM//
 import { Link } from "react-router-dom";
+//SVG İMPORT//
 import { ReactComponent as Send } from "../assets/icons/send.svg";
 import { ReactComponent as Facebook } from "../assets/icons/facebook.svg";
 import { ReactComponent as Twitter } from "../assets/icons/twitter.svg";
@@ -8,8 +9,9 @@ import { ReactComponent as Whatsapp } from "../assets/icons/whatsappIcon.svg";
 import { ReactComponent as Close } from "../assets/icons/close.svg";
 
 const ShopProducts = ({ data }) => {
+  //Opening and closing on click of the social icon//
   const [sendIsOpen, setSendIsOpen] = useState(false);
-
+  
   return (
     <div className="boxs">
       <div className="box-head">

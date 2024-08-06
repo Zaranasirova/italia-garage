@@ -1,6 +1,6 @@
 import React from "react";
 
-//section import//
+//SECTION IMPORT//
 import AllProducts from "./Section/AllProducts";
 import Hero from "./Section/Hero";
 

@@ -1,4 +1,5 @@
 import React from 'react';
+//IMAGE IMPORT//
 import garage from "../../assets/image/c7277835932697.5a02d87f74637.jpg";
 
 
