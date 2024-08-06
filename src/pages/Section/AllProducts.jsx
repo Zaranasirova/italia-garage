@@ -18,14 +18,11 @@ try {
   setLoading(false);
 }
 }
-
 useEffect(()=>{
-  getProducts()
-},[])
-
-
+  getProducts();
+},[]);
   return (
-    <section className="all-products">
+    <section className="product-section">
    {loading && <Loading/>}
       <div className="container">
         <div className="row">
@@ -35,7 +32,6 @@ useEffect(()=>{
                 <ShopProducts key={item.id} data={item}/>
               ))
             }
-       
           </div>
         </div>
       </div>

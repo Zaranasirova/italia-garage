@@ -6,17 +6,21 @@ import { ReactComponent as Facebook } from "../assets/icons/facebook.svg";
 import { ReactComponent as Twitter } from "../assets/icons/twitter.svg";
 import { ReactComponent as Whatsapp } from "../assets/icons/whatsappIcon.svg";
 import { ReactComponent as Close } from "../assets/icons/close.svg";
-import { MainContext } from "../utils/MainContext";
 
 const ShopProducts = ({ data }) => {
   const [sendIsOpen, setSendIsOpen] = useState(false);
 
   return (
     <div className="boxs">
-      <div className="box-image">
+      <div className="box-head">
         <Link to={`/product-details/${data.id}`}>
           {" "}
-          <img src={`${process.env.REACT_APP_BASE_URL}/${data.productImage}`} alt={data.name} />
+          <div className="box-image">
+            <img
+              src={`${process.env.REACT_APP_BASE_URL}/${data.productImage}`}
+              alt={data.name}
+            />
+          </div>
         </Link>
 
         <Send
@@ -24,7 +28,7 @@ const ShopProducts = ({ data }) => {
           onClick={() => setSendIsOpen(!sendIsOpen)}
         />
         {sendIsOpen && (
-          <div className="icon-list">
+          <div className="icon-list row">
             <Link
               className="icon"
               to={
@@ -59,18 +63,18 @@ const ShopProducts = ({ data }) => {
           </div>
         )}
       </div>
-      <Link to={`/product-details/${data.id}`} className="box-info-link">
-        <div className="box-info">
+      <div className="box-info">
+        <Link to={`/product-details/${data.id}`} className="box-info-link">
           <p className="box-name">{data.name}</p>
           <div className="price-list">
-            {
-              data.old_price !==0 && <span className="old-price">€{data.old_price}</span>
-            }
-            
+            {data.old_price !== 0 && (
+              <span className="old-price">€{data.old_price}</span>
+            )}
+
             <span className="new-price">€{data.price}</span>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
     </div>
   );
 };

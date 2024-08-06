@@ -1,51 +1,4 @@
-// .bottom-header{
-//   position: sticky;
-//   bottom: 0;
-//   height: 48px;
-//   background-color: var(--bg--color);
-//   backdrop-filter: var(--bg--blur);
-//   border-top: 1px solid var(--base--color);
-//   border-bottom: 1px solid var(--base--color);
-//   .container {
-//     .navBar {
 
-//       // @media (max-width: 640px) {
-//       //   display: none;
-//       // }
-//       ul{
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-between;
-//         align-items: center;
-//         height: 100%;
-//         padding: 0 30px;
-//         text-transform: uppercase;
-
-//         li{
-//           .customs,
-//           .hub,
-//           .ourGarage,
-//           .market-place,
-//           .studio,
-//           .shop {
-//             .title {
-//               color: var(--base-color);
-//               font-size: 12px;
-//               &.active{
-//                 color: var(--white--color);
-//               }
-//             }
-//             &:hover {
-//               text-decoration: underline;
-//             }
-//           }
-//         }
-//       }
-
-//     }
-//   }
-
-// }
 
 .bottom-header {
   position: sticky;
@@ -79,10 +32,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 100%;
+     @include width-height;
       .menu-toggle {
         display: none;
-        width: 100%;
+     @include width-height;
         text-align: center;
        .navBar-title {
           position: relative;
@@ -94,7 +47,6 @@
           }
         }
         .navbar-menu {
-          flex-direction: column;
           width: 100%;
           position: absolute;
           bottom: 100%;
@@ -108,15 +60,13 @@
             border-bottom: 1px solid var(--base--color);
             text-align: center;
             height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+           @include flex-center-property;
             &.active{
               border-bottom: 1px solid var(--white--color);
             }
             .title {
               color: var(--base--color);
-              font-size: 12px;
+              font-size: var(--base--font);
               &.active {
                 color: var(--white--color);
               }
@@ -140,10 +90,10 @@
         width: 100%;
        
         .title {
-          font-size: 12px;
+          font-size: var(--base--font);
           color: var(--base--color);
           &.active{
-            color: var(--white--color);
+            color:#fff;
           }
         }
         @media (max-width: 630px) {

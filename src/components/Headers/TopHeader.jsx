@@ -15,7 +15,6 @@ const TopHeader = () => {
 
   useEffect(() => {
     document.body.style.overflow = cartIsOpen ? "hidden" : "auto";
-  
   }, [cartIsOpen]);
   return (
     // <header className={`top-header ${path === "/" ? "active" : ""}`}>
