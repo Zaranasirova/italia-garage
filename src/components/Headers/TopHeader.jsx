@@ -1,53 +1,31 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
+//REACT ROUTER DOM//
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
-import DropDownList from "../DropDownList";
+//ICONS//
+import { ReactComponent as Basket } from "../../assets/icons/basket.svg";
 import { ReactComponent as Dropdown } from "../../assets/icons/dropDown.svg";
-import { firstDropdown } from "../../DB/Dropdown";
+import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
+//FONTAWESOME//
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { ReactComponent as Basket } from "../../assets/icons/basket.svg";
-import { MainContext } from "../../utils/MainContext";
+//COMPONENTS
+import DropDownList from "../DropDownList";
 import BasketCart from "../Basket/BasketCart";
+//DB//
+import { firstDropdown } from "../../DB/Dropdown";
+//MAINCONTEXT//
+import { MainContext } from "../../utils/MainContext";
+
 
 const TopHeader = () => {
+  //MAINCONTEXT//
   const { path, title, cartIsOpen, setCartIsOpen } = useContext(MainContext);
-
+//When the basket is open and closed, the page’s overflow should be hidden//
   useEffect(() => {
     document.body.style.overflow = cartIsOpen ? "hidden" : "auto";
   }, [cartIsOpen]);
+
   return (
-    // <header className={`top-header ${path === "/" ? "active" : ""}`}>
-    //   <div className="container">
-    //     <div className="row">
-    //       <div className="logo-title">
-    //         <Link to="/" className={`title ${path === "/" ? "active" : ""}`}>{title}</Link>
-    //       </div>
-    //       <div className="logo">
-    //         <Link to={"/"}>
-    //           <Logo className={`logo-icon ${path === "/" ? "active" : ""}`}/>
-    //         </Link>
-    //       </div>
-    //       <div className={`user-area ${path === "/" ? "active" : ""}`}>
-    //         <DropDownList
-    //           triggerText="Social"
-    //           icon={<Dropdown />}
-    //           items={firstDropdown}
-    //           ClassList="dropdown-menu"
-    //           ClassLink="menu-link"
-    //         />
-    //         <Link to="/contacts" className={`contact-page-title ${path === "/" ? "active" : ""}`}>CONTACTS</Link>
-    //         <span className={`lang ${path === "/" ? "active" : ""}`}>ITA</span>
-    //         <FontAwesomeIcon icon={faSearch} className={`search-icon ${path === "/" ? "active" : ""}`} />
-    //         <Basket className={`basket-icon ${path === "/" ? "active" : ""}`} onClick={()=> setCartIsOpen(true)} />
-    //       </div>
-    //     </div>
-    //   </div>
-    //   {cartIsOpen && <BasketCart />}
-    //   {cartIsOpen && (
-    //     <div className="overlay" onClick={()=>setCartIsOpen(false)}></div>
-    //   )}
-    // </header>
     <header className="top-header">
       <div className="container">
         <div className="header-wrapper row">

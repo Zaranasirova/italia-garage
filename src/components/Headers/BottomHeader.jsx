@@ -1,21 +1,25 @@
 import React, { useState } from "react";
-//hooks
+//HOOKS IMPORT//
 import { useContext } from "react";
-//context
+//MAINCONTEXT IMPORT//
 import { MainContext } from "../../utils/MainContext";
 
-//component
+//COMPONENT IMPORT//
 import NavBar from "../NavBar";
 
 
 
 const BottomHeader = () => {
+  //Opening and closing the menu in responsiveness//
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  //Responsiveness menu opening and closing while handling overflow//
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
   };
+  //MAINCONTEXT//
   const { path } = useContext(MainContext);
+  
   return (
     <header className={`bottom-header ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container">

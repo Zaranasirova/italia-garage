@@ -1,5 +1,4 @@
 
-
 .center-header {
   background-color: #0c2340;
   height: 36px;
@@ -11,18 +10,17 @@
   border-bottom: 1px solid var(--white--color);
   .container {
     .center-header-wrapper {
-      width: 100%;
-      height: 100%;
+    @include width-height;
       ul {
-        justify-content: space-between;
-        height: 100%;
-        align-items: center;
+     @include flex-between-property;
+        @include width-height;
+      
         li {
           a {
             color: var(--white--color);
-            font-size: 12px;
+            font-size: var(--base--font);
             @media (max-width: 560px) {
-              font-size: 9.6px;
+              font-size:var(--responsive--font);
             }
           }
         }
