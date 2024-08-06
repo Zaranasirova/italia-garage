@@ -1,6 +1,6 @@
 .footer {
   background-color: #0c2340;
-  color:var(--white--color);
+  color: var(--white--color);
   font-size: 10px;
   text-transform: uppercase;
   padding-top: 40px;
@@ -8,15 +8,12 @@
   border-bottom: 1px solid var(--base--color);
   padding-bottom: 40px;
   .container {
-    .row {
-      flex-direction: column;
+    .footer-body {
       gap: 20px;
       .social-head,
       .social-body {
         width: 98%;
         ul {
-          display: flex;
-          flex-direction: row;
           width: 100%;
           @media (max-width: 1024px) {
             display: flex;
@@ -33,11 +30,11 @@
         }
       }
       .social-head {
-        .social-head-list{
+        .social-head-list {
           li {
             .social-list-link {
               color: var(--white--color);
-              font-size: 9.6px;
+              font-size: var(--responsive--font);
               font-weight: 700;
             }
           }
@@ -47,13 +44,11 @@
         .social-body-list {
           li {
             ul {
-              display: flex;
-              flex-direction: column;
               gap: 5px;
               li {
                 font-weight: 700;
                 .list-link {
-                  font-size: 9.6px;
+                  font-size: var(--responsive--font);
                   font-weight: 300;
                   color: var(--white--color);
                 }
@@ -63,17 +58,13 @@
         }
       }
       .copy-write {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-   
+        @include flex-between-property;
         .footer-logo {
           height: 20px;
           color: var(--white--color);
         }
         small {
-          width: 100%;
+          @include width-height;
         }
       }
     }
