@@ -10,7 +10,6 @@ import NavBar from "../NavBar";
 
 
 const BottomHeader = () => {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
