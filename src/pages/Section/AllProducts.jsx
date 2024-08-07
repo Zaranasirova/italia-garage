@@ -30,7 +30,7 @@ useEffect(()=>{
   getProducts();
 },[]);
   return (
-    <section className="product-section">
+    <section className="all-product-section">
    {loading && <Loading/>}
       <div className="container">
         <div className="row">

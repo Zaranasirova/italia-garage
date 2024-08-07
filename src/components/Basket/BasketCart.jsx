@@ -1,14 +1,26 @@
 import React from "react";
+//MAINCONTEXT IMPORT//
 import { MainContext } from "../../utils/MainContext";
+//HOOKS IMPORT//
 import { useContext } from "react";
+//COMPONENTS IMPORT//
 import Cart from "../Cart";
+//REACT ROUTER DOM IMPORT//
 import { Link } from "react-router-dom";
-import AddButton from "../AddButton";
+import { useNavigate } from "react-router-dom";
+
 const BasketCart = () => {
-  const { cartIsOpen, setCartIsOpen,cartList,totalPrice } = useContext(MainContext);
-console.log("header",cartList);
+  //MAINCONTEXT//
+  const { cartIsOpen, setCartIsOpen, cartList, totalPrice } =
+    useContext(MainContext);
+//Redirect to Checkout Page on Button Click//
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate("/CheckoutPage");
+  };
+
   return (
-    <div className={`basket-cart ${cartIsOpen ? 'open' : ''}`}>
+    <div className={`basket-cart column ${cartIsOpen ? "open" : ""}`}>
       <div className="basket-cart-head">
         <h3 className="basket-cart-title">Cart</h3>
         <h3 className="basket-cart-close" onClick={() => setCartIsOpen(false)}>
@@ -17,28 +29,25 @@ console.log("header",cartList);
       </div>
       <div className="cart-list">
         <div className="product-list">
-          {
-            cartList.map((item)=>(
-              <Cart key={item.id} data={item}/>
-            ))
-          }
+          {cartList.map((item) => (
+            <Cart key={item.id} data={item} />
+          ))}
         </div>
-        {
-          cartList.length ===0 && (  <div className="empty">
+        {cartList.length === 0 && (
+          <div className="empty">
             <span>YOUR CART IS EMPTY</span>
-          </div>)
-        }
-      
+          </div>
+        )}
       </div>
       <div className="end-of-cart">
-        <div className="total">
+        <div className="total column">
           <div className="sub-total">
             <p>SubTotal</p>
             <p>€{totalPrice}</p>
           </div>
-          <Link  className="check" to={"/CheckoutPage"}>
-          <button className="add">CHECKOUT</button>
-          </Link>
+          <button className="add" onClick={handleButtonClick}>
+            CHECKOUT
+          </button>
         </div>
       </div>
     </div>

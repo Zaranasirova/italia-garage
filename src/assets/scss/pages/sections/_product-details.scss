@@ -1,6 +1,8 @@
 
+
 .product-section {
   padding-top: 70px;
+  
   .container {
     .product-details {
       justify-content: space-between;
@@ -193,7 +195,7 @@
     position: sticky;
     bottom: 48px;
     display: none;
-    padding: 20px;
+    padding:20px;
     @media (max-width: 1024px) {
       display: flex;
     }
@@ -219,7 +221,10 @@
         &::before {
           content: "";
           position: absolute;
-          @include width-height;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 100%;
           background-color: var(--white--color);
           z-index: -1;
           transition: var(--transition);
