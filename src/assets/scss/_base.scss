@@ -8,50 +8,37 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   transition: all 0.3s ease;
-
 }
 
-a{
+a {
   cursor: url("../icons/download.svg"), auto;
   color: var(--base--color);
 }
 
-.container{
-    width: 94%;
-    height: 100%;
-    margin: 0 auto;
+.container {
+  width: 94%;
+  height: 100%;
+  margin: 0 auto;
 }
-.row{
-    display: flex;
-    flex-direction: row;
-   
+.row {
+  display: flex;
+  flex-direction: row;
 }
-.column{
+.column {
   display: flex;
   flex-direction: column;
- 
 }
 
-
-:root{
-  --base--color:#242424;
-  --white--color:#fff;
+:root {
+  --base--color: #242424;
+  --white--color: #fff;
   --bg--color: rgba(243, 243, 243, 0.4);
-  --bg--blur:blur(60px) saturate(180%);
-  --base--font:12px;
-  --transition:all .3s;
-  --responsive--font:9.6px;
-  --black--color:#000000;
+  --bg--blur: blur(60px) saturate(180%);
+  --base--font: 12px;
+  --transition: all 0.3s;
+  --responsive--font: 9.6px;
+  --black--color: #000000;
 }
-
-
-
-
-
-
-
-
-
 
 // * Custom scrollbar
 ::-webkit-scrollbar {
