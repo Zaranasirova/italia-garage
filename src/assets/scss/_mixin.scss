@@ -19,6 +19,7 @@
 }
 
 @mixin hovermenu{
+    position: absolute; 
     transform: translateX(-50%);
     color: var(--base--color);
     max-height: 0;
@@ -26,7 +27,6 @@
     transition:var(--transition);
     width: 200px;
     background-color: rgba(243, 243, 243, 0.4);
-    position: absolute; 
 }
 @mixin hovervisible{
     max-height: 300px;
@@ -61,6 +61,5 @@
     max-height: 300px;
     background-color: rgba(243, 243, 243, 0.4);
     backdrop-filter: var(--bg--blur);
-    position: absolute;
-    z-index:1008;
+
 }

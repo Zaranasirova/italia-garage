@@ -6,6 +6,7 @@
   backdrop-filter: var(--bg--blur);
   border-top: 1px solid var(--base--color);
   border-bottom: 1px solid var(--base--color);
+  z-index: 3;
   @media (max-width: 630px) {
     position: fixed;
     left: 0;

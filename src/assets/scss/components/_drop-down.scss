@@ -1,11 +1,10 @@
 .dropdown-container {
   position: relative;
-  z-index: 1000;
   display: inline-block;
   .dropdown-trigger {
     color: var(--base--color);
     text-transform: uppercase;
-    font-size: var(--base--font);
+    font-size: 14px;
     &.active {
       color: var(--white--color);
     }
@@ -95,7 +94,6 @@
 
   &:hover .hubDropdown-menu {
     @include hoverDropdownMenu;
-      
   }
 
   &:hover .dropdown-menu .menu-link,
@@ -112,6 +110,3 @@
     transform: translateY(0px);
   }
 }
-
-
-
