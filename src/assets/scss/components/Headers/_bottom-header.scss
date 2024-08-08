@@ -28,7 +28,7 @@
   }
   .container {
     .navBar {
-      @include flex-between-property;
+      @include flex-between-center-property;
       @include width-height;
       .menu-toggle {
         display: none;

@@ -1,5 +1,3 @@
-
-
 .boxs {
   flex: 0 0 calc(33.333% - 10px);
   margin-bottom: 10px;
@@ -54,7 +52,7 @@
     padding: 12px;
     height: 50px;
     .box-info-link {
-      @include flex-between-property;
+      @include flex-between-center-property;
       .box-name {
         font-size: var(--base--font);
         width: 100%;
@@ -64,9 +62,9 @@
       }
 
       .price-list {
-        display: flex;
+        @include flex-end-property;
         gap: 8px;
-        justify-content: end;
+
         .new-price {
           font-size: var(--base--font);
           color: var(--base--color);

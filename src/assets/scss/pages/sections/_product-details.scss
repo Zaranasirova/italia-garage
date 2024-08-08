@@ -64,7 +64,7 @@
             }
           }
           .size {
-            @include flex-between-property;
+            @include flex-between-center-property;
             padding-top: 30px;
             .size-list {
               display: flex;
@@ -200,7 +200,7 @@
       display: flex;
     }
     .name-size-box {
-      @include flex-between-property;
+      @include flex-between-center-property;
       p,
       span {
         font-size: var(--responsive--font);

@@ -1,52 +1,29 @@
 .dropdown-container {
   position: relative;
+  z-index: 1000;
   display: inline-block;
-
   .dropdown-trigger {
     color: var(--base--color);
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: var(--base--font);
     &.active {
       color: var(--white--color);
     }
   }
-
   .dropdown-menu {
     top: 50px;
-    position: absolute;
-    transform: translateX(-50%);
-    color: var(--base--color);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    width: 200px;
-    background-color: rgba(243, 243, 243, 0.4);
-    z-index: 61;
+    @include hovermenu;
     &.visible {
-      max-height: 300px;
-      backdrop-filter: blur(60px);
+      @include hovervisible;
     }
     .listItem {
-      transition: height 0.5s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid var(--base--color);
-      border-bottom: none;
-      z-index: 1000;
-      padding: 5px 10px;
-      background-color: rgba(243, 243, 243, 0.4);
-      backdrop-filter: blur(60px) saturate(180%);
-
+      @include hoverListItem;
       &.active {
-        border: 1px solid var(--white--color);
-        border-bottom: none;
-
+        @include hoverListItemActive;
         &:last-child {
           border-bottom: 1px solid var(--white--color);
         }
       }
-
       &:last-child {
         border-bottom: 1px solid var(--base--color);
       }
@@ -65,72 +42,26 @@
       width: 100vw;
     }
     .menu-link {
-      color: var(--base--color);
-      padding: 8px 10px;
-      border-radius: 3px;
-      transition: all 0.5s ease;
-      display: inline-block;
-      transform: translateY(20px);
-      font-size: 12px;
+      @include dropdownLink;
       &.active {
         color: var(--white--color);
       }
     }
   }
+
   .customsDropdown-menu,
   .garageDropdown-menu,
   .hubDropdown-menu {
+    @include hovermenu;
     bottom: 50px;
     left: 65%;
-  }
-  .garageDropdown-menu,
-  .customsDropdown-menu,
-  .hubDropdown-menu {
-    .drop-link {
-      color: #242424;
-      padding: 8px 10px;
-      border-radius: 3px;
-      transition: all 0.5s ease;
-      display: inline-block;
-      transform: translateY(20px);
-      font-size: 12px;
-      &.active {
-        color: var(--white--color);
-      }
-    }
-  }
-
-  .customsDropdown-menu,
-  .garageDropdown-menu,
-  .hubDropdown-menu {
-    position: absolute;
-    transform: translateX(-50%);
-    color: var(--base--color);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    width: 200px;
-    background-color: rgba(243, 243, 243, 0.4);
-    z-index: 50000;
     &.visible {
-      max-height: 300px;
-      backdrop-filter: blur(60px);
+      @include hovervisible;
     }
     .listItem {
-      transition: height 0.5s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid var(--base--color);
-      border-bottom: none;
-      z-index: 1000;
-      padding: 5px 10px;
-      background-color: rgba(243, 243, 243, 0.4);
-      backdrop-filter: blur(60px) saturate(180%);
-
+      @include hoverListItem;
       &.active {
-        border: 1px solid var(--white--color);
-        border-bottom: none;
+        @include hoverListItemActive;
 
         &:last-child {
           border-bottom: 1px solid var(--white--color);
@@ -140,13 +71,31 @@
       &:last-child {
         border-bottom: 1px solid var(--base--color);
       }
+
+      .drop-link {
+        @include dropdownLink;
+        &.active {
+          color: var(--white--color);
+        }
+      }
     }
   }
 
   &:hover .dropdown-menu {
-    max-height: 300px;
-    background-color: rgba(243, 243, 243, 0.4);
-    backdrop-filter: blur(60px) saturate(180%);
+    @include hoverDropdownMenu;
+  }
+
+  &:hover .customsDropdown-menu {
+    @include hoverDropdownMenu;
+  }
+
+  &:hover .garageDropdown-menu {
+    @include hoverDropdownMenu;
+  }
+
+  &:hover .hubDropdown-menu {
+    @include hoverDropdownMenu;
+      
   }
 
   &:hover .dropdown-menu .menu-link,
@@ -163,3 +112,6 @@
     transform: translateY(0px);
   }
 }
+
+
+

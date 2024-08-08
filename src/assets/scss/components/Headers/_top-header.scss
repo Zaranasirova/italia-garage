@@ -13,7 +13,7 @@
   }
   .container {
     .header-wrapper {
-     @include flex-between-property;
+     @include flex-between-center-property;
      @include width-height;
       .header-logo-name {
         width: 30%;

@@ -1,8 +1,13 @@
 import React from 'react';
+//REACT ROUTER DOM//
 import { Link } from 'react-router-dom';
+//HOOKS//
 import { useContext } from 'react';
+//MAINCONTEXT//
 import { MainContext } from '../utils/MainContext';
+//COMPONENTS
 import DropDownList from '../components/DropDownList';
+//DB//
 import {
     customsDropdown,
     garageDropdown,
@@ -10,6 +15,7 @@ import {
   } from "../DB/Dropdown";
 
 const NavBar = ({clas}) => {
+  //Maincontext//
     const { path } = useContext(MainContext);
   return (
     <ul className={clas}>

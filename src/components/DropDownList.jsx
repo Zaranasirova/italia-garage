@@ -1,11 +1,14 @@
 import React, { useContext, useState } from "react";
+//REACT ROUTER DOM//
 import { Link, useLocation } from "react-router-dom";
 
 //Context///
 import { MainContext } from "../utils/MainContext";
 
 const DropDownList = ({ triggerText, items,icon,ClassList,ClassLink }) => {
+  //Dropdown that opens and closes with mouse movement using useState//
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  //MAINCONTEXT//
   const { path} = useContext(MainContext);
   return (
     <div className="dropdown-container">

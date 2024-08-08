@@ -36,7 +36,7 @@
         }
       }
       .downSide {
-        @include flex-between-property;
+        @include flex-between-center-property;
         .numberlist {
           li {
             button {
