@@ -2,12 +2,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  @include width-height;
   background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-property;
   z-index: 9999;
   .hard-loader {
     position: relative;
@@ -19,8 +16,7 @@
 
     .cube {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      @include width-height;
       background-color: rgb(37, 3, 187);
       opacity: 0.8;
       transform-style: preserve-3d;

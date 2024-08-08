@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 //MAINCONTEXT IMPORT//
-import { MainContext } from "../utils/MainContext";
+import { MainContext } from "../../utils/MainContext";
 
 const Cart = ({ data }) => {
   //MAINCONTEXT//

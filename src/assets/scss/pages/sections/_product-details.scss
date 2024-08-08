@@ -122,7 +122,6 @@
         .add-to-basket {
           padding-right: 30px;
           width: 100%;
-
           gap: 20px;
           @media (max-width: 1024px) {
             display: none;
@@ -144,6 +143,10 @@
               opacity: 0.4;
               text-decoration: line-through;
             }
+          }
+
+          .add {
+            @include add;
           }
         }
       }

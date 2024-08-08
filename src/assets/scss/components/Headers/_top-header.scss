@@ -6,7 +6,7 @@
   backdrop-filter: var(--bg--blur);
   height: 48px;
   width: 100%;
-  z-index: 3;
+  z-index: 5;
   border-bottom: 1px solid var(--base--color);
   &.active {
     border-bottom: 1px solid var(--white--color);

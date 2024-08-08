@@ -63,6 +63,9 @@
         @include flex-between-center-property;
         font-size: var(--base--font);
       }
+      .add {
+        @include add;
+      }
     }
   }
 }

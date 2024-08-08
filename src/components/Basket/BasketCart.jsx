@@ -4,9 +4,8 @@ import { MainContext } from "../../utils/MainContext";
 //HOOKS IMPORT//
 import { useContext } from "react";
 //COMPONENTS IMPORT//
-import Cart from "../Cart";
+import Cart from "./Cart";
 //REACT ROUTER DOM IMPORT//
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const BasketCart = () => {
