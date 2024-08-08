@@ -28,12 +28,14 @@
     font-size: 0.6rem;
     text-transform: uppercase;
     border-bottom: 1px solid var(--base--color);
-    .basket-cart-close,
-    .basket-cart-title {
+    .cart-head-name {
       font-size: var(--base--font);
       color: var(--base--color);
       font-weight: 400;
       text-transform: uppercase;
+    }
+    .close {
+      cursor: pointer;
     }
   }
 

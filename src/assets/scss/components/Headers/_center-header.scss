@@ -1,4 +1,3 @@
-
 .center-header {
   background-color: #0c2340;
   height: 36px;
@@ -10,17 +9,16 @@
   border-bottom: 1px solid var(--white--color);
   .container {
     .center-header-wrapper {
-    @include width-height;
+      @include width-height;
       ul {
-     @include flex-between-property;
+        @include flex-between-property;
         @include width-height;
-      
         li {
           a {
             color: var(--white--color);
             font-size: var(--base--font);
             @media (max-width: 560px) {
-              font-size:var(--responsive--font);
+              font-size: var(--responsive--font);
             }
           }
         }

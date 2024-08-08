@@ -22,8 +22,8 @@ const BasketCart = () => {
   return (
     <div className={`basket-cart column ${cartIsOpen ? "open" : ""}`}>
       <div className="basket-cart-head">
-        <h3 className="basket-cart-title">Cart</h3>
-        <h3 className="basket-cart-close" onClick={() => setCartIsOpen(false)}>
+        <h3 className="cart-head-name">Cart</h3>
+        <h3 className=" cart-head-name close" onClick={() => setCartIsOpen(false)}>
           Close
         </h3>
       </div>
