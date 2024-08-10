@@ -10,15 +10,14 @@ const CheckOut = () => {
         <div className="checkout row">
           <div className="left-side-container">
            <div className="container">
-           <div className="left-side">
-              <div className="payment-way">
+           <div className="left-side column">
+              <div className="payment-way column">
                 <p className="title">Express checkout</p>
                 <div className="button-container">
                   <button className="paypal">
                     <img src={PayPal} alt="paypal" />
                   </button>
                 </div>
-
                 <div className="or-way row">
                   <span></span>
                   <p>or</p>
