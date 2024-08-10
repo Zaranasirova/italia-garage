@@ -1,0 +1,38 @@
+.checkout-header {
+  background-color: var(--black--color);
+
+  .container {
+    .check-head {
+      width: 100%;
+      padding: 20px 80px;
+      @include flex-between-center-property;
+      color: var(--white--color);
+      .check-logo {
+        width: 60px;
+        height: 60px;
+        a {
+          .logo {
+            @include width-height;
+            fill: var(--white--color);
+          }
+        }
+      }
+      .check-title {
+        color: var(--white--color);
+        @include flex-center-property;
+        h4 {
+          @include title;
+          line-height: 0.7;
+          font-size: 45px;
+          letter-spacing: -2px;
+        }
+        p {
+          font-size: 20px;
+          font-weight: 500;
+          text-transform: uppercase;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}

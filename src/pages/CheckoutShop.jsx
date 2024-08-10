@@ -1,8 +1,16 @@
-import React from "react";
-import CheckOut from "./Section/CheckOut";
+import React from 'react'
+import CheckoutHeader from '../components/Headers/CheckoutHeader'
+import CheckOut from './Section/CheckOut'
 
 const CheckoutShop = () => {
-  return <CheckOut />;
-};
+  return (
+   <>
+   <CheckoutHeader/>
+   <main>
+    <CheckOut/>
+   </main>
+   </>
+  )
+}
 
-export default CheckoutShop;
+export default CheckoutShop

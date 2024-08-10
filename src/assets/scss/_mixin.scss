@@ -93,3 +93,9 @@
     }
   }
 }
+
+@mixin title {
+  font-weight: 100;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
+}
