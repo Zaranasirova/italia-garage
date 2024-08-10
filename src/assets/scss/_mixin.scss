@@ -99,3 +99,11 @@
   text-transform: uppercase;
   font-family: "Bebas Neue", sans-serif;
 }
+
+@mixin checkout-fixed{
+  width: 50%;
+  position: fixed;
+  top: 100px;
+  bottom: 0;
+  overflow-y: auto;
+}
