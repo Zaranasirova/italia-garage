@@ -1,7 +1,7 @@
 import React from "react";
 import PayPal from "../../assets/image/payPal .png";
 import Tee from "../../assets/image/tee_fronte_pastel_green.webp";
-import Delivery from "../shop/Delivery";
+import Delivery from "../../components/Delivery";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { MainContext } from "../../utils/MainContext";
@@ -51,7 +51,7 @@ const CheckOut = () => {
                     methods.
                   </div>
                 </div>
-                <button className="review-button">Review order</button>
+               
               </div>
             </div>
           </div>
