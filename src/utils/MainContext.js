@@ -64,7 +64,7 @@ export const GlobalContext = ({ children }) => {
 
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
-const [totalPrice, setTotalPrice]=useState(0)
+  const [totalPrice, setTotalPrice] = useState(0);
   const getSingleProduct = async (productId) => {
     setLoading(true);
     try {
@@ -75,27 +75,43 @@ const [totalPrice, setTotalPrice]=useState(0)
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1500);
     }
   };
 
   const [cartIsOpen, setCartIsOpen] = useState(false);
   const [cartList, setCartList] = useState([]);
 
+  // const addToCart = () => {
+  //   const existing = cartList.find((item) => item.id === product.id);
+  //   if (existing) {
+  //     const updated = cartList.filter((item) => {
+  //       if (item.id === existing.id) {
+  //         return {
+  //           ...item,
+  //           quantity: item.quantity++,
+  //         };
+  //       } else {
+  //         return item;
+  //       }
+  //     });
+  //     setCartList(updated);
+  //   } else {
+  //     setCartList((prev) => [
+  //       ...prev,
+  //       {
+  //         ...product,
+  //         quantity: 1,
+  //       },
+  //     ]);
+  //   }
+  // };
+
   const addToCart = () => {
     const existing = cartList.find((item) => item.id === product.id);
     if (existing) {
-      const updated = cartList.filter((item) => {
-        if (item.id === existing.id) {
-          return {
-            ...item,
-            quantity: item.quantity++,
-          };
-        } else {
-          return item;
-        }
-      });
-      setCartList(updated);
     } else {
       setCartList((prev) => [
         ...prev,
@@ -107,20 +123,19 @@ const [totalPrice, setTotalPrice]=useState(0)
     }
   };
 
- const calcTotalPrice = ()=>{
-  const multiSum=cartList.map(item=>item.quantity*item.price);
-  const totalSum=multiSum.reduce((acc,curr)=>acc+curr,0);
-  setTotalPrice(totalSum)
- }
-const removeProductCart=(id)=>{
-const updatedCart=cartList.filter(item=>item.id!==id);
-setCartList(updatedCart);
-}
+  const calcTotalPrice = () => {
+    const multiSum = cartList.map((item) => item.quantity * item.price);
+    const totalSum = multiSum.reduce((acc, curr) => acc + curr, 0);
+    setTotalPrice(totalSum);
+  };
+  const removeProductCart = (id) => {
+    const updatedCart = cartList.filter((item) => item.id !== id);
+    setCartList(updatedCart);
+  };
 
-
-useEffect(()=>{
-  calcTotalPrice();
-},[cartList]);
+  useEffect(() => {
+    calcTotalPrice();
+  }, [cartList]);
 
   const globalData = {
     path,

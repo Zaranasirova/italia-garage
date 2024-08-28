@@ -1,5 +1,5 @@
 @import "./base.scss";
-@import './mixin';
+@import "./mixin";
 //components
 @import "./components/Headers/top-header";
 @import "./components/Headers/bottom-header";
@@ -11,7 +11,6 @@
 @import "./components/Basket/basket-cart";
 @import "./components/Headers/checkout-header";
 
-
 //pages
 @import "./pages/sections/main-section";
 @import "./pages/sections/contacts";
@@ -19,12 +18,6 @@
 @import "./pages/sections/product-details";
 @import "./pages/sections/all-products";
 @import "./components/Loader/loader";
-@import "./pages/shop/delivery";
-@import "./pages/shop/leftShop";
-@import "./pages/shop/pay-detail";
-@import "./pages/shop/rightShop";
-@import "./pages/shop/shopSection";
-@import "./pages/shop/topShop";
+@import "./components/delivery";
 @import "./pages/sections/checkout";
-@import "./pages/shop/delivery";
 

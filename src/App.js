@@ -14,7 +14,6 @@ import { AnimatePresence } from "framer-motion";
 import CheckoutShop from "./pages/CheckoutShop";
 
 
-
 const App = () => {
   const location = useLocation();
   return (
