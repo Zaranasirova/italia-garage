@@ -12,7 +12,7 @@ const BasketCart = () => {
   //MAINCONTEXT//
   const { cartIsOpen, setCartIsOpen, cartList, totalPrice } =
     useContext(MainContext);
-//Redirect to Checkout Page on Button Click//
+  //Redirect to Checkout Page on Button Click//
   const navigate = useNavigate();
   const handleButtonClick = () => {
     navigate("/CheckoutPage");
@@ -22,7 +22,10 @@ const BasketCart = () => {
     <div className={`basket-cart column ${cartIsOpen ? "open" : ""}`}>
       <div className="basket-cart-head">
         <h3 className="cart-head-name">Cart</h3>
-        <h3 className=" cart-head-name close" onClick={() => setCartIsOpen(false)}>
+        <h3
+          className=" cart-head-name close"
+          onClick={() => setCartIsOpen(false)}
+        >
           Close
         </h3>
       </div>
@@ -40,10 +43,12 @@ const BasketCart = () => {
       </div>
       <div className="end-of-cart">
         <div className="total column">
-          <div className="sub-total">
-            <p>SubTotal</p>
-            <p>€{totalPrice}</p>
-          </div>
+          {totalPrice !== 0 && (
+            <div className="sub-total">
+              <p>SubTotal</p>
+              <p>€{totalPrice}</p>
+            </div>
+          )}
           <button className="add" onClick={handleButtonClick}>
             CHECKOUT
           </button>
