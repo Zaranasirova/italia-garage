@@ -84,34 +84,20 @@ export const GlobalContext = ({ children }) => {
   const [cartIsOpen, setCartIsOpen] = useState(false);
   const [cartList, setCartList] = useState([]);
 
-  // const addToCart = () => {
-  //   const existing = cartList.find((item) => item.id === product.id);
-  //   if (existing) {
-  //     const updated = cartList.filter((item) => {
-  //       if (item.id === existing.id) {
-  //         return {
-  //           ...item,
-  //           quantity: item.quantity++,
-  //         };
-  //       } else {
-  //         return item;
-  //       }
-  //     });
-  //     setCartList(updated);
-  //   } else {
-  //     setCartList((prev) => [
-  //       ...prev,
-  //       {
-  //         ...product,
-  //         quantity: 1,
-  //       },
-  //     ]);
-  //   }
-  // };
-
   const addToCart = () => {
     const existing = cartList.find((item) => item.id === product.id);
     if (existing) {
+      const updated = cartList.filter((item) => {
+        if (item.id === existing.id) {
+          return {
+            ...item,
+            quantity: item.quantity++,
+          };
+        } else {
+          return item;
+        }
+      });
+      setCartList(updated);
     } else {
       setCartList((prev) => [
         ...prev,
@@ -132,6 +118,8 @@ export const GlobalContext = ({ children }) => {
     const updatedCart = cartList.filter((item) => item.id !== id);
     setCartList(updatedCart);
   };
+
+
 
   useEffect(() => {
     calcTotalPrice();

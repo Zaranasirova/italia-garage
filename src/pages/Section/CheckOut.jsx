@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { MainContext } from "../../utils/MainContext";
 
 const CheckOut = () => {
-  const { cartList } = useContext(MainContext);
+  const { cartList, totalPrice } = useContext(MainContext);
   return (
     <section className="checkout-section">
       <div className="container">
@@ -84,7 +84,7 @@ const CheckOut = () => {
                 <div className="final-info">
                   <div className="final-Subprice row">
                     <span className="subtotal">Subtotal</span>
-                    <span>€500</span>
+                    <span>€{totalPrice}</span>
                   </div>
                   <div className="final-adress row">
                     <span>Spedizione</span>
@@ -94,7 +94,7 @@ const CheckOut = () => {
                     <span className="total">Total</span>
                     <div className="total-price row">
                       <span className="eur">EUR</span>
-                      <span>€500</span>
+                      <span>€{totalPrice}</span>
                     </div>
                   </div>
                   <span>Including €309.45 in taxes</span>
