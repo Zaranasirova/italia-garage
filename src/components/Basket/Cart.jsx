@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 //MAINCONTEXT IMPORT//
 import { MainContext } from "../../utils/MainContext";
+import { quantityTypes } from "../../DB/types";
 
 const Cart = ({ data }) => {
   //MAINCONTEXT//
-  const { removeProductCart } = useContext(MainContext);
+  const { removeProductCart, quantityControl } = useContext(MainContext);
 
   return (
     <div className="about-product">
@@ -33,11 +34,23 @@ const Cart = ({ data }) => {
           <div className="downSide row">
             <ul className="numberlist row">
               <li>
-                <button>-</button>
+                <button
+                  onClick={() =>
+                    quantityControl(data.id, quantityTypes.decrement)
+                  }
+                >
+                  -
+                </button>
               </li>
               <li className="num">{data.quantity}</li>
               <li>
-                <button>+</button>
+                <button
+                  onClick={() =>
+                    quantityControl(data.id, quantityTypes.increment)
+                  }
+                >
+                  +
+                </button>
               </li>
             </ul>
             <span>€{data.price}</span>

@@ -1,8 +1,7 @@
-
-
 import React, { createContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { quantityTypes } from "../DB/types";
 
 export const MainContext = createContext();
 
@@ -70,8 +69,38 @@ export const GlobalContext = ({ children }) => {
     const updatedCart = cartList.filter((item) => item.id !== id);
     setCartList(updatedCart);
   };
+  const quantityControl = (id, type) => {
+    const existing = cartList.find((item) => item.id === id);
+    if (existing) {
+      switch (type) {
+        case quantityTypes.increment:
+          quantityHelperFunction(id, quantityTypes.increment);
+          break;
+        case quantityTypes.decrement:
+          quantityHelperFunction(id, quantityTypes.decrement);
+          break;
+      }
+    }
+  };
 
-
+  const quantityHelperFunction = (id, type) => {
+    const updatedQuantity = cartList.filter((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity:
+            type === quantityTypes.increment
+              ? item.quantity++
+              : item.quantity > 0
+              ? item.quantity--
+              : 0,
+        };
+      } else {
+        return item;
+      }
+    });
+    setCartList(updatedQuantity);
+  };
 
   useEffect(() => {
     calcTotalPrice();
@@ -91,6 +120,7 @@ export const GlobalContext = ({ children }) => {
     loading,
     totalPrice,
     removeProductCart,
+    quantityControl,
   };
 
   return (
