@@ -103,9 +103,31 @@ export const GlobalContext = ({ children }) => {
     setCartList(updatedQuantity);
   };
 
+const checkLocalStorage=async()=>{
+const localResponse= localStorage.getItem('cartList');
+if(localResponse!==null){
+const savedCartList= await JSON.parse(localResponse);
+setCartList(savedCartList);
+}
+}
+
+const savedCartInLocalStorage=async()=>{
+await localStorage.setItem('cartList',JSON.stringify(cartList))
+}
+
+
+
+useEffect(()=>{
+checkLocalStorage();
+
+},[])
+
+
+
   useEffect(() => {
     quantityControl();
     calcTotalPrice();
+    savedCartInLocalStorage();
   }, [cartList]);
 
   const globalData = {
