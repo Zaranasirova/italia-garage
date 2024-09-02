@@ -29,6 +29,7 @@ export const GlobalContext = ({ children }) => {
       setTimeout(() => {
         setLoading(false);
       }, 1500);
+      
     }
   };
 
@@ -91,7 +92,7 @@ export const GlobalContext = ({ children }) => {
           quantity:
             type === quantityTypes.increment
               ? item.quantity++
-              : item.quantity > 0
+              : item.quantity > 1
               ? item.quantity--
               : 0,
         };
@@ -103,6 +104,7 @@ export const GlobalContext = ({ children }) => {
   };
 
   useEffect(() => {
+    quantityControl();
     calcTotalPrice();
   }, [cartList]);
 
