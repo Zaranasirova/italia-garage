@@ -15,7 +15,9 @@ import BasketCart from "../Basket/BasketCart";
 import { firstDropdown } from "../../DB/Dropdown";
 //MAINCONTEXT//
 import { MainContext } from "../../utils/MainContext";
+//Transition//
 
+import { useTranslation } from "react-i18next";
 
 const TopHeader = () => {
   //MAINCONTEXT//
@@ -24,7 +26,8 @@ const TopHeader = () => {
   useEffect(() => {
     document.body.style.overflow = cartIsOpen ? "hidden" : "auto";
   }, [cartIsOpen]);
-
+const {t}=useTranslation();
+console.log();
   return (
     <header className="top-header">
       <div className="container">
@@ -52,10 +55,10 @@ const TopHeader = () => {
               to="/contacts"
               className={`color-active ${path === "/" ? "active" : ""}`}
             >
-              CONTACTS
+              {t("header.Contacts")}
             </Link>
            </div>
-           <div className="ita"> <span className={`color-active ${path === "/" ? "active" : ""}`}>ITA</span></div>
+           <div className="ita"> <span className={`color-active ${path === "/" ? "active" : ""}`} onChange={(e)=>console.log(e.target)}>{t("header.Ita")}</span></div>
             <div className="search">
             <FontAwesomeIcon
               icon={faSearch}

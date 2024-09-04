@@ -29,7 +29,6 @@ export const GlobalContext = ({ children }) => {
       setTimeout(() => {
         setLoading(false);
       }, 1500);
-      
     }
   };
 
@@ -103,26 +102,21 @@ export const GlobalContext = ({ children }) => {
     setCartList(updatedQuantity);
   };
 
-const checkLocalStorage=async()=>{
-const localResponse= localStorage.getItem('cartList');
-if(localResponse!==null){
-const savedCartList= await JSON.parse(localResponse);
-setCartList(savedCartList);
-}
-}
+  const checkLocalStorage = async () => {
+    const localResponse = localStorage.getItem("cartList");
+    if (localResponse !== null) {
+      const savedCartList = await JSON.parse(localResponse);
+      setCartList(savedCartList);
+    }
+  };
 
-const savedCartInLocalStorage=async()=>{
-await localStorage.setItem('cartList',JSON.stringify(cartList))
-}
+  const savedCartInLocalStorage = async () => {
+    await localStorage.setItem("cartList", JSON.stringify(cartList));
+  };
 
-
-
-useEffect(()=>{
-checkLocalStorage();
-
-},[])
-
-
+  useEffect(() => {
+    checkLocalStorage();
+  }, []);
 
   useEffect(() => {
     quantityControl();
