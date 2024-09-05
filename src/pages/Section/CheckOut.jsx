@@ -45,13 +45,7 @@ const CheckOut = () => {
                 </div>
                 <div className="delivery-part">
                   <Delivery />
-                  <span className="shipping">Shipping method</span>
-                  <div className="metod">
-                    Enter your shipping address to view available shipping
-                    methods.
-                  </div>
                 </div>
-               
               </div>
             </div>
           </div>
@@ -71,7 +65,7 @@ const CheckOut = () => {
                           <span className="size">XXS</span>
                         </div>
                         <div className="box-price">
-                          <span>€{item.price}</span>
+                          <span>€{item.price * item.quantity}</span>
                         </div>
                       </div>
                     </div>
@@ -97,7 +91,7 @@ const CheckOut = () => {
                       <span>€{totalPrice}</span>
                     </div>
                   </div>
-                  <span>Including €309.45 in taxes</span>
+                  
                 </div>
               </div>
             </div>

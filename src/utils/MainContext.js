@@ -16,6 +16,8 @@ export const GlobalContext = ({ children }) => {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const[price,setPrice]=useState(0);
   const getSingleProduct = async (productId) => {
     setLoading(true);
     try {
@@ -64,7 +66,10 @@ export const GlobalContext = ({ children }) => {
     const multiSum = cartList.map((item) => item.quantity * item.price);
     const totalSum = multiSum.reduce((acc, curr) => acc + curr, 0);
     setTotalPrice(totalSum);
+
   };
+
+
   const removeProductCart = (id) => {
     const updatedCart = cartList.filter((item) => item.id !== id);
     setCartList(updatedCart);
@@ -113,6 +118,12 @@ export const GlobalContext = ({ children }) => {
   const savedCartInLocalStorage = async () => {
     await localStorage.setItem("cartList", JSON.stringify(cartList));
   };
+
+
+
+
+
+
 
   useEffect(() => {
     checkLocalStorage();

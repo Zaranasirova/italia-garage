@@ -53,7 +53,7 @@ const Cart = ({ data }) => {
                 </button>
               </li>
             </ul>
-            <span>€{data.price}</span>
+            <span>€{data.price * data.quantity}</span>
           </div>
         </div>
       </div>

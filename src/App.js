@@ -12,6 +12,7 @@ import GlobalContext from "./utils/MainContext";
 import PageTransition from "./components/PageTransition";
 import { AnimatePresence } from "framer-motion";
 import CheckoutShop from "./pages/CheckoutShop";
+import Login from "./components/Login";
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/ShopPage" element={<ShopPage />} />
           <Route path="/product-details/:productId" element={<DetailsPage />} />
           <Route path="/CheckoutPage" element={<CheckoutShop/>} />
+          <Route path="/Login" element={<Login/>} />
         </Routes>
       </PageTransition>
     </GlobalContext>
