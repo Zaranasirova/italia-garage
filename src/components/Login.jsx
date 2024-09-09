@@ -13,30 +13,53 @@ const Login = () => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const handleSubmit = (e) => {
+
+  const handleSignUp = (e) => {
     e.preventDefault();
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (emailRegex.test(email) && password.length > 0) {
+    if ( emailRegex.test(signEmail) && signPassword.length > 0 ) {
       let error = "";
 
       switch (true) {
-        case password.length <= 7:
+        case signPassword !== confirmPassword:
+          error = "Şifrə uyğun deyil!";
+          break;
+        case signPassword.length <= 7:
           error = "Şifrə 7 simvoldan çox olmalıdır.";
           break;
-        case password.length >= 15:
+        case signPassword.length >= 15:
           error = "Şifrə 15 simvoldan az olmalıdır.";
           break;
-        case !/[!@#$%^&*]/.test(password):
+        case !/[!@#$%^&*]/.test(signPassword):
           error = "Şifrə xüsusi simvol (!@#$%^&*) ehtiva etməlidir.";
           break;
-        case !/[A-Z]/.test(password):
+        case !/[A-Z]/.test(signPassword):
           error = "Şifrə ən azı bir böyük hərf ehtiva etməlidir.";
           break;
         default:
-          toast.success("Giriş uğurla tamamlandı!");
-          return;
+          const users = JSON.parse(localStorage.getItem("users")) || [];
+          const userExists = users.find((user) => user.email === signEmail);
+          if (userExists) {
+            toast.error("Bu email artıq mövcuddur!");
+            return;
+          }
+
+          users.push({
+            email: signEmail,
+            password: signPassword,
+            firstname,
+            lastname,
+          });
+          localStorage.setItem("users", JSON.stringify(users));
+          toast.success("Qeydiyyat uğurla tamamlandı!");
+          setSignUp(false);
+          setSignEmail("");
+          setSignPassword("");
+          setFirstname("");
+          setLastname("");
+          setConfirmPassword("");
       }
 
       if (error) {
@@ -44,35 +67,8 @@ const Login = () => {
       }
     } else {
       toast.error("Xahiş olunur düzgün e-poçt və şifrə daxil edin.");
-    }
-  };
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    if (signPassword !== confirmPassword) {
-      toast.error("Şifrə uyğun deyil!");
       return;
     }
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const userExists = users.find((user) => user.email === signEmail);
-    if (userExists) {
-      toast.error("Bu email artıq mövcuddur!");
-      return;
-    }
-
-    users.push({
-      email: signEmail,
-      password: signPassword,
-      firstname,
-      lastname,
-    });
-    localStorage.setItem("users", JSON.stringify(users));
-    toast.success("Qeydiyyat uğurla tamamlandı!");
-    setSignUp(false);
-    setSignEmail("");
-    setSignPassword("");
-    setFirstname("");
-    setLastname("");
-    setConfirmPassword("");
   };
 
   return (
@@ -214,9 +210,7 @@ const Login = () => {
               </div>
               <span className="span">Forgot password?</span>
             </div>
-            <button className="button-submit" onClick={handleSubmit}>
-              Sign In
-            </button>
+            <button className="button-submit">Sign In</button>
             <p className="p">
               Don&apos;t have an account?{" "}
               <span className="span" onClick={() => setSignUp(true)}>
