@@ -30,7 +30,7 @@ export const GlobalContext = ({ children }) => {
     } finally {
       setTimeout(() => {
         setLoading(false);
-      }, 1500);
+      }, 3000);
     }
   };
 

@@ -19,7 +19,7 @@ const Login = () => {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if ( emailRegex.test(signEmail) && signPassword.length > 0 ) {
+    if (emailRegex.test(signEmail) && signPassword.length > 0) {
       let error = "";
 
       switch (true) {
@@ -70,6 +70,26 @@ const Login = () => {
       return;
     }
   };
+
+ 
+  const handleLogin = (e) => {
+    e.preventDefault();
+  
+    // LocalStorage-dan istifadəçiləri əldə edin
+    const usersData = JSON.parse(localStorage.getItem("users")) || [];
+  
+    // İstifadəçi məlumatlarını yoxlayın
+    const user = usersData.find((item) => item.email === email && item.password === password);
+  
+    if (user) {
+      // Uğurlu giriş mesajı
+      toast.success("Giriş uğurlu oldu.");
+    } else {
+      // Uğursuz giriş mesajı
+      toast.error("Giriş uğursuz oldu. Email və ya şifrə səhvdir.");
+    }
+  };
+  
 
   return (
     <StyledWrapper>
@@ -210,7 +230,7 @@ const Login = () => {
               </div>
               <span className="span">Forgot password?</span>
             </div>
-            <button className="button-submit">Sign In</button>
+            <button className="button-submit" onClick={handleLogin}>Sign In</button>
             <p className="p">
               Don&apos;t have an account?{" "}
               <span className="span" onClick={() => setSignUp(true)}>
