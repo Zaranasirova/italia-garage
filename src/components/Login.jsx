@@ -1,175 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { MainContext } from "../utils/MainContext";
+import SignUpForm from "../components/SignUpForm";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [signUp, setSignUp] = useState(false);
-  const [signEmail, setSignEmail] = useState("");
-  const [signPassword, setSignPassword] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
-  const handleSignUp = (e) => {
-    e.preventDefault();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (emailRegex.test(signEmail) && signPassword.length > 0) {
-      let error = "";
-
-      switch (true) {
-        case signPassword !== confirmPassword:
-          error = "Şifrə uyğun deyil!";
-          break;
-        case signPassword.length <= 7:
-          error = "Şifrə 7 simvoldan çox olmalıdır.";
-          break;
-        case signPassword.length >= 15:
-          error = "Şifrə 15 simvoldan az olmalıdır.";
-          break;
-        case !/[!@#$%^&*]/.test(signPassword):
-          error = "Şifrə xüsusi simvol (!@#$%^&*) ehtiva etməlidir.";
-          break;
-        case !/[A-Z]/.test(signPassword):
-          error = "Şifrə ən azı bir böyük hərf ehtiva etməlidir.";
-          break;
-        default:
-          const users = JSON.parse(localStorage.getItem("users")) || [];
-          const userExists = users.find((user) => user.email === signEmail);
-          if (userExists) {
-            toast.error("Bu email artıq mövcuddur!");
-            return;
-          }
-
-          users.push({
-            email: signEmail,
-            password: signPassword,
-            firstname,
-            lastname,
-          });
-          localStorage.setItem("users", JSON.stringify(users));
-          toast.success("Qeydiyyat uğurla tamamlandı!");
-          setSignUp(false);
-          setSignEmail("");
-          setSignPassword("");
-          setFirstname("");
-          setLastname("");
-          setConfirmPassword("");
-      }
-
-      if (error) {
-        toast.error(error);
-      }
-    } else {
-      toast.error("Xahiş olunur düzgün e-poçt və şifrə daxil edin.");
-      return;
-    }
-  };
-
- 
-  const handleLogin = (e) => {
-    e.preventDefault();
-  
-    // LocalStorage-dan istifadəçiləri əldə edin
-    const usersData = JSON.parse(localStorage.getItem("users")) || [];
-  
-    // İstifadəçi məlumatlarını yoxlayın
-    const user = usersData.find((item) => item.email === email && item.password === password);
-  
-    if (user) {
-      // Uğurlu giriş mesajı
-      toast.success("Giriş uğurlu oldu.");
-    } else {
-      // Uğursuz giriş mesajı
-      toast.error("Giriş uğursuz oldu. Email və ya şifrə səhvdir.");
-    }
-  };
-  
-
+  const {
+    signUp,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleLogin,
+    setSignUp,
+  } = useContext(MainContext);
   return (
     <StyledWrapper>
       <div className="login">
         {signUp ? (
-          <form className="form-sign-up">
-            <p className="title-sign-up">Register </p>
-            <p className="message-sign-up">
-              Signup now and get full access to our app.{" "}
-            </p>
-            <div className="flex">
-              <label>
-                <input
-                  required
-                  placeholder=""
-                  type="text"
-                  className="input"
-                  value={firstname}
-                  onChange={(e) => setFirstname(e.target.value)}
-                />
-                <span>Firstname</span>
-              </label>
-
-              <label>
-                <input
-                  required
-                  placeholder=""
-                  type="text"
-                  className="input"
-                  value={lastname}
-                  onChange={(e) => setLastname(e.target.value)}
-                />
-                <span>Lastname</span>
-              </label>
-            </div>
-
-            <label>
-              <input
-                required
-                placeholder=""
-                type="email"
-                className="input"
-                value={signEmail}
-                onChange={(e) => setSignEmail(e.target.value)}
-              />
-              <span>Email</span>
-            </label>
-
-            <label>
-              <input
-                required
-                placeholder=""
-                type="password"
-                className="input"
-                value={signPassword}
-                onChange={(e) => setSignPassword(e.target.value)}
-              />
-              <span>Password</span>
-            </label>
-            <label>
-              <input
-                required
-                placeholder=""
-                type="password"
-                className="input"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-              <span>Confirm password</span>
-            </label>
-            <button className="submit-sign-up " onClick={handleSignUp}>
-              Submit
-            </button>
-            <p className="signin">
-              Already have an acount ?{" "}
-              <a href="#" onClick={() => setSignUp(false)}>
-                Signin
-              </a>{" "}
-            </p>
-          </form>
+          <SignUpForm />
         ) : (
           <form className="form">
             <div className="flex-column">
@@ -230,7 +81,9 @@ const Login = () => {
               </div>
               <span className="span">Forgot password?</span>
             </div>
-            <button className="button-submit" onClick={handleLogin}>Sign In</button>
+            <button className="button-submit" onClick={handleLogin}>
+              Sign In
+            </button>
             <p className="p">
               Don&apos;t have an account?{" "}
               <span className="span" onClick={() => setSignUp(true)}>
@@ -432,141 +285,6 @@ const StyledWrapper = styled.div`
 
   .btn:hover {
     border: 1px solid #2d79f3;
-  }
-
-  .form-sign-up {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 450px;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    position: relative;
-  }
-
-  .title-sign-up {
-    font-size: 28px;
-    color: royalblue;
-    font-weight: 600;
-    letter-spacing: -1px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-  }
-
-  .title-sign-up::before,
-  .title-sign-up::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color: royalblue;
-  }
-
-  .title-sign-up::before {
-    width: 18px;
-    height: 18px;
-    background-color: royalblue;
-  }
-
-  .title-sign-up::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-  }
-
-  .message-sign-up,
-  .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
-  }
-
-  .signin {
-    text-align: center;
-  }
-
-  .signin a {
-    color: royalblue;
-  }
-
-  .signin a:hover {
-    text-decoration: underline royalblue;
-  }
-
-  .flex {
-    display: flex;
-    width: 100%;
-    gap: 6px;
-  }
-
-  .form-sign-up label {
-    position: relative;
-  }
-
-  .form-sign-up label .input {
-    width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
-    margin: 0px;
-  }
-
-  .form-sign-up label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
-
-  .form-sign-up label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-  }
-
-  .form-sign-up label .input:focus + span,
-  .form-sign-up label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-
-  .form-sign-up label .input:valid + span {
-    color: green;
-  }
-
-  .submit-sign-up {
-    border: none;
-    outline: none;
-    background-color: royalblue;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-    transform: 0.3s ease;
-  }
-
-  .submit-sign-up :hover {
-    background-color: rgb(56, 90, 194);
-  }
-
-  @keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
   }
 `;
 

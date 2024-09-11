@@ -2,6 +2,8 @@ import React, { createContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { quantityTypes } from "../DB/types";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const MainContext = createContext();
 
@@ -119,12 +121,6 @@ export const GlobalContext = ({ children }) => {
     await localStorage.setItem("cartList", JSON.stringify(cartList));
   };
 
-
-
-
-
-
-
   useEffect(() => {
     checkLocalStorage();
   }, []);
@@ -134,6 +130,93 @@ export const GlobalContext = ({ children }) => {
     calcTotalPrice();
     savedCartInLocalStorage();
   }, [cartList]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [signUp, setSignUp] = useState(false);
+  const [signEmail, setSignEmail] = useState("");
+  const [signPassword, setSignPassword] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailRegex.test(signEmail) && signPassword.length > 0) {
+      let error = "";
+
+      switch (true) {
+        case signPassword !== confirmPassword:
+          error = "Şifrə uyğun deyil!";
+          break;
+        case signPassword.length <= 7:
+          error = "Şifrə 7 simvoldan çox olmalıdır.";
+          break;
+        case signPassword.length >= 15:
+          error = "Şifrə 15 simvoldan az olmalıdır.";
+          break;
+        case !/[!@#$%^&*]/.test(signPassword):
+          error = "Şifrə xüsusi simvol (!@#$%^&*) ehtiva etməlidir.";
+          break;
+        case !/[A-Z]/.test(signPassword):
+          error = "Şifrə ən azı bir böyük hərf ehtiva etməlidir.";
+          break;
+        default:
+          const users = JSON.parse(localStorage.getItem("users")) || [];
+          const userExists = users.find((user) => user.email === signEmail);
+          if (userExists) {
+            toast.error("Bu email artıq mövcuddur!");
+            return;
+          }
+
+          users.push({
+            email: signEmail,
+            password: signPassword,
+            firstname,
+            lastname,
+          });
+          localStorage.setItem("users", JSON.stringify(users));
+          toast.success("Qeydiyyat uğurla tamamlandı!");
+          setSignUp(false);
+          setSignEmail("");
+          setSignPassword("");
+          setFirstname("");
+          setLastname("");
+          setConfirmPassword("");
+      }
+
+      if (error) {
+        toast.error(error);
+      }
+    } else {
+      toast.error("Xahiş olunur düzgün e-poçt və şifrə daxil edin.");
+      return;
+    }
+  };
+  const handleLogin = (e) => {
+    e.preventDefault();
+  
+    // LocalStorage-dan istifadəçiləri əldə edin
+    const usersData = JSON.parse(localStorage.getItem("users")) || [];
+  
+    // İstifadəçi məlumatlarını yoxlayın
+    const user = usersData.find((item) => item.email === email && item.password === password);
+  
+    if (user) {
+      // Uğurlu giriş mesajı
+      toast.success("Giriş uğurlu oldu.");
+    } else {
+      // Uğursuz giriş mesajı
+      toast.error("Giriş uğursuz oldu. Email və ya şifrə səhvdir.");
+    }
+  };
+
+
+
+
 
   const globalData = {
     path,
@@ -150,6 +233,24 @@ export const GlobalContext = ({ children }) => {
     totalPrice,
     removeProductCart,
     quantityControl,
+    signUp,
+    setFirstname,
+    firstname,
+    lastname,
+    setLastname,
+    signEmail,
+    setSignEmail,
+    signPassword,
+    setSignPassword,
+    confirmPassword,
+    setConfirmPassword,
+    handleSignUp,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleLogin,
+    setSignUp
   };
 
   return (
