@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { MainContext } from "../utils/MainContext";
 
- export const Form = () => {
+export const Form = () => {
   const {
     setFirstname,
     firstname,
