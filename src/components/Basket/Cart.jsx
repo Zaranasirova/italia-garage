@@ -6,7 +6,7 @@ import { quantityTypes } from "../../DB/types";
 const Cart = ({ data }) => {
   //MAINCONTEXT//
   const { removeProductCart, quantityControl } = useContext(MainContext);
-
+  const roundedPrice= data.price * data.quantity
   return (
     <div className="about-product">
       <div className="product-box row">
@@ -28,7 +28,7 @@ const Cart = ({ data }) => {
               className="removeProduct"
               onClick={() => removeProductCart(data.id)}
             >
-              <span>REMOVE</span>
+              <span style={{cursor:"pointer"}}>REMOVE</span>
             </div>
           </div>
           <div className="downSide row">
@@ -53,7 +53,7 @@ const Cart = ({ data }) => {
                 </button>
               </li>
             </ul>
-            <span>€{data.price * data.quantity}</span>
+            <span>€{(Math.round(roundedPrice * 100) / 100).toFixed(2)}</span>
           </div>
         </div>
       </div>

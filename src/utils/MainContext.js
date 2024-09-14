@@ -13,6 +13,7 @@ export const GlobalContext = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const path = location.pathname;
+ 
   const formattedPath = path.replace("/", "");
   const title = `Garage Italia ${
     formattedPath ? `/ ${formattedPath}` : ""
@@ -70,7 +71,8 @@ export const GlobalContext = ({ children }) => {
   const calcTotalPrice = () => {
     const multiSum = cartList.map((item) => item.quantity * item.price);
     const totalSum = multiSum.reduce((acc, curr) => acc + curr, 0);
-    setTotalPrice(totalSum);
+    const formattedSum=(Math.round(totalSum * 100) / 100).toFixed(2);
+    setTotalPrice(formattedSum);
   };
 
   const removeProductCart = (id) => {
@@ -257,6 +259,7 @@ export const GlobalContext = ({ children }) => {
     setSignUp,
     currentUser,
     handleLogOut,
+ 
   };
 
   return (

@@ -8,6 +8,7 @@ import { MainContext } from "../../utils/MainContext";
 
 const CheckOut = () => {
   const { cartList, totalPrice } = useContext(MainContext);
+ 
   return (
     <section className="checkout-section">
       <div className="container">
@@ -65,7 +66,7 @@ const CheckOut = () => {
                           <span className="size">XXS</span>
                         </div>
                         <div className="box-price">
-                          <span>€{item.price * item.quantity}</span>
+                          <span>€{(Math.round(( item.price * item.quantity) * 100) / 100).toFixed(2)}</span>
                         </div>
                       </div>
                     </div>

@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 const BasketCart = () => {
   //MAINCONTEXT//
-  const { cartIsOpen, setCartIsOpen, cartList, totalPrice } =
+  const { cartIsOpen, setCartIsOpen, cartList, totalPrice, } =
     useContext(MainContext);
   //Redirect to Checkout Page on Button Click//
   const navigate = useNavigate();
