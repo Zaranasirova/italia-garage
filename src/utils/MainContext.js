@@ -5,14 +5,14 @@ import { quantityTypes } from "../DB/types";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
-
-
+import { useNavigate } from 'react-router-dom';
 
 
 export const MainContext = createContext();
 
 export const GlobalContext = ({ children }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const path = location.pathname;
   const formattedPath = path.replace("/", "");
   const title = `Garage Italia ${
@@ -201,6 +201,7 @@ export const GlobalContext = ({ children }) => {
     }
   };
   const handleLogin = (e) => {
+    
     e.preventDefault();
   
     // LocalStorage-dan istifadəçiləri əldə edin
@@ -212,6 +213,7 @@ export const GlobalContext = ({ children }) => {
     if (user) {
       // Uğurlu giriş mesajı
       toast.success("Giriş uğurlu oldu.");
+      navigate('/oauth');
     } else {
       // Uğursuz giriş mesajı
       toast.error("Giriş uğursuz oldu. Email və ya şifrə səhvdir.");

@@ -21,6 +21,7 @@ const Login = () => {
       }}
     >
       {signUp ? <SignUpForm /> : <LogInForm />}
+      
       <ToastContainer autoClose={2000} />
     </div>
   );
