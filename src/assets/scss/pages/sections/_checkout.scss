@@ -1,19 +1,33 @@
 .checkout-section {
+  background-color: #000000;
   .container {
     .checkout {
+      display: flex;
+      flex-direction: row;
+      @media (max-width: 1040px) {
+        flex-direction: column;
+      }
       .left-side-container {
         left: 0;
         @include checkout-fixed;
         width: 50%;
         background-color: var(--black--color);
         color: var(--white--color);
- 
+        @media (max-width: 1040px) {
+          position: static;
+          width: 100%;
+          overflow: hidden;
+        }
         .container {
           .left-side {
             padding-left: 100px;
             padding-right: 30px;
             width: 100%;
             gap: 30px;
+            @media (max-width: 669px) {
+              padding-left:0;
+              padding-right: 0;
+            }
             .payment-way {
               margin-top: 30px;
               align-items: center;
@@ -90,7 +104,6 @@
                 }
               }
             }
-          
           }
         }
       }
@@ -101,12 +114,26 @@
         width: 50%;
         background-color: var(--white--color);
         color: var(--black--color);
-
+        @media (max-width: 1040px) {
+          position: static;
+          width: 100%;
+          overflow: hidden;
+          background-color: #000000;
+          color: #fff;
+        }
         .container {
           .right-side {
             padding-left: 30px;
             padding-right: 100px;
             gap: 10px;
+            @media (max-width: 1040px) {
+              padding-left: 100px;
+              padding-right: 40px;
+            }
+            @media (max-width: 669px) {
+              padding-left:0;
+              padding-right: 0;
+            }
             .selected-clothes {
               margin-top: 30px;
               gap: 10px;
@@ -133,7 +160,6 @@
                     right: -8px;
                     font-size: 14px;
                     color: var(--white--color);
-
                     border-radius: 50%;
                     background-color: #0000008f;
                     display: flex;
@@ -158,11 +184,11 @@
                       font-size: 14px;
                     }
                   }
-                  .box-price{
+                  .box-price {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    span{
+                    span {
                       font-weight: 500;
                     }
                   }
@@ -192,13 +218,17 @@
               }
             }
             .final-info {
-             display: flex;
-             flex-direction: column;
+              display: flex;
+              flex-direction: column;
               color: rgb(0, 0, 0);
               gap: 12px;
               font-size: 15px;
               font-weight: 300;
               width: 100%;
+              padding-bottom: 40px;
+              @media (max-width: 1040px) {
+                color: #fff;
+              }
               .final-Subprice {
                 justify-content: space-between;
               }

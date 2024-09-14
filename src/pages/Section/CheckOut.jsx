@@ -12,7 +12,7 @@ const CheckOut = () => {
   return (
     <section className="checkout-section">
       <div className="container">
-        <div className="checkout row">
+        <div className="checkout ">
           <div className="left-side-container">
             <div className="container">
               <div className="left-side column">
