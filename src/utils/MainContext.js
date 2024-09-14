@@ -5,8 +5,7 @@ import { quantityTypes } from "../DB/types";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 export const MainContext = createContext();
 
@@ -23,7 +22,7 @@ export const GlobalContext = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const[price,setPrice]=useState(0);
+  const [price, setPrice] = useState(0);
   const getSingleProduct = async (productId) => {
     setLoading(true);
     try {
@@ -72,9 +71,7 @@ export const GlobalContext = ({ children }) => {
     const multiSum = cartList.map((item) => item.quantity * item.price);
     const totalSum = multiSum.reduce((acc, curr) => acc + curr, 0);
     setTotalPrice(totalSum);
-
   };
-
 
   const removeProductCart = (id) => {
     const updatedCart = cartList.filter((item) => item.id !== id);
@@ -142,8 +139,7 @@ export const GlobalContext = ({ children }) => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
-
+  const [currentUser, setCurrentUser] = useState([]);
   const handleSignUp = (e) => {
     e.preventDefault();
 
@@ -201,28 +197,31 @@ export const GlobalContext = ({ children }) => {
     }
   };
   const handleLogin = (e) => {
-    
     e.preventDefault();
-  
-    // LocalStorage-dan istifadəçiləri əldə edin
+
     const usersData = JSON.parse(localStorage.getItem("users")) || [];
-  
-    // İstifadəçi məlumatlarını yoxlayın
-    const user = usersData.find((item) => item.email === email && item.password === password);
-  
+
+    const user = usersData.find(
+      (item) => item.email === email && item.password === password
+    );
+
     if (user) {
-      // Uğurlu giriş mesajı
       toast.success("Giriş uğurlu oldu.");
-      navigate('/oauth');
+      navigate("/oauth");
+      setCurrentUser(user);
+      setEmail('');
+      setPassword('')
     } else {
-      // Uğursuz giriş mesajı
-      toast.error("Giriş uğursuz oldu. Email və ya şifrə səhvdir.");
+      toast.error("Email və ya şifrə səhvdir.");
     }
   };
 
-
-
-
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    setCurrentUser("");
+    navigate("/Login");
+    toast.success("Çıxış uğurla tamamlandı!");
+  };
 
   const globalData = {
     path,
@@ -256,7 +255,9 @@ export const GlobalContext = ({ children }) => {
     password,
     setPassword,
     handleLogin,
-    setSignUp
+    setSignUp,
+    currentUser,
+    handleLogOut,
   };
 
   return (
