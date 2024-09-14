@@ -32,7 +32,6 @@ const Form = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-
         <div className="flex-column">
           <label>Password </label>
         </div>
@@ -77,7 +76,6 @@ const Form = () => {
             Sign Up
           </span>
         </p>
-      
       </form>
     </StyledWrapper>
   );
@@ -94,6 +92,16 @@ const StyledWrapper = styled.div`
     border-radius: 20px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      @media(max-width:460px){
+      width:400px;
+      }
+       @media(max-width:400px){
+      width:350px;
+      }
+       @media(max-width:350px){
+      padding:18px 10px;
+      width:250px;
+      }
   }
 
   ::placeholder {
