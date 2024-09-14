@@ -1,13 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url(https://db.onlinewebfonts.com/c/373efd69166d31c2b5052a505527acbf?family=Graphik-Medium);
+
+@font-face {
+  font-family: "Graphik-Medium";
+  src: url("https://db.onlinewebfonts.com/t/373efd69166d31c2b5052a505527acbf.eot");
+  src: url("https://db.onlinewebfonts.com/t/373efd69166d31c2b5052a505527acbf.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/373efd69166d31c2b5052a505527acbf.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/373efd69166d31c2b5052a505527acbf.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/373efd69166d31c2b5052a505527acbf.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/373efd69166d31c2b5052a505527acbf.svg#Graphik-Medium")
+      format("svg");
+}
+
 * {
   padding: 0;
   margin: 0;
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
   transition: all 0.3s ease;
+  font-family: Graphik, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 a {
