@@ -52,7 +52,7 @@ import PageTransition from "./components/PageTransition";
 import { AnimatePresence } from "framer-motion";
 import CheckoutShop from "./pages/CheckoutShop";
 import Login from "./components/Login";
-import OAuth from "./components/OAuth";
+import OAuth from "./pages/OAuth";
 
 const App = () => {
   const location = useLocation();

@@ -4,7 +4,6 @@ import axios from "axios";
 import { quantityTypes } from "../DB/types";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 export const MainContext = createContext();
@@ -13,7 +12,7 @@ export const GlobalContext = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const path = location.pathname;
- 
+
   const formattedPath = path.replace("/", "");
   const title = `Garage Italia ${
     formattedPath ? `/ ${formattedPath}` : ""
@@ -22,8 +21,18 @@ export const GlobalContext = ({ children }) => {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
-
-  const [price, setPrice] = useState(0);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [signUp, setSignUp] = useState(false);
+  const [signEmail, setSignEmail] = useState("");
+  const [signPassword, setSignPassword] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [currentUser, setCurrentUser] = useState([]);
+  const [cartIsOpen, setCartIsOpen] = useState(false);
+  const [cartList, setCartList] = useState([]);
+////////////////////////////////////////////getSingleProduct///////////////////////////////////////////
   const getSingleProduct = async (productId) => {
     setLoading(true);
     try {
@@ -39,10 +48,7 @@ export const GlobalContext = ({ children }) => {
       }, 3000);
     }
   };
-
-  const [cartIsOpen, setCartIsOpen] = useState(false);
-  const [cartList, setCartList] = useState([]);
-
+///////////////////////////////////AddToCart///////////////////////////////////////////////////////////
   const addToCart = () => {
     const existing = cartList.find((item) => item.id === product.id);
     if (existing) {
@@ -67,18 +73,19 @@ export const GlobalContext = ({ children }) => {
       ]);
     }
   };
-
+/////////////////////////////////////TotalPrice///////////////////////////////////////////////////////
   const calcTotalPrice = () => {
     const multiSum = cartList.map((item) => item.quantity * item.price);
     const totalSum = multiSum.reduce((acc, curr) => acc + curr, 0);
-    const formattedSum=(Math.round(totalSum * 100) / 100).toFixed(2);
+    const formattedSum = (Math.round(totalSum * 100) / 100).toFixed(2);
     setTotalPrice(formattedSum);
   };
-
+/////////////////////////////////////RemoveProduct/////////////////////////////////////////////////////////
   const removeProductCart = (id) => {
     const updatedCart = cartList.filter((item) => item.id !== id);
     setCartList(updatedCart);
   };
+  /////////////////////////////Quantity increment,decrement///////////////////////////////////////
   const quantityControl = (id, type) => {
     const existing = cartList.find((item) => item.id === id);
     if (existing) {
@@ -92,7 +99,7 @@ export const GlobalContext = ({ children }) => {
       }
     }
   };
-
+//////////////////////////////////Quantity Helper Function///////////////////////////////////////////////////////
   const quantityHelperFunction = (id, type) => {
     const updatedQuantity = cartList.filter((item) => {
       if (item.id === id) {
@@ -112,6 +119,7 @@ export const GlobalContext = ({ children }) => {
     setCartList(updatedQuantity);
   };
 
+  //////////////////////////////////////////////CheckLocalStorage/////////////////////////////////////////
   const checkLocalStorage = async () => {
     const localResponse = localStorage.getItem("cartList");
     if (localResponse !== null) {
@@ -119,11 +127,11 @@ export const GlobalContext = ({ children }) => {
       setCartList(savedCartList);
     }
   };
-
+/////////////////////////////////////////////Saved Cart LocalStorage///////////////////////////////////////////
   const savedCartInLocalStorage = async () => {
     await localStorage.setItem("cartList", JSON.stringify(cartList));
   };
-
+////////////////////////////////////////////UseEffect///////////////////////////////////////////////
   useEffect(() => {
     checkLocalStorage();
   }, []);
@@ -133,15 +141,7 @@ export const GlobalContext = ({ children }) => {
     calcTotalPrice();
     savedCartInLocalStorage();
   }, [cartList]);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [signUp, setSignUp] = useState(false);
-  const [signEmail, setSignEmail] = useState("");
-  const [signPassword, setSignPassword] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [currentUser, setCurrentUser] = useState([]);
+  /////////////////////////////////////SignUp///////////////////////////////////////////
   const handleSignUp = (e) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -197,6 +197,7 @@ export const GlobalContext = ({ children }) => {
       return;
     }
   };
+  //////////////////////////Login////////////////////////////////////////////////////
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -209,6 +210,9 @@ export const GlobalContext = ({ children }) => {
     if (user) {
       toast.success("Giriş uğurlu oldu.");
       navigate("/oauth");
+      const usersLogin = JSON.parse(localStorage.getItem("usersLogin")) || [];
+      usersLogin.push(user);
+      localStorage.setItem("usersLogin", JSON.stringify(usersLogin));
       setCurrentUser(user);
       setEmail("");
       setPassword("");
@@ -216,10 +220,10 @@ export const GlobalContext = ({ children }) => {
       toast.error("Email və ya şifrə səhvdir.");
     }
   };
-
+  ///////////////////////////////////////////////////////////////LogOut/////////////////////////////////////////////////
   const handleLogOut = (e) => {
     e.preventDefault();
-    setCurrentUser("");
+    localStorage.removeItem("usersLogin");
     navigate("/Login");
     toast.success("Çıxış uğurla tamamlandı!");
   };
@@ -259,7 +263,6 @@ export const GlobalContext = ({ children }) => {
     setSignUp,
     currentUser,
     handleLogOut,
- 
   };
 
   return (
