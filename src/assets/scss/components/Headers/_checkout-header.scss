@@ -21,8 +21,12 @@
         }
       }
       .check-title {
+        @media(max-width:1040px){
+          display: none;
+        }
         color: var(--white--color);
         @include flex-center-property;
+        
         h4 {
           @include title;
           line-height: 0.7;
