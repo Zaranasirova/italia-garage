@@ -73,8 +73,8 @@ const ProductDetails = () => {
             <div className="add-to-basket row">
             <button className="add" onClick={addToCart}>ADD TO CART</button>
               <div className="list-price row">
-                {product.old_price !== 0 && <span className="price old">€{product.old_price}</span>}
-                <span className="price original">€{product.price}</span>
+                {product.old_price !== 0 && <span className="price old">€{parseFloat(product.old_price).toFixed(2)}</span>}
+                <span className="price original">€{parseFloat(product.price).toFixed(2)}</span>
               </div>
             </div>
           </div>

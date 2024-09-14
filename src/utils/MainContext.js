@@ -142,7 +142,6 @@ export const GlobalContext = ({ children }) => {
   const [currentUser, setCurrentUser] = useState([]);
   const handleSignUp = (e) => {
     e.preventDefault();
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (emailRegex.test(signEmail) && signPassword.length > 0) {
@@ -166,18 +165,18 @@ export const GlobalContext = ({ children }) => {
           break;
         default:
           const users = JSON.parse(localStorage.getItem("users")) || [];
-          const userExists = users.find((user) => user.email === signEmail);
-          if (userExists) {
-            toast.error("Bu email artıq mövcuddur!");
-            return;
-          }
-
           users.push({
             email: signEmail,
             password: signPassword,
             firstname,
             lastname,
           });
+          const userExists = users.find((user) => user.email === signEmail);
+          if (userExists) {
+            toast.error("Bu email artıq mövcuddur!");
+            return;
+          }
+
           localStorage.setItem("users", JSON.stringify(users));
           toast.success("Qeydiyyat uğurla tamamlandı!");
           setSignUp(false);
@@ -209,8 +208,8 @@ export const GlobalContext = ({ children }) => {
       toast.success("Giriş uğurlu oldu.");
       navigate("/oauth");
       setCurrentUser(user);
-      setEmail('');
-      setPassword('')
+      setEmail("");
+      setPassword("");
     } else {
       toast.error("Email və ya şifrə səhvdir.");
     }

@@ -70,10 +70,10 @@ const ShopProducts = ({ data }) => {
           <p className="box-name">{data.name}</p>
           <div className="price-list">
             {data.old_price !== 0 && (
-              <span className="old-price">€{data.old_price}</span>
+              <span className="old-price">€{parseFloat(data.old_price).toFixed(2)}</span>
             )}
 
-            <span className="new-price">€{data.price}</span>
+            <span className="new-price">€{parseFloat(data.price).toFixed(2)}</span>
           </div>
         </Link>
       </div>
