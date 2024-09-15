@@ -6,7 +6,8 @@ import { MainContext } from "../../utils/MainContext";
 
 //COMPONENT IMPORT//
 import NavBar from "../NavBar";
-
+///i18////
+import { useTranslation } from "react-i18next";
 
 
 const BottomHeader = () => {
@@ -19,13 +20,13 @@ const BottomHeader = () => {
   };
   //MAINCONTEXT//
   const { path } = useContext(MainContext);
-  
+  const { t } = useTranslation();
   return (
     <header className={`bottom-header ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container">
         <nav className="navBar">
           <div className="menu-toggle" onClick={toggleMenu}>
-            <span className={`navBar-title ${path === "/" ? "active" : ""}`}>Menu</span>
+            <span className={`navBar-title ${path === "/" ? "active" : ""}`}>{t("header.MENU")}</span>
             <NavBar clas={`navbar-menu column ${isMenuOpen ? "open" : ""}`}/>
             <div className={`menu-overlay ${isMenuOpen ? "open" : ""}`}></div>
           </div>

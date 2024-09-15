@@ -1,8 +1,17 @@
 {
-    "header":{
-        "Social":"SOSIAL",
-        "Contacts":"ƏLAQƏ",
-        "Ita":"AZE",
-        "AZE":"ITA"
-    }
+  "header": {
+    "Social": "SOSIAL",
+    "Contacts": "ƏLAQƏ",
+    "Ita": "AZE",
+    "AZE": "ITA"
+  },
+  "bottomHeader": {
+    "CUSTOMS": "GÖMRÜK",
+    "OUR GARAGE": "BIZIM QARAJ",
+    "MARKET PLACE": "BAZAR YERI",
+    "SHOP": "MAĞAZA",
+    "MENU": "MENYU",
+    "HUB": "MƏRKƏZ",
+    "STUDIO": "STUDIYA"
+  }
 }

@@ -13,16 +13,21 @@ import {
     garageDropdown,
     hubDropdown,
   } from "../DB/Dropdown";
+////i18n//////////
+import { useTranslation } from "react-i18next";
+
 
 const NavBar = ({clas}) => {
   //Maincontext//
     const { path } = useContext(MainContext);
+    ///translation////////
+    const { t } = useTranslation();
   return (
     <ul className={clas}>
     <li  className={`${path === "/" ? "active" : ""}`}>
       {" "}
       <DropDownList
-        triggerText="CUSTOMS"
+        triggerText={t("bottomHeader.CUSTOMS")}
         items={customsDropdown}
         ClassList="customsDropdown-menu"
         ClassLink="drop-link"
@@ -31,7 +36,7 @@ const NavBar = ({clas}) => {
     <li className={`${path === "/" ? "active" : ""}`}>
       {" "}
       <DropDownList
-        triggerText="OUR GARAGE"
+        triggerText={t("bottomHeader.OUR GARAGE")}
         items={garageDropdown}
         ClassList="garageDropdown-menu"
         ClassLink="drop-link"
@@ -42,12 +47,12 @@ const NavBar = ({clas}) => {
         to={"/"}
         className={`title ${path === "/" ? "active" : ""}`}
       >
-        MARKET PLACE
+        {t("bottomHeader.MARKET PLACE")}
       </Link>
     </li>
     <li className={`${path === "/" ? "active" : ""}`}>
       <DropDownList
-        triggerText="HUB"
+        triggerText={t("bottomHeader.HUB")}
         items={hubDropdown}
         ClassList="hubDropdown-menu"
         ClassLink="drop-link"
@@ -58,7 +63,7 @@ const NavBar = ({clas}) => {
         to={"/ShopPage"}
         className={`title ${path === "/" ? "active" : ""}`}
       >
-        SHOP
+        {t("bottomHeader.SHOP")}
       </Link>
     </li>
     <li className={`${path === "/" ? "active" : ""}`}>
@@ -66,7 +71,7 @@ const NavBar = ({clas}) => {
         to={"/"}
         className={`title ${path === "/" ? "active" : ""}`}
       >
-        STUDIO
+        {t("bottomHeader.STUDIO")}
       </Link>
     </li>
   </ul>

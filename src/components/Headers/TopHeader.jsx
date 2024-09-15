@@ -30,7 +30,7 @@ const TopHeader = () => {
   }, [cartIsOpen]);
   const [buttonText, setButtonText] = useState("ITA");
   const { t, i18n } = useTranslation();
-  console.log(t("header.Social"));
+ 
 
   const changeLanguage = (lngCode) => {
     i18n.changeLanguage(lngCode);

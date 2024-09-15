@@ -3,5 +3,14 @@
         "Social":"SOCIAL",
         "Contacts":"CONTACTS",
         "Ita":"ITA"
-    }
+    },
+    "bottomHeader": {
+        "CUSTOMS": "CUSTOMS",
+        "OUR GARAGE":"OUR GARAGE",
+        "MARKET PLACE": "MARKET PLACE",
+        "SHOP": "SHOP",
+        "MENU":"MENU",
+        "HUB":"HUB",
+        "STUDIO":"STUDIO"
+      }
 }
