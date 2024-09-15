@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 //REACT ROUTER DOM//
 import { Link } from "react-router-dom";
 //ICONS//
@@ -18,16 +18,29 @@ import { MainContext } from "../../utils/MainContext";
 //Transition//
 
 import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
+import { changeLanguage } from "i18next";
 
 const TopHeader = () => {
   //MAINCONTEXT//
   const { path, title, cartIsOpen, setCartIsOpen } = useContext(MainContext);
-//When the basket is open and closed, the page’s overflow should be hidden//
+  //When the basket is open and closed, the page’s overflow should be hidden//
   useEffect(() => {
     document.body.style.overflow = cartIsOpen ? "hidden" : "auto";
   }, [cartIsOpen]);
-const {t}=useTranslation();
-console.log();
+  const [buttonText, setButtonText] = useState("ITA");
+  const { t, i18n } = useTranslation();
+  console.log(t("header.Social"));
+
+  const changeLanguage = (lngCode) => {
+    i18n.changeLanguage(lngCode);
+  };
+
+  const handleClick = () => {
+    setButtonText((prevText) => (prevText === "AZE" ? "ITA" : "AZE"));
+    changeLanguage(buttonText);
+  };
+
   return (
     <header className="top-header">
       <div className="container">
@@ -50,27 +63,36 @@ console.log();
               ClassList="dropdown-menu"
               ClassLink="menu-link"
             />
-           <div className="contacts">
-           <Link
-              to="/contacts"
-              className={`color-active ${path === "/" ? "active" : ""}`}
-            >
-              {t("header.Contacts")}
-            </Link>
-           </div>
-           <div className="ita"> <span className={`color-active ${path === "/" ? "active" : ""}`} onChange={(e)=>console.log(e.target)}>{t("header.Ita")}</span></div>
-            <div className="search">
-            <FontAwesomeIcon
-              icon={faSearch}
-              className={`color-active ${path === "/" ? "active" : ""}`}
-            />
+            <div className="contacts">
+              <Link
+                to="/contacts"
+                className={`color-active ${path === "/" ? "active" : ""}`}
+              >
+                {t("header.Contacts")}
+              </Link>
             </div>
-          <div className="basket">
-          <Basket
-              className={`color-active ${path === "/" ? "active" : ""}`}
-              onClick={() => setCartIsOpen(true)}
-            />
-          </div>
+            <div className="ita">
+              {" "}
+              {/* <span className={`color-active ${path === "/" ? "active" : ""}`}>
+                {t("header.Ita")}
+              </span>
+              <span className={`color-active ${path === "/" ? "active" : ""}`}>
+                {t("header.Ita")}
+              </span> */}
+              <button className={`color-active ${path === "/" ? "active" : ""}`} onClick={handleClick}>{buttonText}</button>
+            </div>
+            <div className="search">
+              <FontAwesomeIcon
+                icon={faSearch}
+                className={`color-active ${path === "/" ? "active" : ""}`}
+              />
+            </div>
+            <div className="basket">
+              <Basket
+                className={`color-active ${path === "/" ? "active" : ""}`}
+                onClick={() => setCartIsOpen(true)}
+              />
+            </div>
           </nav>
         </div>
       </div>
